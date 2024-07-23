@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned();
+            $table->boolean('is_published')->default(false);
+            $table->string('title');
+            $table->text('body');
+            $table->string('category')->nullable(); // expects comma,separated,list
+            $table->string('author')->nullable();
+            $table->string('cover_image');
+            $table->date('published_at')->nullable();
             $table->timestamps();
         });
     }

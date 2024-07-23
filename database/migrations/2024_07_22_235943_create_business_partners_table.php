@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('business_partners', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_active')->default(true);
+            $table->string('name');
+            $table->string('category');
+            $table->string('business_url');
+            $table->string('logo_path');
             $table->timestamps();
         });
     }

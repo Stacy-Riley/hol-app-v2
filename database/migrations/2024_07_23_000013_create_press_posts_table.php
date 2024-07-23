@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('press_posts', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_published')->default(false);
+            $table->string('title');
+            $table->text('body');
+            $table->string('category')->nullable();
+            $table->string('external_link_url');
+            $table->string('cover_image_path');
+            $table->date('published_at')->nullable();
             $table->timestamps();
         });
     }

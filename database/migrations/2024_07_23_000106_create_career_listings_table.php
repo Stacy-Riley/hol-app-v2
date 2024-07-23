@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('career_listings', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_active')->default(false);
+            $table->string('title');
+            $table->text('body');
             $table->timestamps();
         });
     }

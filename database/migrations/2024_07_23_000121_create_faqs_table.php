@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_published')->default(true);
+            $table->text('question');
+            $table->text('answer');
             $table->timestamps();
         });
     }
