@@ -1,0 +1,14 @@
+
+.container-custom-link-styles-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+}
+.custom-link-styles-footer {
+    width: 150px;
+    padding: 10px 30px;
+    background: #BC942F;
+    font-weight:bold;
+    border-radius: 15px;
+    text-align: center;
+}

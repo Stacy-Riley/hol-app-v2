@@ -10,10 +10,24 @@ class BusinessServiceController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function education()
+    {
+        $services = BusinessService::byCategory('education')->get();
+//        return $services;
+        return view('business_service_education', ['services' => $services]);
+    }
+
+    public function corporate()
+    {
+        $services = BusinessService::byCategory( 'corporate')->get();
+        return view('business_service_corporate', ['services' => $services]);
+    }
+
     public function index()
     {
-        //
+
     }
+
 
     /**
      * Show the form for creating a new resource.

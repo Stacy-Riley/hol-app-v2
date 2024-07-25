@@ -12,7 +12,7 @@ class PressPostController extends Controller
      */
     public function index()
     {
-        //
+        return view('press_post');
     }
 
     /**

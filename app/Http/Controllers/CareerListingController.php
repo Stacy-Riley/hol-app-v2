@@ -12,7 +12,7 @@ class CareerListingController extends Controller
      */
     public function index()
     {
-        //
+        return view('career_listing');
     }
 
     /**

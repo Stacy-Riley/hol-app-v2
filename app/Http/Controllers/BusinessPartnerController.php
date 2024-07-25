@@ -12,7 +12,7 @@ class BusinessPartnerController extends Controller
      */
     public function index()
     {
-        //
+        return view('business_partner');
     }
 
     /**

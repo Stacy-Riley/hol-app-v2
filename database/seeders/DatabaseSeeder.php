@@ -16,6 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         BlogPost::factory()->count(50)->create();
+
+        $faqSeeder = new FaqSeeder();
+        $faqSeeder->run();
+
+
 //        User::factory()->create([
 //            'name' => 'Test User',
 //            'email' => 'test@example.com',

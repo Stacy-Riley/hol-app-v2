@@ -12,3 +12,5 @@
 <link rel="stylesheet" href="{{env('APP_URL')}}/assets/css/owl.carousel.min.css">
 <!-- Main CSS -->
 <link href="{{env('APP_URL')}}/assets/css/style.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="{{env('APP_URL')}}/assets/css/custom.css" rel="stylesheet">

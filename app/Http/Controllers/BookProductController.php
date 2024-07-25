@@ -12,7 +12,7 @@ class BookProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('book_product');
     }
 
     /**

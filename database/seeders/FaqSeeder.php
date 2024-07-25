@@ -13,6 +13,22 @@ class FaqSeeder extends Seeder
      */
     public function run(): void
     {
-        Faq::factory()->count(10)->create();
+        $faqs = [
+            [
+                'question' => 'How can I make a donation to support House of Light’s mission and initatives?',
+                'answer' => 'At House of Light, we welcome your generous contributions to help us further our mission and support our initiatives. You can easily make a <a href="www.gofundme.com">donation</a> on our secure platform or apply to sponsor a student!'
+            ],
+            [
+                'question' => 'How can I make a donation to support House of Light’s mission and initatives?',
+                'answer' => 'At House of Light, we welcome your generous contributions to help us further our mission and support our initiatives. You can easily make a <a href="www.gofundme.com">donation</a> on our secure platform or apply to sponsor a student!'
+            ],
+        ];
+
+        foreach ($faqs as $faq) {
+            $faqRecord = new Faq();
+            $faqRecord->question = $faq['question'];
+            $faqRecord->answer = $faq['answer'];
+            $faqRecord->save();
+        }
     }
 }

@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class GhanaProjectController extends Controller
+class CommunityCenterController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('ghana_project');
+        return view('community_center');
     }
 
     /**
