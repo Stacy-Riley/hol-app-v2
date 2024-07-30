@@ -9,10 +9,48 @@ class BookProductController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('book_product');
+        $gradeLevel = $request->input('grade_level');
+        $pages = $request->input('pages');
+        $cost = $request->input('cost');
+
+//start the query with this table
+        $query = BookProduct::query();
+
+        if ($gradeLevel && $gradeLevel != 'Select Grade') {
+            $query->where('grade_level', $gradeLevel);
+        }
+
+        if ($pages && $pages != 'Book Length') {
+            if ($pages == 1) {
+                $query->where('num_pages', '<', 10);
+            } elseif ($pages == 2) {
+                $query->whereBetween('num_pages', [10, 20]);
+            } elseif ($pages == 3) {
+                $query->where('num_pages', '>', 20);
+            }
+
+        }
+
+        if ($cost && $cost != 'Price Range') {
+            if ($cost == 1) {
+                $query->where('cost', '<', 10);
+            } elseif ($cost == 2) {
+                $query->whereBetween('cost', [10, 20]);
+            } elseif ($cost == 3) {
+                $query->where('cost', '>', 20);
+            }
+        }
+
+        $bookProducts = $query->get();
+
+        return view('book_products', compact('bookProducts'));
+
     }
 
     /**

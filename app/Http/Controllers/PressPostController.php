@@ -10,10 +10,44 @@ class PressPostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('press_post');
+        $category = $request->input('category');
+        $contentType = $request->input('contentType');
+
+
+        // Fetch articles with pagination
+        $articles = PressPost::query()
+            ->active()
+            ->where('content_type', 'article')
+            ->category($category)
+            ->paginate(3);
+
+        // Fetch articles for sidebar without pagination
+        $articlesSidebar = PressPost::query()
+            ->active()
+            ->where('content_type', 'article')
+            ->category($category)
+            ->take(9)
+            ->get();
+
+
+        // Fetch podcasts with pagination (if needed)
+        $podcasts = PressPost::query()
+            ->active()
+            ->where('content_type', 'podcast')
+            ->category($category)
+            ->paginate(5);
+
+        return view('press_post', compact('articles', 'articlesSidebar', 'podcasts'));
+
+
     }
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

@@ -12,7 +12,14 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        //
+        $testimonials = Testimonial::query()
+            ->active()
+            ->orderBy('display_order', 'asc')
+            ->get();
+
+
+        return view('homepage.home')
+            ->with('testimonials', $testimonials);
     }
 
     /**
@@ -61,5 +68,9 @@ class TestimonialController extends Controller
     public function destroy(Testimonial $testimonial)
     {
         //
+    }
+
+    private function orderBy(string $string, string $string1)
+    {
     }
 }

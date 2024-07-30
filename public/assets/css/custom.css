@@ -1,14 +1,537 @@
+/******************************************************************* */
+/***** GENERAL *****/
+/* ****************************************************************** */
+/*$theme-colors: (*/
+/*"primary": #102E96,*/
+/*"secondary": #BC942F,*/
+/*"gray-700": #495057*/
+/*);*/
+body {
+    background-color: #ffffff;
+}
 
+.background-primary {
+    background-color: #102E96;
+}
+
+.background-secondary {
+    background-color: #BC942F;
+}
+
+/**********************************/
+/*Blue call-to-action button*/
+/**********************************/
+.button-primary-cta a {
+    display: inline-block; /* Ensure the element can be transformed */
+    background-color: #102E96;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px #9a8888;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    outline: none;
+    padding: 12px 40px;
+    text-align: center;
+    transition: transform 0.1s ease; /* Smooth transition */
+    width: 200px;
+}
+
+.button-primary-cta a:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.button-primary-cta a:active {
+    transform: translateY(2px); /* Move the link down by 2px when clicked */
+}
+
+/**********************************/
+/*Gold call-to-action button*/
+/**********************************/
+.button-secondary-cta a {
+    display: inline-block;
+    background-color: #BC942F;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    outline: none;
+    padding: 12px 30px;
+    text-align: center;
+    transition: transform 0.1s ease; /* Smooth transition */
+    width: 200px;
+}
+
+.button-secondary-cta a:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.button-secondary-cta a:active {
+    transform: translateY(2px); /* Move the link down by 2px when clicked */
+}
+
+.visually-hidden {
+    display: none;
+}
+/******************************************************************* */
+/***** NAVIGATION -ALL SITES BUT HOMEPAGE*****/
+/* ****************************************************************** */
+.navbar-dark-text{
+    color: #6D6C6C;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.navbar-dark-text:hover {
+    color: #000000;
+}
+
+h1 {
+    font-family:'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2, h3 {
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-family:'Montserrat', sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+p,
+li {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/******************************************************************* */
+/***** NAVIGATION - ONLY HOMEPAGE *****/
+/***** HOMEPAGE HEADER*****/
+/******************************************************************* */
+.nav-logo-home li a::before {
+    color: rgba(16, 15, 15, 0.2);
+    margin: 0;
+}
+
+.navbar nav > li {
+    margin: 0;
+}
+
+.hero-text-content-wrapper {
+    position: relative;
+}
+
+.hero-text-content-container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    width: 100%;
+    background-color: rgba(47, 49, 51, 0.56);
+}
+
+.hero-text-content-container h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Cormorant SC', sans-serif;
+}
+
+.hero-text-content-container h2 {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.responsive-logo-container {
+    width: 200px;
+    height: auto;
+}
+
+@media(min-width: 768px) {
+    .responsive-logo-container {
+        width: 200px !important;
+        height: auto;
+    }
+}
+
+/******************************************************************* */
+/***** HOMEPAGE *****/
+/******************************************************************* */
+.homepage-welcome-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.homepage-welcome-section h2 {
+    font-family: 'Quicksand', sans-serif;
+    color: #ffffff;
+    font-size: 22px;
+}
+.homepage-welcome-section p {
+    font-family: 'Quicksand', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.homepage-welcome-section span {
+    font-weight: bold;
+}
+
+.homepage-our-services-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.homepage-our-services-section  h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+}
+
+.consult-button-container {
+
+}
+
+#consult-button {
+    position: absolute;
+    bottom: -105px;
+    background-color: #000000;
+    border: 3px #ffffff solid;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 15px 0;
+    text-transform: uppercase;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+.homepage-our-partners-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.homepage-our-partners-section h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+}
+
+/******************************************************************* */
+/***** ABOUT *****/
+/******************************************************************* */
+.about h1 {
+    color: #ffffff;
+}
+
+.about h2,
+.about p {
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Sustainability Section */
+#sustainability-h2 {
+    font-weight: 700 !important;
+    font-size: 2.375rem !important;
+    margin-top: 0;
+    margin-bottom: 30px
+}
+
+.logo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.emphasis {
+    font-weight: bold;
+}
+
+/* Styles for Tablet */
+@media(min-width: 768px) {
+    .logo {
+        padding: 0;
+    }
+    .about-title-span {
+        display: block;
+    }
+
+    .about-subtitle-span {
+        display: block;
+    }
+
+    .about-row-3 {
+        padding: 0;
+    }
+}
+
+/* Desktop Styles */
+@media(min-width: 1200px) {
+    .about-title-span {
+        display: inline;
+    }
+}
+
+/******************************************************************* */
+/***** SERVICES - EDUCATIONAL/CORPORATE *****/
+/******************************************************************* */
+.business-service-card-container {
+    border-radius: 15px;
+    box-shadow: 0.25rem 0.313rem 0.25rem #9a8888;
+    margin: 20px;
+}
+
+.business-service-card-body a {
+   color: #ffffff;
+}
+
+.business-service-card-body a:hover {
+    text-decoration-line: underline;
+}
+
+/******************************************************************* */
+/***** GHANA PROJECT *****/
+/******************************************************************* */
+.ghana-media {
+    padding-top: 80px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1025px;
+    max-height: 577px;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.ghana-content,
+.ghana-past-collaborations {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.ghana-sponsor,
+.ghana-donate {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: #ffffff;
+}
+
+/******************************************************************* */
+/***** BOOK PRODUCT *****/
+/******************************************************************* */
+.book {
+    padding-bottom: 80px;
+}
+.book-intro {
+    padding-bottom: 40px;
+}
+
+.book-intro a {
+    color: #BC942F;
+    font-weight: bold;
+}
+
+.book-intro a:hover {
+    text-decoration-line: underline;
+
+}
+
+.book form {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.book-card-container {
+    background-color: #F6F6F6;
+    /*border-radius: 10px;*/
+    box-shadow: 2px 2px 4px #9a8888;
+}
+
+.book-card-container h4 {
+    font-size: 18px;
+}
+
+.book-card-details-container li p {
+    color: red;
+}
+/*Return to Top button*/
+#return-to-top {
+    display: none;
+    background-color: #BC942F;
+    box-shadow: 2px 2px 4px #9a8888;
+    color:#ffffff;
+    cursor: pointer;
+    padding: 12px 40px;
+    border-radius: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+#return-to-top:hover {
+    background-color: #555;
+}
+/******************************************************************* */
+/***** BUSINESS PARTNERS *****/
+/******************************************************************* */
+.business-partners h1 {
+    color: #ffffff;
+}
+
+.business-partners h2 {
+    color: #000000;
+    font-size: 36px;
+}
+
+/******************************************************************* */
+/***** PRESS POSTS *****/
+/******************************************************************* */
+.constrained-height {
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+}
+
+.press-post-img-caption {
+    font-style: italic;
+}
+.press-post-read-more-container a {
+    /*color: #102E96;*/
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+}
+.press-post-read-more-container a:hover {
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.press-post-pagination-container span {
+    /*background-color: #BC942F !important;*/
+}
+
+/******************************************************************* */
+/***** BLOG POSTS DISPLAY PAGE *****/
+/******************************************************************* */
+.active-tag {
+    border: 2px solid #3f74af;
+    background-color: #f0f8ff;
+}
+
+.featured-post-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-featured-post-container-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.blog-featured-post-container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-featured-post-container-content {
+    flex: 1; /* Takes the remaining space */
+}
+
+.blog-featured-post-container-content a {
+    color: #292b2c !important;
+}
+
+.blog-featured-post-container-content h5 {
+    color: #292b2c;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.blog-featured-post-container-content p {
+    color: #292b2c;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Media query for tablet devices */
+@media (min-width: 768px) {
+    .blog-featured-post-container-img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Media query for Desktop devices */
+@media (min-width: 1200px) {
+    .featured-post-card {
+        flex-direction: row;
+    }
+
+    .blog-featured-post-container-img {
+        margin: 0;
+        margin-right: 15px;
+    }
+}
+
+/******************************************************************* */
+/***** BLOG POSTS- INDIVIDUAL *****/
+/******************************************************************* */
+.blog-title_block h4 {
+    font-size: 20px;
+    color: #2d2d2d;
+    font-weight: 700;
+}
+
+.blog-title_block h6 span {
+    padding-left: 5px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/******************************************************************* */
+/***** FAQ *****/
+/******************************************************************* */
+.faq-answer-container a {
+    font-weight: bold;
+}
+
+/******************************************************************* */
+/***** FOOTER *****/
+/* ****************************************************************** */
 .container-custom-link-styles-footer {
     display: flex;
     justify-content: space-around;
     flex-flow: row nowrap;
+    margin-left:10px;
+    margin-right:10px;
 }
-.custom-link-styles-footer {
-    width: 150px;
-    padding: 10px 30px;
-    background: #BC942F;
-    font-weight:bold;
-    border-radius: 15px;
-    text-align: center;
+
+.container-custom-link-styles-footer a:first-child {
+    margin-right:10px;
 }

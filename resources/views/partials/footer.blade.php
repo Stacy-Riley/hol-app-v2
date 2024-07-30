@@ -60,9 +60,9 @@
                 <p style="color: white;" class=" pb-4 text-center">If you aren't able find the answers you need, or if you have a general question,
                     feel free to contact us. We’ll get back to you within 24–48 hours.
                 </p>
-                <div class="container-custom-link-styles-footer">
-                    <a href="/faq" class="custom-link-styles-footer">FAQ</a>
-                    <a href="/contact" class="custom-link-styles-footer">Contact</a>
+                <div class="container-custom-link-styles-footer button-secondary-cta">
+                    <a href="/faq" >FAQ</a>
+                    <a href="/contact" >Contact</a>
                 </div>
             </div>
 

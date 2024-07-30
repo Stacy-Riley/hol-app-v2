@@ -12,5 +12,12 @@
 <script src="{{env('APP_URL')}}/assets/js/tweetie.min.js"></script>
 <!-- Subscribe -->
 <script src="{{env('APP_URL')}}/assets/js/subscribe.js"></script>
+<!-- Masonry/Gallery -->
+<script src="{{env('APP_URL')}}/assets/js/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="{{env('APP_URL')}}/assets/js/jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="{{env('APP_URL')}}/assets/js/jquery.isotope.min.js"></script>
+<script src="{{env('APP_URL')}}/assets/js/animated-masonry-gallery.js"></script>
+<!-- Magnific popup JS -->
+<script src="{{env('APP_URL')}}/assets/js/jquery.magnific-popup.js"></script>
 <!-- Script JS -->
 <script src="{{env('APP_URL')}}/assets/js/script.js"></script>

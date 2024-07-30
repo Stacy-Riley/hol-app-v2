@@ -10,6 +10,7 @@ class BusinessServiceController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function education()
     {
         $services = BusinessService::byCategory('education')->get();

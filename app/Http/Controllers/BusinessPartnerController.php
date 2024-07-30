@@ -9,15 +9,27 @@ class BusinessPartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('business_partner');
+
+        $corporatePartners = BusinessPartner::query()
+            ->active()
+            ->category('corporate')
+            ->get();
+
+        $educationPartners = BusinessPartner::query()
+            ->active()
+            ->category('education')
+            ->get();
+
+        return view('business_partner', compact('corporatePartners', 'educationPartners'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //

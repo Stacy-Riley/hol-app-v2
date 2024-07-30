@@ -1,0 +1,155 @@
+/******************************************************************* */
+/***** GENERAL *****/
+/* ****************************************************************** */
+/*$theme-colors: (*/
+/*"primary": #102E96,*/
+/*"secondary": #BC942F,*/
+/*"gray-700": #495057*/
+/*);*/
+
+.background-primary {
+    background-color: #102E96;
+}
+
+.background-secondary {
+    background-color: #BC942F;
+}
+/******************************************************************* */
+/***** NAVIGATION *****/
+/*partials/navbars/...*/
+/* ****************************************************************** */
+.navbar-dark-text{
+    color: #6D6C6C;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.navbar-dark-text:hover {
+    color: #000000;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family:'Montserrat', sans-serif;
+}
+
+h2, h3 {
+    font-size: 1.25rem;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: .75rem;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+p,
+li {
+    font-family: 'Quicksand', sans-serif;
+}
+/******************************************************************* */
+/***** FOOTER *****/
+/*partials/footer.blade.php*/
+/* ****************************************************************** */
+.container-custom-link-styles-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+}
+.custom-link-styles-footer {
+    width: 150px;
+    padding: 10px 30px;
+    background: #BC942F;
+    font-weight:bold;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/******************************************************************* */
+/***** ABOUT *****/
+/* ****************************************************************** */
+#start-of-content {
+    font-size: 2.375rem;
+    text-align: center;
+}
+.main-about {
+    padding-bottom: 30px;
+}
+
+.main-about p {
+    color: #ffffff;
+}
+
+.about-h1 {
+    color: #ffffff;
+}
+
+.about-title-span-1 {
+    display: block;
+}
+
+.about-h2 {
+    color: white;
+    font-weight: bold;
+}
+
+/* Sustainability Section */
+#sustainability-h2 {
+    font-weight: 700 !important;
+    font-size: 2.375rem !important;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+/* This allows the image to expand to the col size */
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#about-portrait-container {
+    height: 325px;
+}
+
+.emphasis {
+    font-weight: bold;
+}
+
+/* Styles for Tablet */
+@media(min-width: 768px) {
+    #start-of-content {
+        font-size: 3rem;
+        line-height: 48px;
+    }
+    .logo img {
+        padding-bottom: 30px;
+    }
+    .logo {
+        padding: 0;
+    }
+    .about-title-span-1 {
+        display: inline;
+    }
+    .about-title-span-2 {
+        display: block;
+    }
+    #about-portrait-container {
+        height: 350px;
+    }
+}
+
+/* Desktop Styles */
+@media(min-width: 1200px) {
+    .about-title-span-2 {
+        display: inline;
+    }
+}

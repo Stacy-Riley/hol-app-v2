@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BlogPost>
@@ -16,15 +18,18 @@ class BlogPostFactory extends Factory
      */
     public function definition(): array
     {
+        $title =  'Blog Post: ' . fake()->words(rand(3, 6), true);
+
         return [
             'user_id' => 1,
-            'is_published' => 1,
-            'title' => fake()->sentence(),
-            'body' => fake()->paragraph(),
-            'category' => fake()->randomElement(['Education', 'Business']),
-            'author' => fake()->randomElement([fake()->name(), fake()->name(), fake()->name()]),
-            'cover_image' => env('APP_URL') . '/assets/img/blog/blog-05.jpg',
-            'published_at' => now(),
+            'is_published' => $this->faker->boolean(75),  // 75% chance to be published
+            'title' => $title,
+            'slug' => Str::slug($title),
+            'body' => $this->faker->paragraph(),
+            'category' => $this->faker->randomElement(['Business', 'Community', 'Education']),
+            'author' => $this->faker->name(),
+            'cover_image' => '/assets/images/blog/blog-img_01.jpg',
+            'published_at' => Carbon::today()->subDays(rand(0, 365)),
         ];
     }
 }

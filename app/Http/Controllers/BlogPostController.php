@@ -7,17 +7,49 @@ use Illuminate\Http\Request;
 
 class BlogPostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('blog_post');
+        $posts = BlogPost::active()->orderBy('published_at', 'desc')->paginate(3);
+        $categoryPosts = BlogPost::select('category')->distinct()->get(); // Get distinct categories
+        $featuredPosts = BlogPost::recent()->get();
+
+        return view('blog_post', [
+            'posts' => $posts,
+            'categoryPosts' => $categoryPosts,
+            'featuredPosts' => $featuredPosts
+        ]);
+    }
+
+    public function category($category)
+    {
+        $posts = BlogPost::active()
+            ->category($category)
+            ->orderBy('published_at', 'desc')
+            ->paginate(3);
+
+        return view('blog_category', [
+            'posts' => $posts,
+            'category' => $category
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the individual blog when clicked on from main blog page.
      */
+
+    public function showBySlug($slug)
+    {
+        $post = BlogPost::where('slug', $slug)->active()->firstOrFail();
+        $categoryPosts = BlogPost::select('category')->distinct()->get();
+        $featuredPosts = BlogPost::active()->orderBy('published_at', 'desc')->limit(3)->get();
+
+        return view('blog_post_individual', [
+            'post' => $post,
+            'categoryPosts' => $categoryPosts,
+            'featuredPosts' => $featuredPosts
+        ]);
+    }
+
     public function create()
     {
         //
@@ -26,15 +58,7 @@ class BlogPostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(BlogPost $blogPost)
+    public function store()
     {
         //
     }

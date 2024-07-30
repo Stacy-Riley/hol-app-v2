@@ -14,12 +14,9 @@ class FaqFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+
+    public function definition()
     {
-        return [
-            'is_published' => 1,
-            'question' => fake()->sentence(),
-            'answer' => fake()->paragraph(),
-        ];
+
     }
 }

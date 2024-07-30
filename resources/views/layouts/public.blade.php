@@ -9,12 +9,17 @@
     @include('partials.assets.styles')
 
     <div class="main-wrapper">
-        @include('partials.navbars.home')
+        @if(request()->route()->named('home'))
+            @include('partials.navbars.home')
+        @else
+            @include('partials.navbars.site_pages')
+        @endif
         @yield('content')
         @include('partials.footer')
     </div>
 
     @include('partials.assets.scripts')
     @yield('custom_scripts')
+    @yield('scripts')
 </body>
 </html>

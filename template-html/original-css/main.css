@@ -1,0 +1,763 @@
+/******************************************************************* */
+/***** GENERAL *****/
+/* ****************************************************************** */
+.main {
+    background-color: var(--bs-secondary);
+    color: white;
+    padding-top: 0px;
+    margin-top: 0;
+}
+
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.page-title {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-lg {
+    font-weight: 700;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--bs-primary-bg-subtle);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: var(--bs-secondary-bg-subtle);
+} 
+
+a {
+    text-decoration: none;
+}
+
+.brand-text {
+    color: var(--bs-primary);
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+p,
+li {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/******************************************************************* */
+/***** NAVIGATION *****/
+/* ****************************************************************** */
+#navbarNavDropdown {
+    justify-content: flex-end;
+}
+
+.hol-logo {
+    width: 110px;
+    aspect-ratio: auto 110 / 88;
+    height: 88px;
+}
+
+a.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-bottom#navbarNavDropdown {
+    justify-content: center;
+}
+
+/******************************************************************* */
+/***** HOMEPAGE *****/
+/* ****************************************************************** */
+header {
+    margin-bottom: 0;
+}
+
+.hero-area {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    background: url('../assets/ghana-pics/full-pics/photo1-full.jpeg') center no-repeat green;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.hero-text-container {
+    background-color: rgba(1, 1, 1, 0.5); /*transparancy controlled by .*/
+    margin-bottom: 2rem;
+}
+
+.hero-text-container h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.hero-text-container h3 {
+    color: white;
+    text-align: center;
+    font-size: 0.938rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .hero-text-container h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text-container h3 {
+        padding-bottom: .5rem;
+    }
+    
+    .span-h2 {
+        display: inline;
+    }
+
+    .hero-area {
+        min-height: 700px;
+    }
+
+/* This needs brought down to base of image */
+    .hero-text-container h2 {
+        color: white;
+    }
+
+    .services-buttons,
+    .partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+}
+
+#consult-button {
+    position: relative;
+    background-color: black;
+    border: 3px white solid;
+    color: White;
+    font-size: 1rem;
+    font-weight: 800;
+    padding-top: 1.33rem;
+    padding-bottom: 1.33rem;
+    text-transform: uppercase;
+}
+
+.cta-btn-container a {
+    position: absolute;
+    bottom: -85px;
+}
+
+#consult-button:hover,
+#consult-button:active {
+    background-color: var(--bs-dark-bg-subtle);
+    color: black;
+}
+
+.hero-text-container h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.intro-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.emphasis {
+    font-weight: 700;
+}
+
+.services-area {
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+.services-area h3 {
+    color: black;
+    font-weight: 700;
+}
+
+.services-container {
+    padding-top: 1.5rem;
+}
+
+.education-button.btn {
+    padding: 1rem 1.25rem;
+}
+
+.corporate-button.btn {
+    padding: 1rem 1.5rem;
+}
+
+.partners-homepage-flex {
+    align-items: center;
+}
+
+.partners-area h3 {
+    color: black;
+    font-weight: 700;
+}
+
+/***** CAROUSEL COMPONENT *****/
+.carousel {
+    max-height: 300px;
+  }
+  
+  .carousel-inner {
+    position: relative;
+    background-color: var(--bs-secondary);
+    width: 100vw;
+    height: 100%;
+    padding: 20px 0; 
+    display: flex; /* Use flexbox to center the text vertically */
+    align-items: center; /* Vertically center the content */
+  }
+  
+  /* Container for each carousel card */
+  .carousel-text {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .carousel-title-container {
+    background-color: var(--bs-secondary);
+    padding-top: 20px;
+  }
+  
+  .carousel-title {
+    color: black;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .carousel-item p {
+    margin-bottom: 0;
+    text-align: center;
+    color: black;
+  }
+  
+  .quote-author {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  
+/******************************************************************* */
+/***** ABOUT *****/
+/* ****************************************************************** */
+#start-of-content {
+    font-size: 2.375rem;
+    text-align: center;
+}
+.main-about {
+    padding-bottom: 30px;
+}
+
+.about-title-span-1 {
+    display: block;
+}
+
+.about-h2 {
+    color: white;
+    font-weight: bold;
+}
+
+/* Sustainability Section */
+#sustainability-container {
+    background-color: var(--bs-secondary);
+}
+
+#sustainability-h2 {
+    font-weight: 700 !important;
+    font-size: 2.375rem !important;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+/* This allows the image to expand to the col size */
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#about-portrait-container {
+    height: 325px;
+}
+
+.emphasis {
+    font-weight: bold;
+}
+
+/* Styles for Tablet */
+@media(min-width: 768px) {
+    #start-of-content {
+        font-size: 3rem; 
+        line-height: 48px;
+    }
+    .logo img {
+        padding-bottom: 30px;
+    }
+    .logo {
+        padding: 0;
+    }
+    .about-title-span-1 {
+        display: inline;
+    }
+    .about-title-span-2 {
+        display: block;
+    }
+    #about-portrait-container {
+        height: 350px;
+    }
+}
+
+/* Desktop Styles */
+@media(min-width: 1200px) {
+    .about-title-span-2 {
+        display: inline;
+    }
+}
+
+/******************************************************************* */
+/***** SERVICES *****/
+/* ****************************************************************** */
+
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-header h2 {
+    color: white;
+    padding: 0;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+.service-cards p {
+    color: black;
+    text-align: left;
+}
+
+.card-footer {
+    border-top: none;
+}
+
+.card-footer a {
+    color: black;
+}
+
+.dei-statement {
+    color: white;
+    padding-bottom: 5rem;
+}
+
+.dei-statement h3 {
+    color: white;
+}
+
+/******************************************************************* */
+/***** GHANA PROJECT *****/
+/* ****************************************************************** */
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+}
+
+.ghana-feature {
+    width: 200px;
+    aspect-ratio: auto 244 / 204;
+    height: 167px;
+}
+
+.ghana-intro p {
+    font-size: 1.125rem;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.video-ratio {
+    max-height: 577px;
+    max-width: 1025px;
+}
+
+.ghana-sponsor h3, 
+.ghana-sponsor p {
+    color: white;
+}
+
+.ghana-sponsor p {
+    margin-bottom: .75rem;
+}
+
+.ghana-donate h4 {
+    font-size: 1rem;
+}
+
+.past-collab {
+    margin-bottom: 1rem;
+}
+
+.sponsor-donate,
+.contact-button {
+    display: flex;
+    justify-content: center;
+}
+
+  /******************************************************************* */
+/***** PARTNERS *****/
+/* ****************************************************************** */
+.partners-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#h2-education,
+#h2-corporate {
+    font-weight: bold;
+    font-size: 36px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+#education-container {
+    min-height: 300px;
+    background-color: var(--bs-secondary);
+    padding-bottom: 30px;
+}
+
+#corporate-container {
+    min-height: 300px;
+    padding-bottom: 30px;
+}
+
+/* Important- removes white space that appears on sides of education-container and nav in footer */
+.container-margin {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+@media(min-width: 768px) {
+    #h1-element {
+        font-size: 48px; 
+    }
+}
+
+/******************************************************************* */
+/***** PRESS PAGE /BLOG PAGE *****/
+/* ****************************************************************** */
+.article-link {
+    font-weight: bold;
+    list-style: none;
+    color: var(--bs-primary);
+}
+
+.article-title {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.span-author-name {
+    font-weight: bold;
+}
+
+.img-caption {
+    font-style: italic;
+}
+
+/* Parent Container of Article Images */
+/* Article 1 */
+.custom-figure-size-1 {
+    max-width: 400px;
+    max-height: 300px;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Article 2 and 3 */
+.custom-figure-size-2 {
+    min-width: 300px;
+    max-height: 300px;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(248, 247, 243);
+}
+
+.custom-figure-size img {
+    padding: 0;  
+}
+
+/* Press Aside */
+.press-aside {
+    margin-top: 30px;
+    border-left: 1px solid black;
+}
+
+.press-aside ul {
+    list-style-type: none;
+    padding-left: 8px;
+}
+
+.press-aside-title {
+    margin-bottom: 16px;
+    padding-left: 8px;
+}
+
+.blog-aside {
+    margin-top: 30px;
+    border-left: 1px solid black;
+    color: #ffffff;
+}
+
+.blog-aside a {
+    color: #ffffff;
+}
+
+.blog-img-container {
+    max-width: 300px;
+    border: 2px solid #BC942F;
+    padding: 8px;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+#blog-page-margin-container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* This allows the image to expand to the col size */
+.blog-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* House of Light Logo on Blog Page */
+.aside-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .custom-figure-size-1 {
+        max-width: 500px;
+        max-height: 400px;
+    }
+
+    .custom-figure-size-2 {
+        max-width: 500px;
+        max-height: 400px;
+    }
+
+    .blog-img-container {
+        max-width: 413px;
+        max-height: 238px;
+    }
+}
+
+@media (min-width: 1200px){
+    .custom-figure-size-1 {
+        max-width: 900px;
+        max-height: 600px;
+    }
+    .custom-figure-size-2 {
+        max-width: 900px;
+        max-height: 600px;
+    }
+}
+
+/******************************************************************* */
+/***** CAREERS *****/
+/* ****************************************************************** */
+
+.careers-page h1 {
+    color: white;
+}
+
+.careers-page h2 {
+    font-size: 2rem;
+}
+
+#careers-intro .col-md-9 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#open-positions#jobs {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+/******************************************************************* */
+/***** FAQ *****/
+/* ****************************************************************** */
+.faqs {
+    padding-top: 1rem;
+}
+
+.qanda {
+    padding-top: 1.66rem;
+    padding-bottom: 1.66rem;
+}
+/******************************************************************* */
+/***** PRODUCT *****/
+/* ****************************************************************** */
+.book-intro {
+    text-align: left !important;
+}
+/******************************************************************* */
+/***** FOOTER *****/
+/* ****************************************************************** */
+
+footer ul {
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Centers the container that holds nav links - Keep this */
+#footer-row {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Adds small amount of padding to li items so they aren't smooshed together - keep this */
+.nav-item-footer {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+
+footer h2,
+footer h3,
+footer h4 {
+    color: white;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.contact-message,
+.business-address,
+.business-copyright {
+    font-size: .75rem;
+    color: white;
+}
+
+.business-phone {
+    color: white;
+    transition: color 0.3s; /*Smooth color transition on hover*/
+}
+.business-phone:hover {
+    color: #dddddd;
+}
+
+.contact-button {
+    color: black;
+}
+
+.contact-button:hover,
+.contact-button:focus {
+    color: black;
+}
+
+.highlight {
+    color: var(--bs-secondary);
+}
+
+footer .social-icons {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.social-icons .facebook,
+.instagram,
+.linkedin,
+.youtube {
+    border-radius: 50%;
+    height: 2.5em;
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    display: inline-block;
+    color: #444444;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+  .icon {
+    color: white;
+  }
+
+.facebook {
+    background-color: #1877F2;
+}
+
+.instagram {
+    background-color: #F00073;
+}
+
+.twitter {
+    background-color: #1DA1F2;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.linkedin {
+    background-color: #2867B2;
+}
+
+footer .pl-3 {
+    padding-left: 1rem
+}

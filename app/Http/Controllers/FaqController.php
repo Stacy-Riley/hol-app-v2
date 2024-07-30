@@ -12,7 +12,11 @@ class FaqController extends Controller
      */
     public function index()
     {
-        return view('faq');
+        $faqs = Faq::query()
+            ->active()
+            ->get();
+
+        return view('faq', with(['faqs' => $faqs]));
     }
 
     /**
@@ -36,7 +40,7 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
-        //
+        //create a query in the model and show it here?
     }
 
     /**
