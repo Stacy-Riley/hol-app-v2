@@ -526,12 +526,38 @@ li {
 /* ****************************************************************** */
 .container-custom-link-styles-footer {
     display: flex;
-    justify-content: space-around;
-    flex-flow: row nowrap;
+    justify-content: center;
+    flex-flow: row wrap;
     margin-left:10px;
     margin-right:10px;
 }
 
-.container-custom-link-styles-footer a:first-child {
+.container-custom-link-styles-footer a{
     margin-right:10px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+.address-container,
+.contact-us-container {
+    color: #ffffff;
+}
+
+.dropdown-item-footer {
+    color: #000000 !important;
+}
+
+.dropdown-item-footer:hover {
+    font-weight: bold;
+}
+
+.list-inline-item svg:hover {
+    fill: #BC942F;
+}
+
+.footer-copyright-container p {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 60px;
 }

@@ -1007,7 +1007,7 @@ a {
    ============================================================== */
 footer {
   background: #2d2d2d;
-  padding: 60px 0 100px; }
+  padding: 60px 0 20px; }
 
 .subscribe {
   border-bottom: 1px solid #3f3f3f; }
@@ -1037,7 +1037,7 @@ footer {
 
 .signup_form {
   font-family: "Lora", serif;
-  background: #3f3f3f;
+  background: #636161;
   font-size: 17px;
   border: none;
   padding: 15px 60px 15px 60px;
@@ -1070,9 +1070,10 @@ footer {
 .btn-warning {
   background: #BC942F;
   border: none;
-  border-radius: 3px;
+    border-radius: 15px;
   padding: 17px 34px;
-  font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
   outline: none;
   cursor: pointer;
   font-weight: bold; }
@@ -1085,7 +1086,7 @@ footer {
 
 .btn-warning:hover {
   border: none;
-  background: #bfa97f; }
+  background: #555; }
 
 .foot-logo {
   padding: 60px 0 34px; }
@@ -1119,7 +1120,7 @@ footer {
   .sitemap ul li {
     list-style: none; }
     .sitemap ul li a {
-      color: #c4c4c4;
+      color: #ffffff;
       font-size: 17px;
       line-height: 2; }
     .sitemap ul li :hover {
@@ -1134,7 +1135,7 @@ footer h3 {
   padding: 60px 0 0; }
 
 .address p {
-  color: #c4c4c4;
+  color: #ffffff;
   padding: 16px 0 0; }
   .address p span {
     color: #fff; }
@@ -1165,8 +1166,24 @@ footer h3 {
   -o-transition: 0.2;
   transition: 0.2; }
 
+.fa-tt {
+    background: #4b6eb9;
+    padding: 13px 13px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.fa-tt:hover {
+    opacity: 0.8;
+    -webkit-transition: 0.2;
+    -o-transition: 0.2;
+    transition: 0.2; }
+
 .fa-in {
-  background: #188bc3;
+  background: #55acee;
   padding: 13px 16px;
   border-radius: 50%;
   width: 44px;
@@ -1178,14 +1195,14 @@ footer h3 {
   -o-transition: 0.2;
   transition: 0.2; }
 
-.fa-tw {
+.fa-ig {
   background: #55acee;
   padding: 14px 16px;
   border-radius: 50%;
   width: 44px;
   height: 44px; }
 
-.fa-tw:hover {
+.fa-ig:hover {
   opacity: 0.8;
   -webkit-transition: 0.2;
   -o-transition: 0.2;
@@ -1202,10 +1219,15 @@ footer h3 {
     width: 44px;
     height: 44px;
     padding: 14px 16px; }
-  .fa-tw {
+  .fa-ig {
     width: 44px;
     height: 44px;
-    padding: 14px 16px; } }
+    padding: 14px 16px; }
+    .fa-tt {
+        width: 44px;
+        height: 44px;
+        padding: 14px 16px; }
+}
 
 @media (max-width: 767px) {
   .subscribe form {
@@ -2841,6 +2863,7 @@ div.panel {
 .btn-warning:active,
 .show > .btn-warning.dropdown-toggle {
   border: none;
+    border-radius: 15px;
   background: #BC942F; }
 
 .bnt-border_1 {
