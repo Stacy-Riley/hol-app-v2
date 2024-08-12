@@ -41,7 +41,7 @@
             <div class="row justify-content-center">
                 <div class="col-10 col-md-10">
                     <h2>Diversity and Inclusion</h2>
-                    <p>At House of Light, we firmly believe in diversity, equity, inclusion, and accessibility. These values are deeply rooted in our identity as our team comprises individuals with diverse backgrounds, cultures, and perspectives, which inspires us to continuously strive for inclusivity and accessibility. Here at House of Light, we ensure that “Visibility” is at the forefront of our business.
+                    <p>At House of Light, we are committed to creating a world where everyone feels valued and included. Our comprehensive accessibility and inclusion solutions empower businesses to thrive while making a positive impact on society. These values are deeply rooted in our identity as our team comprises individuals with diverse backgrounds, cultures, and perspectives, which inspires us to continuously strive for inclusivity and accessibility. Here at House of Light, we ensure that “Visibility” is at the forefront of our business.
                     </p>
                 </div>
             </div>

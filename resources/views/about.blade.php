@@ -11,12 +11,16 @@
         </div>
         <div class="row justify-content-center p-3 pb-5">
             <div class="col-md-5">
-                <h2>A Journey from Education to <span class="about-subtitle-span">Global Advocacy</span></h2>
-                <p>Sierra Dockery founded House of Light in 2015 to make a difference beyond the classroom. Her journey began years earlier at Illinois State University. Four weeks after earning her degree in special education, Sierra’s grandmother began losing her vision.
-                    Her education helped her assist her grandmother, marking the first of many times she would guide a visually impaired person.
-                    <br>Feeling limited in her role at a public school in Chicago, Sierra started House of Light. Now, her organization has an international reach, helping blind or visually impaired people adapt to everyday activities.
+                <h2>Origin</h2>
+                <p>
+                    Sierra Dockery, founder of House of Light, is a passionate advocate for individuals with visual impairments. Her journey to creating a global impact began in 2015 with a mission to make a profound difference beyond the classroom.
                 </p>
-                <br>
+                <p>
+                    With roots tracing back to her time as a special education student at Illinois State University, Sierra's path was illuminated when her grandmother experienced vision loss shortly after graduation. Armed with her education, she became a steadfast guide, witnessing firsthand the transformative power of support for the visually impaired.
+                </p>
+                <p>
+                    Frustrated by limitations in traditional educational settings, Sierra established House of Light to create a platform for broader impact. Today, her organization reaches across borders, empowering people who are blind or visually impaired to live independently and fully.
+                </p>
             </div>
             <div class="col-md-5">
                 <img class="img-fluid w-100"  src="{{env('APP_URL')}}/assets/images/about-page/about-portrait.png" alt="Portrait of Founder's Grandmother">
@@ -29,11 +33,13 @@
             </div>
             <div class="col-md-5 ">
                 <h2>Mission</h2>
-                <p>Our mission is to promote inclusion for individuals with visual impairment by engaging them in society whether in commercial, institutional, or educational spaces. We do this by providing training and programming that targets in-class training for educators, workshops, and professional development of corporate managers who engage with those with disabilities.
+                <p>
+                    Our mission is to promote inclusion for individuals with visual impairment by engaging them in society whether in commercial, institutional, or educational spaces.
                 </p>
                 <br>
                 <h2>Vision</h2>
-                <p>House of Light strives to be a collaborative, professional, and supportive educational consulting firm that will inspire each educator to be a better reflection of themselves. While obtaining the support they need to excel in a flexible, non-bureaucratic, and financially rewarding environment. We will engage in best practices, focus on meeting the needs of our stakeholders, and allow our students to excel at their own pace.
+                <p>
+                    To improve the lives of those who are blind or visually impaired globally by bringing the sighted world to them through education, inclusion, and innovation.
                 </p>
             </div>
         </div>

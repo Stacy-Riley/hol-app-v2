@@ -172,18 +172,31 @@ li {
 }
 
 .homepage-welcome-section h2 {
-    font-family: 'Quicksand', sans-serif;
     color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
     font-size: 22px;
 }
+
 .homepage-welcome-section p {
-    font-family: 'Quicksand', sans-serif;
     color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
 
 .homepage-welcome-section span {
     font-weight: bold;
+}
+
+.homepage-welcome-links {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+.homepage-welcome-links:hover {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration-line: underline;
 }
 
 .homepage-our-services-section {
@@ -196,10 +209,6 @@ li {
     font-size: 22px;
 }
 
-.consult-button-container {
-
-}
-
 #consult-button {
     position: absolute;
     bottom: -105px;
@@ -209,10 +218,10 @@ li {
     font-size: 16px;
     font-weight: 800;
     padding: 15px 0;
+    text-align: center;
     text-transform: uppercase;
     border-radius: 15px;
     width: 300px;
-    text-align: center;
 }
 
 .homepage-our-partners-section {
@@ -225,6 +234,9 @@ li {
     font-size: 22px;
 }
 
+hr {
+    width: 80%;
+}
 /******************************************************************* */
 /***** ABOUT *****/
 /******************************************************************* */

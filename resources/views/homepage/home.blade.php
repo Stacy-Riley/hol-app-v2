@@ -4,7 +4,7 @@
     <!--============================= WELCOME =============================-->
     <section class="homepage-welcome-section background-primary">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pb-3">
                 <div class="col-md-10">
                     <h2>Welcome</h2>
                 </div>
@@ -12,11 +12,47 @@
             <div class="row justify-content-center">
                 <div class="col-md-10">
                     <p>
-                        Thank you for visiting <span>House of Light</span>. We are an organization serving low vision and blind individuals led by educators providing high quality, cost-effective services to our low incidence populations within the public school sector.
+                        Thank you for visiting <span>House of Light</span>. We are a leading consulting and training firm dedicated to creating inclusive environments for people with visual impairments. Our team of experienced educators and accessibility experts provides comprehensive solutions to schools, businesses, and organizations seeking to enhance accessibility and compliance.
                     </p>
                     <p>
-                        We understand the importance of partnerships and collaborations, thus we strive to make sure our students receive high quality, one-on-one instruction, and age-appropriate services for activities of daily living via face-to-face, virtual, or hybrid instruction as applicable.
+                        We offer specialized <a class="homepage-welcome-links" href="/services/education">educational services</a> and training to ensure that students with visual impairments receive the support they need to succeed. Our programs focus on creating inclusive classrooms, developing individualized education plans (IEPs), and providing teachers with the tools and knowledge to effectively support visually impaired students.
                     </p>
+                    <p>
+                        Our <a class="homepage-welcome-links" href="/services/corporate">corporate services</a> help corporations build a more inclusive workplace by offering ADA compliance training, accessibility audits, and employee development programs. Our expertise in preventing lawsuits and fostering a culture of inclusion empowers businesses to create a positive impact.
+                    </p>
+                    <p>
+                        For example, do you have an event coming soon? Have you thought about making sure your presentation is accessible for those with disabilities in your audience? Is your team trained to work with a person with disabilities? Is your municipality looking to purchase software for your constituents, in your selection price did you make sure the software was accessible? We can help!
+
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center pt-5">
+                <div class="col-md-10">
+                    <h2>Our Commitment</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p>
+                        House of Light is committed to collaboration and partnership. We work closely with our clients to develop customized solutions that meet their specific needs.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center pt-5">
+                <div class="col-md-10">
+                    <h2>Ready to take the next step?</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p>
+                        Contact us today to schedule a consultation and learn more about our services!
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <a id="consult-button" href="/contact">Book a Free Consultation -></a>
                 </div>
             </div>
         </div>
@@ -39,11 +75,6 @@
                         <a href="/services/corporate">Corporate Services</a>
                     </div>
 
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <a id="consult-button" href="/contact">Book a Free Consultation -></a>
                 </div>
             </div>
         </div>
@@ -77,7 +108,8 @@
     </section>
     <!--//END OUR PARTNERS -->
     <!--============================= TESTIMONIAL =============================-->
-    <section class="testimonial ">
+    <hr>
+    <section class="testimonial">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -87,129 +119,41 @@
                 <div class="col-md-12">
                     <div class="testimonial-container">
                         @foreach($testimonials as $testimonial)
-                        <div aria-live="polite" class="slick-list draggable">
-                            <div class="quote slick-track">
+                        <div aria-live="polite" class="testimonial-card">
+                            <div class="quote">
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                                 <p class="quote_text">"{{ $testimonial->comment }}"</p>
                                 <div class="testi-img_block">
-
                                     <p><span>{{ $testimonial->author_name }}</span>{{ $testimonial->job_title }}</p>
                                 </div>
                             </div>
                         </div>
                         @endforeach
                     </div>
-
                 </div>
-
             </div>
         </div>
     </section>
     <!--//END TESTIMONIAL -->
-                <!--============================= OUR BLOG =============================-->
-{{--    <section class="blog">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-12">--}}
-{{--                    <h2>Our Blog</h2>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-8">--}}
-{{--                    <a href="blog-post.html" class="home_blog_link">--}}
-{{--                        <div class="blog-img_box">--}}
-{{--                            <img src="assets/images/blog-img_1.jpg" class="img-fluid blog_display" alt="blog-img">--}}
-{{--                            <div class="blogtitle">--}}
-{{--                                <h3>Eestibulum sodales</h3>--}}
-{{--                                <i class="icon-user fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>by: admin</p>--}}
-{{--                                <i class="icon-speedometer fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>9- Nov-2016</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-4">--}}
-{{--                    <a href="blog-post.html" class="home_blog_link">--}}
-{{--                        <div class="blog-img_box">--}}
-{{--                            <img src="assets/images/blog-img_2.jpg" class="img-fluid blog_display" alt="blog-img">--}}
-{{--                            <div class="blogtitle">--}}
-{{--                                <h3>Variations of passages</h3>--}}
-{{--                                <i class="icon-user fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>by: admin</p>--}}
-{{--                                <i class="icon-speedometer fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>9- Nov-2016</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-4">--}}
-{{--                    <a href="blog-post.html" class="home_blog_link">--}}
-{{--                        <div class="blog-img_box">--}}
-{{--                            <img src="assets/images/blog-img_3.jpg" class="img-fluid blog_display" alt="blog-img">--}}
-{{--                            <div class="blogtitle">--}}
-{{--                                <h3>Lorem Ipsum passage</h3>--}}
-{{--                                <i class="icon-user fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>by: admin</p>--}}
-{{--                                <i class="icon-speedometer fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>9- Nov-2016</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-4">--}}
-{{--                    <a href="blog-post.html" class="home_blog_link">--}}
-{{--                        <div class="blog_hide">--}}
-{{--                            <i class="icon-link" aria-hidden="true"></i>--}}
-{{--                            <p class="m-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been dummy...</p>--}}
-{{--                            <div class="blogtitle-link">--}}
-{{--                                <i class="icon-user fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>by: admin</p>--}}
-{{--                                <i class="icon-speedometer fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>9- Nov-2016</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-4">--}}
-{{--                    <a href="blog-post.html" class="home_blog_link">--}}
-{{--                        <div class="blog-img_box">--}}
-{{--                            <div class="blog-video">--}}
-{{--                                <div class="blog-play_btn"> <img src="assets/images/play-btn.png" alt="play-btn"> </div>--}}
-{{--                                <img src="assets/images/blog-img_4.jpg" class="img-fluid blog_display" alt="blog-img">--}}
-{{--                            </div>--}}
-{{--                            <!-- // end .blog-video -->--}}
-{{--                            <div class="blogtitle">--}}
-{{--                                <h3>Nam libero tempore</h3>--}}
-{{--                                <i class="icon-user fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>by: admin</p>--}}
-{{--                                <i class="icon-speedometer fa-common" aria-hidden="true"></i>--}}
-{{--                                <p>9- Nov-2016</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            </div><br>--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-12 text-center">--}}
-{{--                    <a href="#" class="btn btn-default btn-courses">VIEW ALL BLOG</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-    <!--//END OUR BLOG -->
-
 @endsection
-
 @section('scripts')
-{{--    <script>--}}
-{{--        $(document).ready(function(){--}}
-{{--            $('.testimonial-container').slick({--}}
-{{--                setting-name: setting-value--}}
-{{--        });--}}
-{{--        });--}}
-{{--    </script>--}}
+    <script src="{{env('APP_URL')}}/assets/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="{{env('APP_URL')}}/assets/js/jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{{env('APP_URL')}}/assets/js/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.testimonial-container').slick({
+                accessibility: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                dots: true,
+                pauseOnHover: true,
+                autoplaySpeed: 3000,
+            });
+        });
+    </script>
+
 
 @endsection
