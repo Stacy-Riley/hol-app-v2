@@ -15,11 +15,11 @@
                         <span class="icon-menu"></span>
                     </button>
                     <div class="p-0 col-md-12 navbars-site-pages collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
+                        <ul class="navbar-nav ml-1">
+                            <li class="nav-item nav-item-left-side pl-0 mx-0">
                                 <a class="nav-link navbar-dark-text" href="/about">About<span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown nav-item-left-side">
                                 <a class="nav-link dropdown-toggle navbar-dark-text" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Services
                                 </a>
@@ -28,7 +28,7 @@
                                     <li><a class="dropdown-item navbar-dark-text" href="/services/corporate">Corporate Services</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item nav-item-left-side">
                                 <a class="nav-link navbar-dark-text" href="/ghana/project">Ghana Project</a>
                             </li>
                             <li class="nav-logo">

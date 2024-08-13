@@ -113,6 +113,10 @@ li {
     font-family: 'Quicksand', sans-serif;
 }
 
+.nav-item-left-side {
+    padding-left: 11px;
+    padding-right: 11px;
+}
 /******************************************************************* */
 /***** NAVIGATION - ONLY HOMEPAGE *****/
 /***** HOMEPAGE HEADER*****/
@@ -154,6 +158,11 @@ li {
 .responsive-logo-container {
     width: 200px;
     height: auto;
+}
+
+.nav-item-left-side {
+    padding-left: 11px;
+    padding-right: 11px;
 }
 
 @media(min-width: 768px) {
@@ -533,6 +542,13 @@ hr {
     font-weight: bold;
 }
 
+/******************************************************************* */
+/***** CAREER *****/
+/******************************************************************* */
+.career h1 {
+    color: #ffffff;
+
+}
 /******************************************************************* */
 /***** FOOTER *****/
 /* ****************************************************************** */
