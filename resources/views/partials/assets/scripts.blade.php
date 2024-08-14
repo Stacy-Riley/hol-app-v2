@@ -19,5 +19,17 @@
 <script src="{{env('APP_URL')}}/assets/js/animated-masonry-gallery.js"></script>
 <!-- Magnific popup JS -->
 <script src="{{env('APP_URL')}}/assets/js/jquery.magnific-popup.js"></script>
+
+<!-- Tabler -->
+<!-- Libs JS -->
+<script src="{{env('APP_URL')}}/assets/js/tabler/apexcharts/dist/apexcharts.min.js?1692870487" defer></script>
+<script src="{{env('APP_URL')}}/assets/js/tabler/jsvectormap/dist/js/jsvectormap.min.js?1692870487" defer></script>
+<script src="{{env('APP_URL')}}/assets/js/tabler/jsvectormap/dist/maps/world.js?1692870487" defer></script>
+<script src="{{env('APP_URL')}}/assets/js/tabler/jsvectormap/dist/maps/world-merc.js?1692870487" defer></script>
+<!-- Tabler Core -->
+<script src="{{env('APP_URL')}}/assets/js/tabler/tabler.min.js?1692870487" defer></script>
+<script src="{{env('APP_URL')}}/assets/js/tabler/demo.min.js?1692870487" defer></script>
+
+
 <!-- Script JS -->
 <script src="{{env('APP_URL')}}/assets/js/script.js"></script>

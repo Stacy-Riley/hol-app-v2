@@ -16,6 +16,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SponsorFormController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 // public pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -39,14 +40,9 @@ Route::get('/contact', [ContactSubmissionsController::class, 'index']);
 Route::get('/sponsor_form', [SponsorFormController::class, 'index']);
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+//Admin
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
 });
 
 require __DIR__.'/auth.php';
