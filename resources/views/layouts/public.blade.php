@@ -6,7 +6,7 @@
     </head>
 <body>
 
-    @include('partials.assets.styles')
+    @include('partials.assets.guest_styles')
 
     <div class="main-wrapper">
         @if(request()->route()->named('home'))
@@ -18,7 +18,7 @@
         @include('partials.footer')
     </div>
 
-    @include('partials.assets.scripts')
+    @include('partials.assets.guest_scripts')
     @yield('custom_scripts')
     @yield('scripts')
 </body>

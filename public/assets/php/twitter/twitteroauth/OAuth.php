@@ -4,7 +4,9 @@
 /* Generic exception class
  */
 
-namespace public\assets\php\twitter\twitteroauth;
+namespace assets\php\twitter\twitteroauth;
+use php\twitter\twitteroauth\OAuthException;
+
 if (!class_exists('OAuthException')) {
     class OAuthException extends Exception
     {

@@ -82,7 +82,7 @@ class SMTP
      * The PHPMailer SMTP Version number.
      * @var string
      * @deprecated Use the `VERSION` constant instead
-     * @see SMTP::VERSION
+     * @see \php\phpmailer\\assets\php\phpmailer\SMTP::VERSION
      */
     public $Version = '5.2.22';
 
@@ -90,7 +90,7 @@ class SMTP
      * SMTP server port number.
      * @var integer
      * @deprecated This is only ever used as a default value, so use the `DEFAULT_SMTP_PORT` constant instead
-     * @see SMTP::DEFAULT_SMTP_PORT
+     * @see \php\phpmailer\\assets\php\phpmailer\SMTP::DEFAULT_SMTP_PORT
      */
     public $SMTP_PORT = 25;
 
@@ -98,7 +98,7 @@ class SMTP
      * SMTP reply line ending.
      * @var string
      * @deprecated Use the `CRLF` constant instead
-     * @see SMTP::CRLF
+     * @see \php\phpmailer\\assets\php\phpmailer\SMTP::CRLF
      */
     public $CRLF = "\r\n";
 
@@ -210,8 +210,8 @@ class SMTP
      * @param string $str Debug string to output
      * @param integer $level The debug level of this message; see DEBUG_* constants
      * @return void
-     * @see SMTP::$do_debug
-     * @see SMTP::$Debugoutput
+     * @see \php\phpmailer\\assets\php\phpmailer\SMTP::$do_debug
+     * @see \php\phpmailer\\assets\php\phpmailer\SMTP::$Debugoutput
      */
     protected function edebug($str, $level = 0)
     {

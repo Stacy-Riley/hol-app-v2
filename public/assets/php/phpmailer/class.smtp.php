@@ -17,8 +17,10 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace public\assets\php\phpmailer;
+namespace assets\php\phpmailer;
 use ntlm_sasl_client_class;
+use public\assets\php\phpmailer\OAuth;
+use public\assets\php\phpmailer\stdClass;
 
 /**
  * PHPMailer RFC821 SMTP email transport class.

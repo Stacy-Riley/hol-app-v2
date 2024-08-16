@@ -8,7 +8,7 @@
 
 /* Load OAuth lib. You can find it at http://oauth.net */
 
-namespace public\assets\php\twitter\twitteroauth;
+namespace assets\php\twitter\twitteroauth;
 use a;
 use API;
 use OAuthConsumer;

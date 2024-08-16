@@ -130,7 +130,7 @@ class Google extends AbstractProvider
 
 
 //Set Redirect URI in Developer Console as [https/http]://<yourdomain>/<folder>/get_oauth_token.php
-$provider = new Google(
+$provider = new \assets\php\phpmailer\Google(
     array(
         'clientId' => $clientId,
         'clientSecret' => $clientSecret,

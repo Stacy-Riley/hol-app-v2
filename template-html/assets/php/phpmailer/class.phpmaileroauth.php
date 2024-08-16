@@ -19,10 +19,9 @@
 
 namespace public\assets\php\phpmailer;
 
+use assets\php\phpmailer\PHPMailerOAuthGoogle;
+use assets\php\phpmailer\SMTP;
 use PHPMailer;
-use public\assets\php\phpmailer\phpmailerException;
-use public\assets\php\phpmailer\PHPMailerOAuthGoogle;
-use public\assets\php\phpmailer\SMTP;
 
 /**
  * PHPMailerOAuth - PHPMailer subclass adding OAuth support.

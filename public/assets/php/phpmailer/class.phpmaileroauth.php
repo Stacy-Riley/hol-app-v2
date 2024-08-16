@@ -17,12 +17,10 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace public\assets\php\phpmailer;
+namespace assets\php\phpmailer;
 
 use PHPMailer;
 use public\assets\php\phpmailer\phpmailerException;
-use public\assets\php\phpmailer\PHPMailerOAuthGoogle;
-use public\assets\php\phpmailer\SMTP;
 
 /**
  * PHPMailerOAuth - PHPMailer subclass adding OAuth support.
@@ -85,7 +83,7 @@ class PHPMailerOAuth extends PHPMailer
      * Overrides the original smtpConnect method to add support for OAuth.
      * @param array $options An array of options compatible with stream_context_create()
      * @return bool
-     * @throws phpmailerException
+     * @throws \assets\php\phpmailer\phpmailerException
      * @uses SMTP
      * @access public
      */

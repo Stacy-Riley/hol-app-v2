@@ -53,7 +53,7 @@ class PHPMailerOAuthGoogle
 
     private function getProvider()
     {
-        return new \public\assets\php\phpmailer\Google([
+        return new \assets\php\phpmailer\Google([
             'clientId' => $this->oauthClientId,
             'clientSecret' => $this->oauthClientSecret
         ]);

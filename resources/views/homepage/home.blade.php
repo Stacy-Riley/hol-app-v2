@@ -50,7 +50,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center consult-button-wrapper">
                 <div class="d-flex justify-content-center">
                     <a id="consult-button" href="/contact">Book a Free Consultation -></a>
                 </div>

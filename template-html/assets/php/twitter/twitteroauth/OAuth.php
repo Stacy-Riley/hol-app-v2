@@ -110,7 +110,7 @@ abstract class OAuthSignatureMethod
  * character (ASCII code 38) even if empty.
  *   - Chapter 9.2 ("HMAC-SHA1")
  */
-class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod
+class OAuthSignatureMethod_HMAC_SHA1 extends \php\twitter\twitteroauth\OAuthSignatureMethod
 {
     function get_name()
     {
@@ -139,7 +139,7 @@ class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod
  * over a secure channel such as HTTPS. It does not use the Signature Base String.
  *   - Chapter 9.4 ("PLAINTEXT")
  */
-class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod
+class OAuthSignatureMethod_PLAINTEXT extends \php\twitter\twitteroauth\OAuthSignatureMethod
 {
     public function get_name()
     {
@@ -178,7 +178,7 @@ class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod
  * specification.
  *   - Chapter 9.3 ("RSA-SHA1")
  */
-abstract class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod
+abstract class OAuthSignatureMethod_RSA_SHA1 extends \php\twitter\twitteroauth\OAuthSignatureMethod
 {
     public function get_name()
     {

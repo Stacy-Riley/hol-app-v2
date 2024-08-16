@@ -147,7 +147,7 @@ class POP3
         $debug_level = 0
     )
     {
-        $pop = new POP3;
+        $pop = new \assets\php\phpmailer\POP3;
         return $pop->authorise($host, $port, $timeout, $username, $password, $debug_level);
     }
 

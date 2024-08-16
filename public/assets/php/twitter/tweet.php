@@ -1,6 +1,6 @@
 <?php
 
-use public\assets\php\twitter\twitteroauth\TwitterOAuth;
+use assets\php\twitter\twitteroauth\TwitterOAuth;
 
 require_once("twitteroauth/twitteroauth.php"); // Path to twitteroauth library
     require_once('config.php'); // Path to config file

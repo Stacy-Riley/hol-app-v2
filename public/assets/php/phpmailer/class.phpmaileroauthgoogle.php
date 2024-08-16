@@ -17,7 +17,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace public\assets\php\phpmailer;
+namespace assets\php\phpmailer;
 /**
  * PHPMailerOAuthGoogle - Wrapper for League OAuth2 Google provider.
  * @package PHPMailer
@@ -53,7 +53,7 @@ class PHPMailerOAuthGoogle
 
     private function getProvider()
     {
-        return new \public\assets\php\phpmailer\Google([
+        return new \assets\php\phpmailer\Google([
             'clientId' => $this->oauthClientId,
             'clientSecret' => $this->oauthClientSecret
         ]);

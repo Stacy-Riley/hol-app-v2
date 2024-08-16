@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\BookProductController;
 use App\Http\Controllers\BusinessPartnerController;
@@ -12,11 +14,8 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GhanaProjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PressPostController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SponsorFormController;
-use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
 
 // public pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -43,6 +42,8 @@ Route::get('/sponsor_form', [SponsorFormController::class, 'index']);
 //Admin
 Route::middleware('auth')->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
+    Route::get('/admin/blog', [AdminBlogPostController::class, 'index'])->name('admin.blog');
+    Route::get('admin/blog/create', [AdminBlogPostController::class, 'create'])->name('admin.blog.create');
 });
 
 require __DIR__.'/auth.php';

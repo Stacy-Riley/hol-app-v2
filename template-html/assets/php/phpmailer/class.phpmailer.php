@@ -19,7 +19,7 @@
 
 namespace public\assets\php\phpmailer;
 
-use public\assets\php\phpmailer\SMTP;
+use assets\php\phpmailer\SMTP;
 
 /**
  * PHPMailer - PHP email creation and transport class.
@@ -244,7 +244,7 @@ class PHPMailer
      * Default is $Hostname. If $Hostname is empty, PHPMailer attempts to find
      * one with the same method described above for $Hostname.
      * @var string
-     * @see PHPMailer::$Hostname
+     * @see \php\phpmailer\PHPMailer::$Hostname
      */
     public $Helo = '';
 
@@ -267,8 +267,8 @@ class PHPMailer
      * Whether to use SMTP authentication.
      * Uses the Username and Password properties.
      * @var boolean
-     * @see PHPMailer::$Username
-     * @see PHPMailer::$Password
+     * @see \php\phpmailer\PHPMailer::$Username
+     * @see \php\phpmailer\PHPMailer::$Password
      */
     public $SMTPAuth = false;
 
@@ -464,7 +464,7 @@ class PHPMailer
     /**
      * Which validator to use by default when validating email addresses.
      * May be a callable to inject your own validator, but there are several built-in validators.
-     * @see PHPMailer::validateAddress()
+     * @see \php\phpmailer\PHPMailer::validateAddress()
      * @var string|callable
      * @static
      */
@@ -510,7 +510,7 @@ class PHPMailer
      * Includes all of $to, $cc, $bcc
      * @var array
      * @access protected
-     * @see PHPMailer::$to @see PHPMailer::$cc @see PHPMailer::$bcc
+     * @see \php\phpmailer\PHPMailer::$to @see PHPMailer::$cc @see PHPMailer::$bcc
      */
     protected $all_recipients = array();
 
@@ -521,8 +521,8 @@ class PHPMailer
      * This array is used only for addresses with IDN.
      * @var array
      * @access protected
-     * @see PHPMailer::$to @see PHPMailer::$cc @see PHPMailer::$bcc
-     * @see PHPMailer::$all_recipients
+     * @see \php\phpmailer\PHPMailer::$to @see PHPMailer::$cc @see PHPMailer::$bcc
+     * @see \php\phpmailer\PHPMailer::$all_recipients
      */
     protected $RecipientsQueue = array();
 
@@ -532,7 +532,7 @@ class PHPMailer
      * This array is used only for addresses with IDN.
      * @var array
      * @access protected
-     * @see PHPMailer::$ReplyTo
+     * @see \php\phpmailer\PHPMailer::$ReplyTo
      */
     protected $ReplyToQueue = array();
 
@@ -709,8 +709,8 @@ class PHPMailer
     /**
      * Output debugging info via user-defined method.
      * Only generates output if SMTP debug output is enabled (@param string $str
-     * @see PHPMailer::$Debugoutput
-     * @see PHPMailer::$SMTPDebug
+     * @see \php\phpmailer\PHPMailer::$Debugoutput
+     * @see \php\phpmailer\PHPMailer::$SMTPDebug
      * @see SMTP::$do_debug).
      */
     protected function edebug($str)
@@ -1181,7 +1181,7 @@ class PHPMailer
      *   or fails for any reason (e.g. domain has characters not allowed in an IDN)
      * @param string $address The email address to convert
      * @return string The encoded address in ASCII form
-     * @see PHPMailer::$CharSet
+     * @see \php\phpmailer\PHPMailer::$CharSet
      */
     public function punyencodeAddress($address)
     {
@@ -1365,7 +1365,7 @@ class PHPMailer
      * @return boolean
      * @throws phpmailerException
      * @access protected
-     * @see PHPMailer::$Sendmail
+     * @see \php\phpmailer\PHPMailer::$Sendmail
      */
     protected function sendmailSend($header, $body)
     {
@@ -1537,7 +1537,7 @@ class PHPMailer
      * @throws phpmailerException
      * @uses SMTP
      * @access protected
-     * @see  PHPMailer::getSMTPInstance() to use a different class.
+     * @see  \php\phpmailer\PHPMailer::getSMTPInstance() to use a different class.
      */
     protected function smtpSend($header, $body)
     {
@@ -1721,7 +1721,7 @@ class PHPMailer
      */
     public function smtpClose()
     {
-        if (is_a($this->smtp, 'public\assets\php\phpmailer\SMTP')) {
+        if (is_a($this->smtp, 'assets\php\phpmailer\SMTP')) {
             if ($this->smtp->connected()) {
                 $this->smtp->quit();
                 $this->smtp->close();
@@ -2175,7 +2175,7 @@ class PHPMailer
      * Includes complete headers and body.
      * Only valid post preSend().
      * @return string
-     * @see PHPMailer::preSend()
+     * @see \php\phpmailer\PHPMailer::preSend()
      * @access public
      */
     public function getSentMIMEMessage()
@@ -2922,7 +2922,7 @@ class PHPMailer
      * @param integer $line_max
      * @param boolean $space_conv
      * @return string
-     * @see PHPMailer::encodeQP()
+     * @see \php\phpmailer\PHPMailer::encodeQP()
      * @access public
      * @deprecated Use encodeQP instead.
      */
@@ -3401,7 +3401,7 @@ class PHPMailer
      * @param string $basedir Absolute path to a base directory to prepend to relative paths to images
      * @param boolean|callable $advanced Whether to use the internal HTML to text converter
      *    or your own custom converter @return string $message The transformed message Body
-     * @see PHPMailer::html2text()
+     * @see \php\phpmailer\PHPMailer::html2text()
      */
     public function msgHTML($message, $basedir = '', $advanced = false)
     {

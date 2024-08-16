@@ -13,7 +13,7 @@
  * PHP Version 5.4
  */
 
-namespace public\assets\php\phpmailer;
+namespace assets\php\phpmailer;
 
 require 'vendor/autoload.php';
 

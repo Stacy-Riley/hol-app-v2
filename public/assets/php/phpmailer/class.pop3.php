@@ -17,7 +17,9 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace public\assets\php\phpmailer;
+namespace assets\php\phpmailer;
+use public\assets\php\phpmailer\Exception;
+
 /**
  * PHPMailer POP-Before-SMTP Authentication Class.
  * Specifically for PHPMailer to use for RFC1939 POP-before-SMTP authentication.
