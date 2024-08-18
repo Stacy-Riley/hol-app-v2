@@ -1,51 +1,103 @@
 @extends('layouts/admin')
 @section('content')
-    <section class="">
+<section class="form-screen-transition mr-5">
+    <div class="container">
         <div class="row">
-            <div class="col-md-10 offset-md-2">
-                <h1 class="text-center ml-4 mt-5">Welcome to the BlogPosts </h1>
+            <div class="col-md-12 offset-md-2">
+                <h1 class="text-center ml-4 mt-5">Blog Posts </h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 offset-md-2">
-                <a href="#" type="button" class="btn">New Post</a>
+            <div class="col-md-12 offset-md-2 my-4 p-0">
+                <a href="create/blog" type="button" class="btn admin-form-button">New Post</a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 offset-md-2">
-                <div class="d-flex justify-content-center">
-                <ul class="list-inline">
-                    @foreach($posts as $index=> $post)
-                        <li class="admin-blog-list-item">
-                            <div class="d-flex align-items-center">
-                                <div class="mx-2">
-                                    <a href="#" class="admin-delete-icon" aria-details="delete post">
-                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a class="" href="#"  role="button" aria-expanded="false" >
-                                        <div class="d-flex flex-wrap nav-link-container">
-                                            <p>
-                                                <span class="admin-blog-span-1">Title: {{ Str::limit($post->title, 50, '...') }}</span> <span class="admin-blog-span-divider">|</span> <span class="admin-blog-span-2">Author: {{$post->author}}</span> <span class="admin-blog-span-divider">|</span> <span class="admin-blog-span-3">Publish Date: {{ \Carbon\Carbon::parse($post->published_at)->format('m/d/Y') }}</span>
-                                            </p>
-{{--                                            Idea here is make responsive and hide dividers at different scr
-screen sizes and block for data--}}
-                                        </div>
-                                    </a>
-                                </div>
+            <div class="col-md-12 offset-md-2 card">
+                <div class="card-body border-bottom py-3">
+                    <div class="d-flex">
+                        <div class="text-secondary">
+                            Show
+                            <div class="mx-2 d-inline-block">
+                                <input type="text" class="form-control form-control-sm" value="8" size="3" aria-label="Post count">
                             </div>
+                            entries
+                        </div>
+                        <div class="ms-auto text-secondary">
+                            Search:
+                            <div class="ms-2 d-inline-block">
+                                <input type="text" class="form-control form-control-sm" aria-label="Search posts">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="d-flex align-items-center">
+                    <div class="table-responsive">
+                        <table class="table card-table table-vcenter text-nowrap datatable">
+                            <thead>
+                                <tr>
+                                    <th class="w-1">No. <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>
+                                    </th>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Category</th>
+                                    <th>Date Created</th>
+                                    <th>Published</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
 
-                        </li>
-                    @endforeach
-                </ul>
+                            <tbody>
+                                @foreach($posts as $index=> $post)
+                                    <tr>
+                                        <td {{$post->id}}>
+                                            <span class="text-secondary">{{$post->id}}</span>
+                                        </td>
+                                        <td>
+                                            <a href="#" class="text-reset" tabindex="-1">{{ Str::limit($post->title, 25, '...') }}</a>
+                                        </td>
+                                        <td>
+                                            {{$post->author}}
+                                        </td>
+                                        <td>
+                                            {{$post->category}}
+                                        </td>
+                                        <td>
+                                            {{ \Carbon\Carbon::parse($post->published_at)->format('m/d/Y') }}
+                                        </td>
+                                        @if($post->is_published == true)
+                                        <td><span class="badge bg-success me-1"></span> Published</td>
+                                        @else
+                                        <td><span class="badge bg-warning me-1"></span> Not Published</td>
+                                        @endif
+                                        <td class="text-end">
+                                            <span class="dropdown">
+                                                <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
+
+                                                  <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" href="{{ route('edit.blog', $post->id) }}" aria-label="edit blog">
+                                                      Edit
+                                                    </a>
+                                                    <a class="dropdown-item" href="{{ route('delete.blog', $post->id) }}" aria-label="delete blog">
+                                                      Delete
+                                                    </a>
+                                                  </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-
+    </div>
     </section>
-
 @endsection
+
+<section class="form-screen-transition mr-5">
+    <div class="container">
+        <div class="row">

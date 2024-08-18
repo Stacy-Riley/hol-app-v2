@@ -10,6 +10,18 @@ class BlogPost extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'body',
+        'author',
+        'category',
+        'published_at',
+        'is_published',
+        'cover_image',
+        'slug',
+        'user_id'
+    ];
+
     protected static function boot()
     {
         parent::boot();

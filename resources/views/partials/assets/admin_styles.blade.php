@@ -1,10 +1,10 @@
 {{--Tabler--}}
 <!-- CSS files -->
-<link href="{{env('APP_URL')}}/assets/admin/dist/css/tabler.min.css?1692870487" rel="stylesheet"/>
-<link href="{{env('APP_URL')}}/assets/admin/dist/css/tabler-flags.min.css?1692870487" rel="stylesheet"/>
-<link href="{{env('APP_URL')}}/assets/admin/dist/css/tabler-payments.min.css?1692870487" rel="stylesheet"/>
-<link href="{{env('APP_URL')}}/assets/admin/dist/css/tabler-vendors.min.css?1692870487" rel="stylesheet"/>
-<link href="{{env('APP_URL')}}/assets/admin/dist/css/demo.min.css?1692870487" rel="stylesheet"/>
+<link href="{{env('APP_URL')}}/assets/admin/css/tabler.min.css?1692870487" rel="stylesheet"/>
+<link href="{{env('APP_URL')}}/assets/admin/css/tabler-flags.min.css?1692870487" rel="stylesheet"/>
+<link href="{{env('APP_URL')}}/assets/admin/css/tabler-payments.min.css?1692870487" rel="stylesheet"/>
+<link href="{{env('APP_URL')}}/assets/admin/css/tabler-vendors.min.css?1692870487" rel="stylesheet"/>
+<link href="{{env('APP_URL')}}/assets/admin/css/demo.min.css?1692870487" rel="stylesheet"/>
 <style>
     @import url('https://rsms.me/inter/inter.css');
     :root {
@@ -14,3 +14,4 @@
         font-feature-settings: "cv03", "cv04", "cv11";
     }
 </style>
+

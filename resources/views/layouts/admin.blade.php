@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,7 @@
 </head>
 <body>
         @include('partials.assets.admin_styles')
+        @include('partials.assets.admin_summernote')
 
         @include('partials.admin.sidebar')
         @yield('content')

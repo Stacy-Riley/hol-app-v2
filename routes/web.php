@@ -43,7 +43,11 @@ Route::get('/sponsor_form', [SponsorFormController::class, 'index']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/admin/blog', [AdminBlogPostController::class, 'index'])->name('admin.blog');
-    Route::get('admin/blog/create', [AdminBlogPostController::class, 'create'])->name('admin.blog.create');
+    Route::get('/admin/create/blog', [AdminBlogPostController::class, 'create'])->name('create.blog');
+    Route::post('/admin/blog/store', [AdminBlogPostController::class, 'store'])->name('store.blog');
+    Route::get('/admin/blog/edit/{id}', [AdminBlogPostController::class, 'edit'])->name('edit.blog');
+    Route::post('/admin/blog/update/{id}', [AdminBlogPostController::class, 'update'])->name('update.blog');
+    Route::get('/admin/blog/delete/{id}', [AdminBlogPostController::class, 'destroy'])->name('delete.blog');
 });
 
 require __DIR__.'/auth.php';

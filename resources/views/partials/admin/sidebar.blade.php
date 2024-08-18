@@ -1,10 +1,12 @@
 <!-- Sidebar -->
-<aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+<aside class="navbar navbar-vertical navbar-expand-lg admin-sidebar-container" data-bs-theme="dark">
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler p-1" type="button" data-toggle="collapse" data-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <svg width="50" height="50" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" >
+                <path stroke="#FFFFFFB3" stroke-width="2" d="M4 7h22M4 15h22M4 23h22" />
+            </svg>
         </button>
-        <h1 class="navbar-brand navbar-brand-autodark">
+        <h1 class="navbar-brand navbar-brand-autodark ">
             <a href="/">
                 <img src="{{env('APP_URL')}}/assets/images/home/House-of-Light-logo-no-bg.png" alt="House of Light" >
             </a>

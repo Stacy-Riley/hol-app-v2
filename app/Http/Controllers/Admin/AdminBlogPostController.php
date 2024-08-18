@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\admin\AdminBlogPost;
-//use App\Models\BlogPost;
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
 
 class AdminBlogPostController extends Controller
@@ -14,10 +13,12 @@ class AdminBlogPostController extends Controller
      */
     public function index()
     {
-        $posts = AdminBlogPost::recent()->paginate(10);
 
-            return view('admin/blog_post', with(['posts' => $posts]));
+        $posts = BlogPost::orderBy('created_at', 'desc')
+        ->paginate(10);
 
+        return view('admin/blog_post')
+            ->with(['posts' => $posts]);
     }
 
 
@@ -26,7 +27,7 @@ class AdminBlogPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/blog_create');
     }
 
     /**
@@ -34,11 +35,35 @@ class AdminBlogPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $formData = $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+            'category' => 'required|string',
+            'body' => 'required|string',
+            'published_at' => 'required|date',
+            'is_published' => 'required|boolean',
+            'cover_image' => 'sometimes|file|image|max:5000',
+            //this cover_image line isn't showing the image name/path
+        ]);
+
+        //This is where the new uploaded image will be stored if the admin changes the file
+        if($request->hasFile('cover_image')) {
+            $path = $request->file('cover_image')->store('assets/images/blog', 'public');
+            $formData['cover_image'] = $path;
+        }
+
+        $formData['user_id'] = auth()->id();
+
+        // Create the blog post
+        BlogPost::create($formData);
+
+        return redirect('admin/blog')
+            ->with('success', 'Blog post created!');
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource - one resource.
      */
     public function show(string $id)
     {
@@ -50,18 +75,40 @@ class AdminBlogPostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = BlogPost::findOrFail($id); //I don't know if the findOrFail is the right move here but it was in the book
+        return view('admin.blog_edit', ['post' => $post]);
     }
+
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $post = BlogPost::findOrFail($id);
 
-    /**
+        $formData = $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+            'category' => 'required|string',
+            'body' => 'required|string',
+            'published_at' => 'required|date',
+            'is_published' => 'required|boolean',
+            'cover_image' => 'sometimes|file|image|max:5000',
+        ]);
+
+        //This is where the new uploaded image will be stored if the admin changes the file
+        if($request->hasFile('cover_image')) {
+            $path = $request->file('cover_image')->store('assets/images/blog', 'public');
+            $formData['cover_image'] = $path;
+        }
+
+    $post->update($formData);
+    return redirect('admin/blog')->with('success', 'Blog post updated successfully!');
+        }
+
+        /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)

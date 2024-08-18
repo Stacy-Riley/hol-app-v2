@@ -1,0 +1,64 @@
+/******************************************************************* */
+/***** SUMMERNOTE - TEXT EDITOR *****/
+/* ****************************************************************** */
+.note-toolbar {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
+.note-toolbar .note-btn-group {
+    flex: 1 1 auto;
+    min-width: 50px;
+    margin-bottom: 5px; /* Space between rows when wrapping */
+}
+
+/******************************************************************* */
+/***** TABLER ADMIN SIDEBAR - TEXT EDITOR *****/
+/* ****************************************************************** */
+.admin-sidebar-container h1 {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-form-button {
+    border: 1px solid #102E96;
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #102E96;
+    width: 150px;
+}
+
+.admin-form-button:hover {
+    background-color: #6a6969;
+    color: white;
+    cursor: pointer;
+}
+
+.admin-form-button:focus {
+    background-color: #6a6969;
+    color: white;
+    cursor: pointer;
+}
+
+.admin-form-button:active {
+    background-color: #6a6969;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and  (max-width: 991px) {
+     .admin-sidebar-container h1 {
+         width: 200px;
+         margin-right: 10px;
+     }
+}
+
+@media (min-width: 992px) and (max-width: 1098px) {
+    .form-screen-transition {
+        margin-left: 125px;
+    }
+}

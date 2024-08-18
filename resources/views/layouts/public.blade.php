@@ -6,7 +6,7 @@
     </head>
 <body>
 
-    @include('partials.assets.guest_styles')
+        @include('partials.assets.guest_styles')
 
     <div class="main-wrapper">
         @if(request()->route()->named('home'))

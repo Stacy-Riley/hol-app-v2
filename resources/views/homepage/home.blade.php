@@ -137,9 +137,8 @@
     <!--//END TESTIMONIAL -->
 @endsection
 @section('scripts')
-    <script src="{{env('APP_URL')}}/assets/js/jquery-ui-1.10.4.min.js"></script>
-    <script type="text/javascript" src="{{env('APP_URL')}}/assets/js/jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="{{env('APP_URL')}}/assets/js/slick.min.js"></script>
+    <script src="{{env('APP_URL')}}/assets/guest_js/jquery-ui-1.10.4.min.js"></script>
+    <script src="{{env('APP_URL')}}/assets/guest_js/slick.min.js"></script>
 
     <script>
         $(document).ready(function(){
