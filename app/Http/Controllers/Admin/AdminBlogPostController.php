@@ -113,6 +113,7 @@ class AdminBlogPostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = BlogPost::destroy($id);
+        return redirect('admin/blog')->with('success', 'Blog post deleted successfully!');
     }
 }

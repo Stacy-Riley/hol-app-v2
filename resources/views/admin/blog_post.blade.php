@@ -56,7 +56,7 @@
                                             <span class="text-secondary">{{$post->id}}</span>
                                         </td>
                                         <td>
-                                            <a href="#" class="text-reset" tabindex="-1">{{ Str::limit($post->title, 25, '...') }}</a>
+                                            {{ Str::limit($post->title, 25, '...') }}
                                         </td>
                                         <td>
                                             {{$post->author}}
@@ -68,19 +68,25 @@
                                             {{ \Carbon\Carbon::parse($post->published_at)->format('m/d/Y') }}
                                         </td>
                                         @if($post->is_published == true)
-                                        <td><span class="badge bg-success me-1"></span> Published</td>
+                                        <td>
+                                            <span class="icon-success me-1">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="#198754"  class="icon icon-tabler icons-tabler-filled icon-tabler-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z" /></svg>
+                                            </span> Published</td>
                                         @else
-                                        <td><span class="badge bg-warning me-1"></span> Not Published</td>
+                                        <td>
+                                            <span class="icon-warning me-1">
+                                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="#FEC109"  class="icon icon-tabler icons-tabler-filled icon-tabler-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z" />
+                                            </svg></span> Not Published</td>
                                         @endif
                                         <td class="text-end">
                                             <span class="dropdown">
                                                 <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-
                                                   <div class="dropdown-menu dropdown-menu-end">
                                                     <a class="dropdown-item" href="{{ route('edit.blog', $post->id) }}" aria-label="edit blog">
                                                       Edit
                                                     </a>
-                                                    <a class="dropdown-item" href="{{ route('delete.blog', $post->id) }}" aria-label="delete blog">
+
+                                                    <a class="dropdown-item" href="{{ route('delete.blog', $post->id) }}" onclick="if (!confirm('Are you sure you want to delete this post?')) { return false }" aria-label="delete blog">
                                                       Delete
                                                     </a>
                                                   </div>
