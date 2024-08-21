@@ -1,10 +1,21 @@
 @extends('layouts/admin')
 @section('content')
+
 <section class="form-screen-transition mr-5">
     <div class="container">
         <div class="row">
             <div class="col-md-12 offset-md-2">
                 <h1 class="text-center ml-4 mt-5">Blog Posts </h1>
+            </div>
+            <div class="row">
+                @if(session('success'))
+                    <div class="col-md-4 offset-md-2 alert alert-success" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
             </div>
         </div>
         <div class="row">
@@ -32,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="d-flex align-items-center">
+                <div ">
                     <div class="table-responsive">
                         <table class="table card-table table-vcenter text-nowrap datatable">
                             <thead>
@@ -69,12 +80,12 @@
                                         </td>
                                         @if($post->is_published == true)
                                         <td>
-                                            <span class="icon-success me-1">
+                                            <span class="me-1">
                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="#198754"  class="icon icon-tabler icons-tabler-filled icon-tabler-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z" /></svg>
                                             </span> Published</td>
                                         @else
                                         <td>
-                                            <span class="icon-warning me-1">
+                                            <span class="me-1">
                                                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="#FEC109"  class="icon icon-tabler icons-tabler-filled icon-tabler-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z" />
                                             </svg></span> Not Published</td>
                                         @endif

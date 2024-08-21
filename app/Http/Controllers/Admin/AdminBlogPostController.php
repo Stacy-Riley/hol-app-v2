@@ -58,6 +58,7 @@ class AdminBlogPostController extends Controller
         // Create the blog post
         BlogPost::create($formData);
 
+
         return redirect('admin/blog')
             ->with('success', 'Blog post created!');
     }
@@ -105,8 +106,9 @@ class AdminBlogPostController extends Controller
         }
 
     $post->update($formData);
-    return redirect('admin/blog')->with('success', 'Blog post updated successfully!');
-        }
+        return redirect('admin/blog')
+            ->with('success', 'Blog post updated successfully!');
+            }
 
         /**
      * Remove the specified resource from storage.
@@ -114,6 +116,7 @@ class AdminBlogPostController extends Controller
     public function destroy(string $id)
     {
         $post = BlogPost::destroy($id);
-        return redirect('admin/blog')->with('success', 'Blog post deleted successfully!');
+        return redirect('admin/blog')
+            ->with('success', 'Blog post deleted successfully!');
     }
 }
