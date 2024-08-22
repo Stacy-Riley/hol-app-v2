@@ -49,7 +49,7 @@ class AdminBlogPostController extends Controller
 
         //This is where the new uploaded image will be stored if the admin changes the file
         if($request->hasFile('cover_image')) {
-            $path = $request->file('cover_image')->store('assets/images/blog', 'public');
+            $path = $request->file('cover_image')->store('blog_images', 'public');
             $formData['cover_image'] = $path;
         }
 

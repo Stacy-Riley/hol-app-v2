@@ -28,7 +28,10 @@ class BlogPostFactory extends Factory
             'body' => $this->faker->paragraph(),
             'category' => $this->faker->randomElement(['Business', 'Community', 'Education']),
             'author' => $this->faker->name(),
-            'cover_image' => '/assets/images/blog/blog-img_01.jpg',
+            'cover_image' => $this->faker->randomElement([
+                'assets/images/blog/blog-img_01.jpg',
+                'assets/images/blog/blog-img_02.jpg',
+                'assets/images/blog/blog-img_03.jpg',]),
             'published_at' => Carbon::today()->subDays(rand(0, 365)),
         ];
     }
