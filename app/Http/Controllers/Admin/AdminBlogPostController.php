@@ -11,14 +11,13 @@ class AdminBlogPostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $itemsPerPage = $request->query('items', 10);
+        $posts = BlogPost::orderBy('published_at', 'desc')
+            ->paginate($itemsPerPage);
 
-        $posts = BlogPost::orderBy('created_at', 'desc')
-        ->paginate(10);
-
-        return view('admin/blog_post')
-            ->with(['posts' => $posts]);
+        return view('admin/blog_post', compact('posts'));
     }
 
 

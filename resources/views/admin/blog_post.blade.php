@@ -1,7 +1,7 @@
 @extends('layouts/admin')
 @section('content')
 
-<section class="form-screen-transition mr-5">
+<section class="form-screen-transition mr-5 ">
     <div class="container">
         <div class="row">
             <div class="col-md-12 offset-md-2">
@@ -30,7 +30,10 @@
                         <div class="text-secondary">
                             Show
                             <div class="mx-2 d-inline-block">
-                                <input type="text" class="form-control form-control-sm" value="8" size="3" aria-label="Post count">
+                                @php
+                                    $itemsPerPage = request()->query('items', 10)
+                                @endphp
+                                <input type="number" id="itemsPerPage" class="form-control form-control-sm" value="{{ $itemsPerPage }}" min="1" max="100" size="3" aria-label="Post count" onchange="updateItemsPerPage()">
                             </div>
                             entries
                         </div>
@@ -43,8 +46,8 @@
                     </div>
                 </div>
 
-                <div ">
-                    <div class="table-responsive">
+                <div>
+                    <div class="table-responsive pb-5 ">
                         <table class="table card-table table-vcenter text-nowrap datatable">
                             <thead>
                                 <tr>
@@ -115,6 +118,12 @@
     </section>
 @endsection
 
-<section class="form-screen-transition mr-5">
-    <div class="container">
-        <div class="row">
+@section('scripts')
+   <script>
+       function updateItemsPerPage () {
+           const itemsPerPage = document.getElementById('itemsPerPage').value;
+           window.location.href= `?items=${itemsPerPage}`;
+       }
+   </script>
+
+    @endsection
