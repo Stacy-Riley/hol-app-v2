@@ -24,6 +24,13 @@
 <!-- <link href="css/style3.css" rel="stylesheet" type="text/css" /> -->
 <link href="{{env('APP_URL')}}/assets/guest_css/animated-masonry-gallery.css" rel="stylesheet" type="text/css" />
 
+<!-- For an ICO file -->
+<link rel="icon" href="{{env('APP_URL')}}/favicon.ico" type="image/x-icon">
+<!-- 32x32 favicon for browsers -->
+<link rel="icon" href="{{env('APP_URL')}}/favicon-32x32.png" sizes="32x32" type="image/png">
+<!-- 16x16 favicon for older browsers -->
+<link rel="icon" href="{{env('APP_URL')}}/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="{{env('APP_URL')}}/apple-touch-icon.png">
 
 <!-- Main CSS -->
 <link href="{{env('APP_URL')}}/assets/guest_css/style.css" rel="stylesheet">
