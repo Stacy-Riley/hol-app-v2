@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/blog/edit/{id}', [AdminBlogPostController::class, 'edit'])->name('edit.blog');
     Route::post('/admin/blog/update/{id}', [AdminBlogPostController::class, 'update'])->name('update.blog');
     Route::get('/admin/blog/delete/{id}', [AdminBlogPostController::class, 'destroy'])->name('delete.blog');
+    Route::get('/admin/blog/search', [AdminBlogPostController::class, 'search'])->name('search.blog');
 });
 
 require __DIR__.'/auth.php';

@@ -21,6 +21,16 @@ class AdminBlogPostController extends Controller
     }
 
 
+    public function search(Request $request)
+    {
+        $searchTerm = $request->query('query');
+
+        $posts = BlogPost::search($searchTerm)->get();
+
+        return view('admin/blog_search')
+            ->with('posts', $posts);
+
+    }
     /**
      * Show the form for creating a new resource.
      */

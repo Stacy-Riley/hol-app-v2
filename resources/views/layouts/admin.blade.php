@@ -8,9 +8,12 @@
 <body>
         @include('partials.assets.admin_styles')
         @include('partials.assets.admin_summernote')
-
         @include('partials.admin.sidebar')
-        @yield('content')
+
+        <div class="content">
+            @yield('content')
+        </div>
+
 
         @include('partials.assets.admin_scripts')
         @yield('custom_scripts')

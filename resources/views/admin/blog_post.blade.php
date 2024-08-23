@@ -4,7 +4,8 @@
 <section class="form-screen-transition mr-5 ">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 offset-md-2">
+            <div class="col-md-2" aria-hidden="true"></div>
+            <div class="col-md-10 ">
                 <h1 class="text-center ml-4 mt-5">Blog Posts </h1>
             </div>
             <div class="row">
@@ -19,12 +20,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 offset-md-2 my-4 p-0">
+            <div class="col-md-2" aria-hidden="true"></div>
+            <div class="col-md-10 my-4 p-0">
                 <a href="create/blog" type="button" class="btn admin-form-button">New Post</a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 offset-md-2 card">
+            <div class="col-md-2" aria-hidden="true"></div>
+            <div class="col-md-10 card">
                 <div class="card-body border-bottom py-3">
                     <div class="d-flex">
                         <div class="text-secondary">
@@ -40,7 +43,7 @@
                         <div class="ms-auto text-secondary">
                             Search:
                             <div class="ms-2 d-inline-block">
-                                <input type="text" class="form-control form-control-sm" aria-label="Search posts">
+                                <input type="text" id="searchQuery" class="form-control form-control-sm" aria-label="Search posts" placeholder="Search posts" onkeydown="handleKeyPress(event)">
                             </div>
                         </div>
                     </div>
@@ -51,9 +54,6 @@
                         <table class="table card-table table-vcenter text-nowrap datatable">
                             <thead>
                                 <tr>
-                                    <th class="w-1">No. <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>
-                                    </th>
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Category</th>
@@ -65,10 +65,8 @@
 
                             <tbody>
                                 @foreach($posts as $index=> $post)
-                                    <tr>
-                                        <td {{$post->id}}>
-                                            <span class="text-secondary">{{$post->id}}</span>
-                                        </td>
+                                    <tr >
+
                                         <td>
                                             {{ Str::limit($post->title, 25, '...') }}
                                         </td>
@@ -123,6 +121,18 @@
        function updateItemsPerPage () {
            const itemsPerPage = document.getElementById('itemsPerPage').value;
            window.location.href= `?items=${itemsPerPage}`;
+       }
+
+       function handleKeyPress(event) {
+           if(event.key === 'Enter') {
+               searchPosts();
+           }
+       }
+
+       function searchPosts() {
+           const query = document.getElementById('searchQuery');
+
+           window.location.href = `/admin/blog/search?query=${encodeURIComponent(query)}`;
        }
    </script>
 
