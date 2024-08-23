@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\Admin\AdminBookProductController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminBlogPostController;
+use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\BookProductController;
 use App\Http\Controllers\BusinessPartnerController;
@@ -60,6 +61,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/book/edit/{id}', [AdminBookProductController::class, 'edit'])->name('edit.book');
     Route::post('/admin/book/update/{id}', [AdminBookProductController::class, 'update'])->name('update.book');
     Route::get('/admin/book/delete/{id}', [AdminBookProductController::class, 'destroy'])->name('delete.book');
+
+    //Admin FAQ Routes
+    Route::get('/admin/faq', [AdminFaqController::class, 'index'])->name('admin.faq.index');
+    Route::get('/admin/faq/create', [AdminFaqController::class, 'create'])->name('create.faq');
+    Route::post('/admin/faq/store', [AdminFaqController::class, 'store'])->name('store.faq');
+    Route::get('/admin/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('edit.faq');
+    Route::post('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('update.faq');
+    Route::get('/admin/faq/delete/{id}', [AdminFaqController::class, 'destroy'])->name('delete.faq');
 
 
 });

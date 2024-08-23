@@ -9,6 +9,12 @@ class Faq extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'question',
+        'answer',
+        'is_published',
+        ];
+
     public function scopeActive($query)
     {
         return $query->where('is_published', true);
