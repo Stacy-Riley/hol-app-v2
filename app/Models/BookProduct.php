@@ -11,6 +11,13 @@ class BookProduct extends Model
 
     protected $table = 'book_products';
 
+    protected $fillable = [
+        'title',
+        'author',
+        'grade_level',
+        'cost',
+        'num_pages'
+    ];
 
 
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\Admin\AdminBookProductController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\BlogPostController;
@@ -42,6 +43,8 @@ Route::get('/sponsor_form', [SponsorFormController::class, 'index']);
 //Admin
 Route::middleware('auth')->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
+
+    //Admin BlogPage Routes
     Route::get('/admin/blog', [AdminBlogPostController::class, 'index'])->name('admin.blog');
     Route::get('/admin/create/blog', [AdminBlogPostController::class, 'create'])->name('create.blog');
     Route::post('/admin/blog/store', [AdminBlogPostController::class, 'store'])->name('store.blog');
@@ -49,6 +52,16 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/blog/update/{id}', [AdminBlogPostController::class, 'update'])->name('update.blog');
     Route::get('/admin/blog/delete/{id}', [AdminBlogPostController::class, 'destroy'])->name('delete.blog');
     Route::get('/admin/blog/search', [AdminBlogPostController::class, 'search'])->name('search.blog');
+
+    //Admin Book Product Routes
+    Route::get('/admin/book', [AdminBookProductController::class, 'index'])->name('admin.book.index');
+    Route::get('/admin/book/create', [AdminBookProductController::class, 'create'])->name('create.book');
+    Route::post('/admin/book/store', [AdminBookProductController::class, 'store'])->name('store.book');
+    Route::get('/admin/book/edit/{id}', [AdminBookProductController::class, 'edit'])->name('edit.book');
+    Route::post('/admin/book/update/{id}', [AdminBookProductController::class, 'update'])->name('update.book');
+    Route::get('/admin/book/delete/{id}', [AdminBookProductController::class, 'destroy'])->name('delete.book');
+
+
 });
 
 require __DIR__.'/auth.php';
