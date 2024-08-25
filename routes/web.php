@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminBookProductController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\Admin\AdminFaqController;
+use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\BookProductController;
 use App\Http\Controllers\BusinessPartnerController;
@@ -70,7 +71,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('update.faq');
     Route::get('/admin/faq/delete/{id}', [AdminFaqController::class, 'destroy'])->name('delete.faq');
 
-
+    //Admin Testimonial Routes
+    Route::get('admin/testimonial', [AdminTestimonialController::class, 'index'])->name('admin.testimonial.index');
+    Route::get('admin/testimonial/create', [AdminTestimonialController::class, 'create'])->name('create.testimonial');
+    Route::post('admin/testimonial/store', [AdminTestimonialController::class, 'store'])->name('store.testimonial');
+    Route::get('admin/testimonial/edit/{id}', [AdminTestimonialController::class, 'edit'])->name('edit.testimonial');
+    Route::post('admin/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('update.testimonial');
+    Route::get('admin/testimonial/delete/{id}', [AdminTestimonialController::class, 'destroy'])->name('delete.testimonial');
 });
 
 require __DIR__.'/auth.php';

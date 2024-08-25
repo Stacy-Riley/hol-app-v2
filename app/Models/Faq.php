@@ -13,7 +13,7 @@ class Faq extends Model
         'question',
         'answer',
         'is_published',
-        ];
+    ];
 
     public function scopeActive($query)
     {
