@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\Admin\AdminBookProductController;
+use App\Http\Controllers\Admin\AdminBusinessServiceController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\Admin\AdminFaqController;
@@ -78,6 +79,15 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/testimonial/edit/{id}', [AdminTestimonialController::class, 'edit'])->name('edit.testimonial');
     Route::post('admin/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('update.testimonial');
     Route::get('admin/testimonial/delete/{id}', [AdminTestimonialController::class, 'destroy'])->name('delete.testimonial');
+
+    //Admin Business Service Routes
+    Route::get('/admin/businessService', [AdminBusinessServiceController::class, 'index'])->name('admin.businessService.index');
+    Route::get('/admin/businessService/create', [AdminBusinessServiceController::class, 'create'])->name('create.businessService');
+    Route::post('/admin/businessService/store', [AdminBusinessServiceController::class, 'store'])->name('store.businessService');
+    Route::get('/admin/businessService/edit/{id}', [AdminBusinessServiceController::class, 'edit'])->name('edit.businessService');
+    Route::post('/admin/businessService/update/{id}', [AdminBusinessServiceController::class, 'update'])->name('update.businessService');
+    Route::get('/admin/businessService/delete/{id}', [AdminBusinessServiceController::class, 'destroy'])->name('delete.businessService');
+    //create blade forms next
 });
 
 require __DIR__.'/auth.php';

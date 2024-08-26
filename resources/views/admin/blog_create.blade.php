@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-3">
-                <h1 class="text-center ml-4 mt-5">New Blog Post </h1>
+                <h1 class="text-center ml-4 mt-5">New Blog Post</h1>
             </div>
         </div>
         <div class="row">

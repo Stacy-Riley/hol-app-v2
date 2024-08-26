@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class BusinessService extends Model
 {
+    protected $fillable = [
+        'title',
+        'body',
+        'category'
+];
+
     use HasFactory;
 
     protected $table = 'business_services';
