@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="d-flex justify-content-between col-md-10 offset-md-2">
+                            <div class="d-flex justify-content-between col-md-10 offset-md-2 p-0">
                                 <div class="col-md-3">
                                     <div class="form-label">Grade Level</div>
                                     <select class="form-select" name="grade_level">
@@ -40,7 +40,7 @@
                                     <input type="number" class="form-control" name="cost" placeholder="ex: 10.00" required>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <label class="form-label">Page Count</label>
                                     <input type="number" class="form-control" name="num_pages" placeholder="ex: 5" required>
                                 </div>

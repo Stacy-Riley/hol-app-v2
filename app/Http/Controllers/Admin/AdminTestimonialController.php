@@ -13,8 +13,8 @@ class AdminTestimonialController extends Controller
      */
     public function index(Request $request)
     {
-        $itemsPerPage = $request->query('items');
-        $testimonials = Testimonial::paginate($itemsPerPage);
+
+        $testimonials = Testimonial::get();
 
         return view('admin.testimonial_index')
             ->with('testimonials', $testimonials);

@@ -13,7 +13,7 @@
                 <div class="col-md-12 offset-md-1">
                     <form action="{{ route('update.faq', $faq->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('POST')
+                        @method('PUT')
                         <div class="row">
                             <div class="col-md-10 offset-md-2">
                                 <div class="mb-3">

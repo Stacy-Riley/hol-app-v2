@@ -9,6 +9,13 @@ class BusinessPartner extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'category',
+        'business_url',
+        'logo_path',
+        'is_active'
+    ];
     //Scope for active partners
     public function scopeActive($query)
     {

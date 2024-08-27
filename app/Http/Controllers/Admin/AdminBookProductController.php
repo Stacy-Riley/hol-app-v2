@@ -14,9 +14,8 @@ class AdminBookProductController extends Controller
      */
     public function index(Request $request)
     {
-        $itemsPerPage = $request->query('items');
-        $books = BookProduct::orderBy('title', 'asc')
-            ->paginate($itemsPerPage);
+
+        $books = BookProduct::orderBy('title', 'asc')->get();
 
         return view('admin/book_index', compact('books'));
     }

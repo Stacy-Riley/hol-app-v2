@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="d-flex justify-content-between col-md-10 offset-md-2">
+                <div class="d-flex justify-content-between col-md-10 offset-md-2 p-0">
                     <div class="col-md-4">
                         <label class="form-label">Category</label>
                         <input type="text" class="form-control" name="category" placeholder="" required>
@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="row ">
-                <div class="my-4 col-md-10 offset-md-2 ">
+                <div class="my-5 col-md-10 offset-md-2 ">
                     <div class="d-flex justify-content-center ">
                         <div class="mx-4">
                             <a href="/admin/blog" type="button" class="btn mr-2 admin-form-button"><< Back </a>

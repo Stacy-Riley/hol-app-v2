@@ -11,9 +11,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12 offset-md-1">
-                    <form action="{{ route('update.blog', $post->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('update.blog', $post->id) }}" method="POST"  enctype="multipart/form-data">
                         @csrf
-                        @method('POST')
+                        @method('PUT')
                         <div class="row">
                             <div class="col-md-10 offset-md-2">
                                 <div class="mb-3">
@@ -46,9 +46,8 @@
                                 <div class="col-md-3">
                                     <div class="form-label">Publish</div>
                                     <select class="form-select" name="is_published" required>
-                                        <option value="" disabled selected hidden></option>
-                                        <option value="1">Yes</option>
-                                        <option value="0">No</option>
+                                        <option value="1" {{$post->is_published == 1 ? 'selected' : ''}}>Yes</option>
+                                        <option value="0" {{$post->is_published == 0 ? 'selected' : ''}}>No</option>
                                     </select>
                                 </div>
                             </div>

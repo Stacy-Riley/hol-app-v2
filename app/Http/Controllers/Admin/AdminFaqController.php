@@ -13,8 +13,7 @@ class AdminFaqController extends Controller
      */
     public function index(Request $request)
     {
-        $itemsPerPage = $request->query('items');
-        $faqs = Faq::paginate($itemsPerPage);
+        $faqs = Faq::get();
 
         return view('admin.faq_index')
             ->with('faqs', $faqs);

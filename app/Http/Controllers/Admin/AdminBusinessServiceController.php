@@ -14,8 +14,8 @@ class AdminBusinessServiceController extends Controller
      */
     public function index(request $request)
     {
-        $itemsPerPage = $request->query('items');
-        $businessServices = BusinessService::paginate($itemsPerPage);
+
+        $businessServices = BusinessService::get();
 
         return view('admin.businessService_index')
             ->with('businessServices', $businessServices);

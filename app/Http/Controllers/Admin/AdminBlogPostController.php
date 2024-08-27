@@ -13,24 +13,12 @@ class AdminBlogPostController extends Controller
      */
     public function index(Request $request)
     {
-        $itemsPerPage = $request->query('items', 10);
-        $posts = BlogPost::orderBy('published_at', 'desc')
-            ->paginate($itemsPerPage);
+        $posts = BlogPost::orderBy('published_at', 'desc')->get();
 
-        return view('admin/blog_post', compact('posts'));
+        return view('admin/blog_index', compact('posts'));
     }
 
 
-    public function search(Request $request)
-    {
-        $searchTerm = $request->query('query');
-
-        $posts = BlogPost::search($searchTerm)->get();
-
-        return view('admin/blog_search')
-            ->with('posts', $posts);
-
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -53,7 +41,6 @@ class AdminBlogPostController extends Controller
             'published_at' => 'required|date',
             'is_published' => 'required|boolean',
             'cover_image' => 'sometimes|file|image|max:5000',
-            //this cover_image line isn't showing the image name/path
         ]);
 
         //This is where the new uploaded image will be stored if the admin changes the file

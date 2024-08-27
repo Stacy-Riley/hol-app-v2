@@ -73,3 +73,8 @@
     .table td {
         vertical-align: middle;
     }
+
+/*    Targeting the id in partners table - numeric field*/
+table.dataTable td.dt-type-numeric {
+        text-align: center !important;
+    }

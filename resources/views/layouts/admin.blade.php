@@ -6,6 +6,8 @@
     <title>House Of Light Admin Page</title>
 </head>
 <body>
+        @yield('custom_styles')
+
         @include('partials.assets.admin_styles')
         @include('partials.assets.admin_summernote')
         @include('partials.admin.sidebar')

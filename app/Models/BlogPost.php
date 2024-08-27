@@ -61,13 +61,4 @@ class BlogPost extends Model
         return $query->active()->orderBy('published_at', 'desc')->limit(5);
     }
 
-    //Scope for searching by title, author, or category
-
-    public function scopeSearch($query, $searchTerm)
-    {
-        return $query->where('title', 'LIKE', "%{$searchTerm}%") //Need upper &/or lowercase, not catching search terms
-                    ->orWhere('author', 'LIKE', "%{$searchTerm}%")
-                    ->orWhere('category', 'LIKE', "%{$searchTerm}%")
-                    ->orderBy('published_at', 'desc');
-    }
 }

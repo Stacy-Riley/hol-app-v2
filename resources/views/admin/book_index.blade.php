@@ -1,4 +1,9 @@
 @extends('layouts/admin')
+
+@section('custom_styles')
+    <link rel="stylesheet" href="//cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
+@endsection
+
 @section('content')
 
     <section class="form-screen-transition mr-5 ">
@@ -28,31 +33,10 @@
             <div class="row">
                 <div class="col-md-2" aria-hidden="true"></div>
                 <div class="col-md-10 card">
-                    <div class="card-body border-bottom py-3">
-                        <div class="d-flex">
-                            <div class="text-secondary">
-                                Show
-                                <div class="mx-2 d-inline-block">
-                                    @php
-                                        $itemsPerPage = request()->query('items', 10)
-                                    @endphp
-                                    <input type="number" id="itemsPerPage" class="form-control form-control-sm" value="{{ $itemsPerPage }}" min="1" max="100" size="3" aria-label="Post count" onchange="updateItemsPerPage()">
-                                </div>
-                                entries
-                            </div>
-                            <div class="ms-auto text-secondary">
-                                Search:
-                                <div class="ms-2 d-inline-block">
-                                    <input type="text" id="searchQuery" class="form-control form-control-sm" aria-label="Search posts" placeholder="Search posts" onkeydown="handleKeyPress(event)">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div>
-                        <div class="table-responsive pb-5 ">
-                            <table class="table card-table table-vcenter text-nowrap datatable">
-                                <thead>
+                        <div class="table-responsive pb-0 mb-2">
+                            <table id="holDataTable" class="table card-table table-vcenter text-nowrap datatable">
+                                <thead class="border-2">
                                 <tr>
                                     <th>Title</th>
                                     <th>Author</th>
@@ -63,7 +47,7 @@
                                 </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody class="border-2">
                                 @foreach($books as $index=> $book)
                                     <tr >
 
@@ -90,9 +74,14 @@
                                                       Edit
                                                     </a>
 
-                                                    <a class="dropdown-item" href="{{ route('delete.book', $book->id) }}" onclick="if (!confirm('Are you sure you want to delete this book?')) { return false }" aria-label="delete book">
-                                                      Delete
-                                                    </a>
+                                                      <form action="{{route('delete.book',[$book->id])}}" method="POST">
+                                                          @method('DELETE')
+                                                          @csrf
+                                                             <button class="dropdown-item" type="submit" onclick="if (!confirm('Are you sure you want to delete this book?')) { return false }" aria-label="delete book">
+                                                                 Delete
+                                                             </button>
+                                                      </form>
+
                                                   </div>
                                             </span>
                                         </td>
@@ -109,13 +98,15 @@
 @endsection
 
 @section('scripts')
+    <script src="//cdn.datatables.net/2.1.4/js/dataTables.min.js">
+
+    </script>
+
     <script>
-        function updateItemsPerPage(){
-            const itemsPerPage = document.getElementById('itemsPerPage').value;
+        let table = new DataTable('#holDataTable', {
+            pageLength: 10
 
-            window.location.href = `?items=${itemsPerPage}`;
-        }
-
+        });
 
     </script>
 @endsection
