@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CareerListing;
 use Illuminate\Http\Request;
 
-class CareerListingController extends Controller
+class CareerFormController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $careerListings = CareerListing::all();
-        return view('career_listing')
-            ->with('careerListings', $careerListings);
+        return view('careerListingApplyForm');
     }
 
     /**
@@ -36,7 +33,7 @@ class CareerListingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CareerListing $careerListing)
+    public function show(string $id)
     {
         //
     }
@@ -44,7 +41,7 @@ class CareerListingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CareerListing $careerListing)
+    public function edit(string $id)
     {
         //
     }
@@ -52,7 +49,7 @@ class CareerListingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CareerListing $careerListing)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -60,7 +57,7 @@ class CareerListingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CareerListing $careerListing)
+    public function destroy(string $id)
     {
         //
     }

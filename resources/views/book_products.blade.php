@@ -83,7 +83,7 @@
             </div>
             <!-- Return to Top Link -->
             <div class="row justify-content-end mr-2">
-                <a href="" id="return-to-top" role="button" >Return to Top</a>
+                <a href="" id="return-to-top" role="button" aria-label="Return to the top of the page">Return to Top</a>
             </div>
         </div>
     </section>

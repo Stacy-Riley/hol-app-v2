@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\Admin\AdminBookProductController;
 use App\Http\Controllers\Admin\AdminBusinessPartnerController;
 use App\Http\Controllers\Admin\AdminBusinessServiceController;
+use App\Http\Controllers\Admin\AdminCareerListingController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\Admin\AdminFaqController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\BookProductController;
 use App\Http\Controllers\BusinessPartnerController;
 use App\Http\Controllers\BusinessServiceController;
+use App\Http\Controllers\CareerFormController;
 use App\Http\Controllers\CareerListingController;
 use App\Http\Controllers\CommunityCenterController;
 use App\Http\Controllers\ContactSubmissionsController;
@@ -40,6 +42,7 @@ Route::get('/blog/category/{category}', [BlogPostController::class, 'category'])
 Route::get('/blog/post/{slug}', [BlogPostController::class, 'showBySlug'])->name('blog.show');
 
 Route::get('/career', [CareerListingController::class, 'index']);
+Route::get('/career/apply', [CareerFormController::class, 'index']);
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/contact', [ContactSubmissionsController::class, 'index']);
 Route::get('/sponsor_form', [SponsorFormController::class, 'index']);
@@ -105,6 +108,13 @@ Route::middleware('auth')->group(function () {
     Route::put('admin/pressPost/update/{id}', [AdminPressPostController::class, 'update'])->name('update.pressPost');
     Route::delete('admin/pressPost/delete/{id}', [AdminPressPostController::class, 'destroy'])->name('delete.pressPost');
 
+    //Admin Career Listing Routes
+    Route::get('admin/careerListing', [AdminCareerListingController::class, 'index'])->name('admin.careerListing.index');
+    Route::get('/admin/careerListing/create', [AdminCareerListingController::class, 'create'])->name('create.careerListing');
+    Route::post('/admin/careerListing/store', [AdminCareerListingController::class, 'store'])->name('store.careerListing');
+    Route::get('/admin/careerListing/edit/{id}', [AdminCareerListingController::class, 'edit'])->name('edit.careerListing');
+    Route::put('/admin/careerListing/update/{id}', [AdminCareerListingController::class, 'update'])->name('update.careerListing');
+    Route::delete('/admin/careerListing/delete/{id}', [AdminCareerListingController::class, 'destroy'])->name('delete.careerListing');
 });
 
 require __DIR__.'/auth.php';
