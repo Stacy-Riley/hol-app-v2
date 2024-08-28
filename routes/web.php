@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminBusinessServiceController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\Admin\AdminFaqController;
+use App\Http\Controllers\Admin\AdminPressPostController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\BookProductController;
@@ -95,6 +96,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/businessPartner/edit/{id}', [AdminBusinessPartnerController::class, 'edit'])->name('edit.businessPartner');
     Route::put('/admin/businessPartner/update/{id}', [AdminBusinessPartnerController::class, 'update'])->name('update.businessPartner');
     Route::delete('/admin/businessPartner/delete/{id}', [AdminBusinessPartnerController::class, 'destroy'])->name('delete.businessPartner');
+
+    //Admin Press Post Routes
+    Route::get('admin/pressPost', [AdminPressPostController::class, 'index'])->name('admin.pressPost.index');
+    Route::get('/admin/pressPost/create', [AdminPressPostController::class, 'create'])->name('create.pressPost');
+    Route::post('/admin/pressPost/store', [AdminPressPostController::class, 'store'])->name('store.pressPost');
+    Route::get('/admin/pressPost/edit/{id}', [AdminPressPostController::class, 'edit'])->name('edit.pressPost');
+    Route::put('admin/pressPost/update/{id}', [AdminPressPostController::class, 'update'])->name('update.pressPost');
+    Route::delete('admin/pressPost/delete/{id}', [AdminPressPostController::class, 'destroy'])->name('delete.pressPost');
+
 });
 
 require __DIR__.'/auth.php';

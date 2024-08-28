@@ -9,6 +9,19 @@ class PressPost extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'author',
+        'content_type',
+        'is_published',
+        'body',
+        'img_caption',
+        'cover_image_path',
+        'external_link_url',
+        'published_at',
+    ];
+
+
     //Scope for published press posts
     public function scopeActive($query)
     {

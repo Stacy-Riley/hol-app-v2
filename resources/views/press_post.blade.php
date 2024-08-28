@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Str; @endphp
 @extends('layouts/public')
 @section('content')
 
@@ -12,19 +13,24 @@
             <!--============================= ARTICLE SECTION =============================-->
             <div class="row">
                 <div class="col-md-8">
-                    @forEach($articles as $article)
-                        <div >
+                    @foreach($articles as $article)
+                        @php
+                            $isOldImage = Str::startsWith($article->cover_image_path, '/assets/images/press-page');
+                        @endphp
+                        <div>
                             <hr>
                             <h2>{{ $article->title }}</h2>
                             <div class="d-flex ">
                                 <p class="mr-4 fw-bold">By: {{ $article->author }}</p>
                                 <p>{{ \Carbon\Carbon::parse($article->published_at)->format('F j, Y') }}</p>
                             </div>
-                            @if($article->cover_image_path)
-                            <div class="">
-                                <img src="{{ env('APP_URL') . $article->cover_image_path }}" class="img-fluid constrained-height" alt="Image of {{$article->img_caption}}">
-                            </div>
+
+                            @if($isOldImage)
+                                <img src="{{asset($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
+                            @else
+                                <img src="{{ Storage::url($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
                             @endif
+
                             <p class="press-post-img-caption">{{ $article->img_caption }}</p>
                             <p>{{ $article->body }}</p>
                             <br>
@@ -64,7 +70,7 @@
                             @foreach($podcasts as $podcast)
                                 <div class="research-posts">
                                     <div class="research-news_block">
-                                        <span>{{ \Carbon\Carbon::parse($article->published_at)->format('F j, Y') }}</span>
+                                        <span>{{ \Carbon\Carbon::parse($podcast->published_at)->format('F j, Y') }}</span>
                                         <a href="{{ $podcast->external_link_url}}"><p>{{ $podcast->title }}</p></a>
                                     </div>
                                 </div>

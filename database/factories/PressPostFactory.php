@@ -16,14 +16,6 @@ class PressPostFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'is_published' => 1,
-            'title' => fake()->sentence(),
-            'body' => fake()->paragraph(),
-            'category' => fake()->randomElement(['Education', 'Business']),
-            'external_link_url' => fake()->url(),
-            'cover_image_path' => env('APP_URL') . '/assets/img/blog/blog-05.jpg',
-            'published_at' => fake()->date(),
-        ];
+
     }
 }

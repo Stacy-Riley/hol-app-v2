@@ -26,7 +26,8 @@ class BusinessPartnerController extends Controller
             ->category('education')
             ->get();
 
-        return view('business_partner', compact('corporatePartners', 'educationPartners'));
+       return view('business_partner',
+           compact('corporatePartners', 'educationPartners'));
     }
 
 

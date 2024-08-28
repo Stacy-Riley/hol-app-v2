@@ -39,7 +39,7 @@ class PressPostController extends Controller
             ->category($category)
             ->paginate(5);
 
-        return view('press_post', compact('articles', 'articlesSidebar', 'podcasts'));
+        return view('press_post', compact('articles', 'articlesSidebar', 'podcasts', 'contentType'));
 
 
     }

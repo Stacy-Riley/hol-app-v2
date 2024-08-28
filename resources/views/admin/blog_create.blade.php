@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Datepicker</label>
+                        <label class="form-label">Date</label>
                         <div class="input-icon mb-2">
                             <input class="form-control " placeholder="Select a date" id="datepicker-icon" value="" name="published_at"/>
                             <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->

@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Str; @endphp
 @extends('layouts/public')
 @section('content')
 
@@ -17,22 +18,27 @@
                     <h2 class="pt-5 pb-0">Education</h2>
                 </div>
             </div>
-            <div class="row  py-5 background-secondary">
+            <div class="row justify-content-center py-5 background-secondary">
                 @foreach($educationPartners as $partner)
-
                         <div class="d-flex justify-content-center col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                            @php
+                                $isOldImage = Str::startsWith($partner->logo_path, '/assets/images/partner-logos/education');
+                            @endphp
                             <div class="campus-img_block">
-                                <a href="{{ $partner->business_url }}">
-                                    <img src="{{env('APP_URL') . $partner->logo_path }}" class="img-fluid" alt="campus-img">
-                                </a>
+                                @if($isOldImage)
+                                    <a href="{{ $partner->business_url }}">
+                                        <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                    </a>
+                                @else
+                                    <a href="{{ $partner->business_url }}">
+                                        <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                    </a>
+                                @endif
                             </div>
                         </div>
-
                 @endforeach
             </div>
         </div>
-
-
 
 {{--  Corporate Logos--}}
         <div class="container-fluid">
@@ -43,15 +49,24 @@
             </div>
             <div class="row justify-content-center py-5">
                 @foreach($corporatePartners as $partner)
-                    @if($partner->category === 'corporate')
                 <div class="d-flex justify-content-center col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
                     <div class="campus-img_block">
-                        <a href="{{ $partner->business_url }}">
-                            <img src="{{env('APP_URL') . $partner->logo_path }}" class="img-fluid" alt="campus-img">
-                        </a>
+                        @php
+                            $isOldImage = Str::startsWith($partner->logo_path, '/assets/images/partner-logos/corporate');
+                        @endphp
+                        <div class="campus-img_block">
+                            @if($isOldImage)
+                                <a href="{{ $partner->business_url }}">
+                                    <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                </a>
+                            @else
+                                <a href="{{ $partner->business_url }}">
+                                    <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                </a>
+                            @endif
+                        </div>
                     </div>
                 </div>
-                    @endif
                 @endforeach
             </div>
         </div>
