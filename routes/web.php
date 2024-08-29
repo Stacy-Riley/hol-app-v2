@@ -21,6 +21,7 @@ use App\Http\Controllers\ContactSubmissionsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GhanaProjectController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PressPostController;
 use App\Http\Controllers\SponsorFormController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::get('/products', [BookProductController::class, 'index'])->name('book_pro
 Route::get('/community_center',[CommunityCenterController::class, 'index']);
 Route::get('/partners', [BusinessPartnerController::class, 'index'])->name('business_partners');;
 Route::get('/press', [PressPostController::class, 'index'])->name('press');
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
 
 //Blog pages
 Route::get('/blog', [BlogPostController::class, 'index'])->name('blog.index');

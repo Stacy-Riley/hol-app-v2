@@ -5,12 +5,19 @@
             <div class="col-md-12 p-3 d-flex justify-content-center">
                 <div class="subscribe">
                     <h3>Newsletter</h3>
-                    <form id="subscribeform" action="../public/assets/php/twitter/subscribe.php" method="post">
+                    <form action="{{ route('subscribe') }}" method="POST">
+                        @csrf
                         <input class="signup_form" type="text" name="email" placeholder="Enter Your Email Address">
-                        <button type="submit" class="btn btn-warning" id="js-subscribe-btn">Subscribe</button>
-                        <div id="js-subscribe-result" data-success-msg="Success, Please check your email." data-error-msg="Oops! Something went wrong"></div>
-                        <!-- // end #js-subscribe-result -->
+                        <button type="submit" class="btn btn-warning">Subscribe</button>
                     </form>
+                    @if(session('success'))
+                        <p>{{ session('success') }}</p>
+                    @endif
+
+                    @if(session('error'))
+                        <p>{{ session('error') }}</p>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -82,7 +89,6 @@
                                     </svg>
                                 </a>
                                 </li>
-
                             <li class="list-inline-item"><a href="https://www.linkedin.com/company/house-of-light-llc"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
@@ -97,3 +103,33 @@
             </div>
         </div>
 </footer>
+
+{{--Sweetalert for newsletter signup popups--}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var successMessage = "{{ session('success') }}";
+        var errorMessage = "{{ session('error') }}";
+
+        if (successMessage) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: successMessage,
+            }).then(() => {
+                window.scrollTo(0, 0);
+            });
+        }
+
+        if (errorMessage) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: errorMessage,
+            }).then(() => {
+                window.scrollTo(0, 0);
+            });
+        }
+    });
+</script>
