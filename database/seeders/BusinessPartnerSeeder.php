@@ -15,6 +15,7 @@ class BusinessPartnerSeeder extends Seeder
     {
         $partners = [
             [
+                'priority' => 1,
                 'is_active'=> true,
                 'name' => 'Spectrios Institute for Low Vision',
                 'category' => 'corporate',
@@ -22,6 +23,7 @@ class BusinessPartnerSeeder extends Seeder
                 'logo_path' => '/assets/images/partner-logos/corporate/spectrios.png',
             ],
             [
+                'priority' => 2,
                 'is_active'=> true,
                 'name' => 'America\'s Best Eyecare and Eyewear',
                 'category' => 'corporate',
@@ -29,6 +31,7 @@ class BusinessPartnerSeeder extends Seeder
                 'logo_path' => '/assets/images/partner-logos/corporate/americas-best.png',
             ],
             [
+                'priority' => 3,
                 'is_active'=> true,
                 'name' => 'Insights 4 Life',
                 'category' => 'corporate',
@@ -36,6 +39,7 @@ class BusinessPartnerSeeder extends Seeder
                 'logo_path' => '/assets/images/partner-logos/corporate/insights-for-life.png',
             ],
             [
+                'priority' => 1,
                 'is_active'=> true,
                 'name' => 'Matteson S.D. 162',
                 'category' => 'education',
@@ -43,6 +47,7 @@ class BusinessPartnerSeeder extends Seeder
                 'logo_path' => '/assets/images/partner-logos/education/matteson.png',
             ],
             [
+                'priority' => 2,
                 'is_active'=> true,
                 'name' => 'Kirby S.D. 140',
                 'category' => 'education',
@@ -50,6 +55,7 @@ class BusinessPartnerSeeder extends Seeder
                 'logo_path' => '/assets/images/partner-logos/education/KSD140.png',
             ],
             [
+                'priority' => 3,
                 'is_active'=> true,
                 'name' => 'Chicago Heights Middle School',
                 'category' => 'education',

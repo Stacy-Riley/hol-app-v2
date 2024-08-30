@@ -19,11 +19,13 @@ class BusinessPartnerController extends Controller
         $corporatePartners = BusinessPartner::query()
             ->active()
             ->category('corporate')
+            ->orderBy('priority', 'asc')
             ->get();
 
         $educationPartners = BusinessPartner::query()
             ->active()
             ->category('education')
+            ->orderBy('priority', 'asc')
             ->get();
 
        return view('business_partner',

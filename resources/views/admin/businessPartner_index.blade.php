@@ -1,7 +1,7 @@
-@extends('layouts/admin')
-
 @section('custom_styles')
     <link rel="stylesheet" href="//cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
+    <!-- jQuery UI CSS (for drag-and-drop visuals) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">@extends('layouts/admin')
 @endsection
 
 @section('content')
@@ -23,6 +23,7 @@
                         </div>
                     @endif
                 </div>
+                <div class="row" id="message-row"></div>
             </div>
             <div class="row">
                 <div class="col-md-2" aria-hidden="true"></div>
@@ -38,19 +39,19 @@
                             <table id="holDataTable" class="table card-table table-vcenter text-nowrap datatable">
                                 <thead class="border-2">
                                 <tr class="text-center">
-                                    <th>ID</th>
+{{--                                    <th>Priority</th>--}}
                                     <th>Name</th>
                                     <th>Category</th>
                                     <th>Active</th>
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody class="border-2">
+                                <tbody id="sortable" class="border-2">
                                 @foreach($businessPartners as $index=> $businessPartner)
-                                    <tr >
-                                        <td>
-                                            {{$businessPartner->$index + 1}}
-                                        </td>
+                                    <tr data-id="{{ $businessPartner->id }}">
+{{--                                        <td>--}}
+{{--                                            {{ $businessPartner->priority }}--}}
+{{--                                        </td>--}}
                                         <td>
                                             {{ Str::limit($businessPartner->name, 20, '...') }}
                                         </td>
@@ -107,5 +108,51 @@
     <script>
         let table = new DataTable('#holDataTable');
     </script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        function displayMessage(message, type) {
+            var alertClass = (type === 'success') ? 'alert-success' : 'alert-danger';
+            var alertHtml = `
+            <div class="col-md-5 offset-md-2 alert ${alertClass}" role="alert">
+                ${message}
+            </div>`;
+            $("#message-row").prepend(alertHtml);
+
+            $(".alert").fadeTo(5000, 500).slideUp(500, function(){
+                $(this).slideUp(500);
+            });
+        }
+
+        $(function() {
+            $("#sortable").sortable({
+                update: function(event, ui) {
+                    var sortedIDs = $("#sortable").sortable("toArray", { attribute: "data-id" });
+                    $.ajax({
+                        url: "{{ route('reorder.businessPartner') }}",
+                        method: "POST",
+                        data: {
+                            sortedIDs: sortedIDs,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function(response) {
+                            displayMessage(response.success, 'success');
+                        },
+                        error: function(xhr) {
+                            displayMessage('There was a problem with the reorder.', 'error');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
 
 @endsection

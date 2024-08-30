@@ -8,12 +8,23 @@ use Illuminate\Http\Request;
 
 class AdminBusinessPartnerController extends Controller
 {
+    public function reorder(Request $request)
+    {
+        $sortedIDs = $request->input('sortedIDs');
+
+        foreach ($sortedIDs as $index => $id) {
+            BusinessPartner::where('id', $id)->update(['priority' => $index + 1]);
+        }
+
+        return response()->json(['success' => 'The business partner has been reordered successfully!']);
+
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $businessPartners = BusinessPartner::get();
+        $businessPartners = BusinessPartner::orderBy('priority')->get();
 
         return view('admin.businessPartner_index')
             ->with('businessPartners', $businessPartners);
