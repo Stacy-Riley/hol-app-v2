@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use bootstrap\Faq;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -16,6 +15,7 @@ class FaqController extends Controller
     {
         $faqs = Faq::query()
             ->active()
+            ->orderBy('priority')
             ->get();
 
         return view('faq', with(['faqs' => $faqs]));

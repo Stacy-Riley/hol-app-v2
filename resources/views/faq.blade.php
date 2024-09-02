@@ -14,19 +14,19 @@
 
                     <div  role="tablist" aria-multiselectable="true">
                         @foreach($faqs as $index=>$faq)
-                        <div class="card">
-                            <div class="card-header" role="tab" id="heading{{ $index }}">
-                                <h5 class="mb-0">
-                                    <a data-toggle="collapse" class="accordian-link" data-parent="#accordion" href="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
-                                        {!! $faq->question !!}
-                                    </a>
-                                </h5>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading{{ $index }}">
+                                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" class="accordian-link" data-parent="#accordion" href="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
+                                            {!! $faq->question !!}
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse{{ $index }}" class="collapse faq-answer-container" role="tabpanel" aria-labelledby="heading{{ $index }}">
+                                    <div class="card-block">
+                                        <p>{!! $faq->answer !!}</p>
+                                </div>
                             </div>
-                            <div id="collapse{{ $index }}" class="collapse faq-answer-container" role="tabpanel" aria-labelledby="heading{{ $index }}">
-                                <div class="card-block">
-                                    <p>{!! $faq->answer !!}</p>
-                            </div>
-                        </div>
                             @endforeach
                     </div>
 

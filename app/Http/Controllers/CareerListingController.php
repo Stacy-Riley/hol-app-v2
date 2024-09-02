@@ -12,7 +12,11 @@ class CareerListingController extends Controller
      */
     public function index()
     {
-        $careerListings = CareerListing::all();
+        $careerListings = CareerListing::query()
+            ->active()
+            ->orderBy('priority')
+            ->get();
+
         return view('career_listing')
             ->with('careerListings', $careerListings);
     }

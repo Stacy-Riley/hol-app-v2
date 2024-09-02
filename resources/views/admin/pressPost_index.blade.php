@@ -109,7 +109,10 @@
     </script>
 
     <script>
-        let table = new DataTable('#holDataTable');
+        let table = new DataTable('#holDataTable', {
+            //This disables the table from overriding the controller
+            order: false
+        });
     </script>
 
 @endsection

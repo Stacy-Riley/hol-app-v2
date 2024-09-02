@@ -15,19 +15,22 @@ class TestimonialSeeder extends Seeder
     public function run(): void
     {
         $testimonials = [
-            [   'is_published' => true,
+            [   'priority' => 1,
+                'is_published' => true,
                 'display_order' => 0,
                 'author_name' => 'Mindy Diaz',
                 'job_title' => 'Director Student Disability Services',
                 'comment' => 'House of Light will be my first choice in document conversions. Your professionalism, kindness, and quality are aligned with my expectations.'
             ],
-            [   'is_published' => true,
+            [   'priority' => 2,
+                'is_published' => true,
                 'display_order' => 1,
                 'author_name' => 'L. Thomas Flagg',
                 'job_title' => 'Building Our Own Community (BOOC)',
                 'comment' => 'We get quality textbooks to provide for our blind children during our mission trip to Ghana. Every year they look forward to the new books we bring.'
             ],
-            [   'is_published' => true,
+            [   'priority' => 3,
+                'is_published' => true,
                 'display_order' => 2,
                 'author_name' => 'A. Lee',
                 'job_title' => 'Administrative Assistant',

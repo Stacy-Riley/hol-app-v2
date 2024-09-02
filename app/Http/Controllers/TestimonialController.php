@@ -14,7 +14,7 @@ class TestimonialController extends Controller
     {
         $testimonials = Testimonial::query()
             ->active()
-            ->orderBy('display_order', 'asc')
+            ->orderBy('priority', 'asc')
             ->get();
 
 

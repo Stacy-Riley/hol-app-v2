@@ -104,8 +104,8 @@
 
     <script>
         let table = new DataTable('#holDataTable', {
-            pageLength: 10
-
+            pageLength: 10,
+            order: false
         });
 
     </script>

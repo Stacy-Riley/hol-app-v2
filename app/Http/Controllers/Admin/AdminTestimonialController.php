@@ -8,13 +8,24 @@ use Illuminate\Http\Request;
 
 class AdminTestimonialController extends Controller
 {
+    public function reorder(Request $request)
+    {
+        $sortedIDs = $request->input('sortedIDs');
+
+        foreach ($sortedIDs as $index => $id) {
+            Testimonial::where('id', $id)->update(['priority' => $index + 1]);
+        }
+
+        return response()->json(['success' => 'The testimonial has been reordered successfully!']);
+
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
 
-        $testimonials = Testimonial::get();
+        $testimonials = Testimonial::orderBy('priority', 'asc')->get();
 
         return view('admin.testimonial_index')
             ->with('testimonials', $testimonials);

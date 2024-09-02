@@ -1,7 +1,8 @@
+@extends('layouts/admin')
 @section('custom_styles')
     <link rel="stylesheet" href="//cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
     <!-- jQuery UI CSS (for drag-and-drop visuals) -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">@extends('layouts/admin')
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @endsection
 
 @section('content')
@@ -39,9 +40,8 @@
                             <table id="holDataTable" class="table card-table table-vcenter text-nowrap datatable">
                                 <thead class="border-2">
                                 <tr class="text-center">
-{{--                                    <th>Priority</th>--}}
-                                    <th>Name</th>
                                     <th>Category</th>
+                                    <th>Name</th>
                                     <th>Active</th>
                                     <th></th>
                                 </tr>
@@ -49,14 +49,11 @@
                                 <tbody id="sortable" class="border-2">
                                 @foreach($businessPartners as $index=> $businessPartner)
                                     <tr data-id="{{ $businessPartner->id }}">
-{{--                                        <td>--}}
-{{--                                            {{ $businessPartner->priority }}--}}
-{{--                                        </td>--}}
-                                        <td>
-                                            {{ Str::limit($businessPartner->name, 20, '...') }}
-                                        </td>
                                         <td>
                                             {{ucfirst($businessPartner->category)}}
+                                        </td>
+                                        <td>
+                                            {{ Str::limit($businessPartner->name, 20, '...') }}
                                         </td>
 
                                         @if($businessPartner->is_active == true)
@@ -106,7 +103,10 @@
     </script>
 
     <script>
-        let table = new DataTable('#holDataTable');
+        let table = new DataTable('#holDataTable',{
+            //This disables the table from overriding the controller displaying the 'priority' field
+            order: false
+        });
     </script>
 
     <!-- jQuery -->

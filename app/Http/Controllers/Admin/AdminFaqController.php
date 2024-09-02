@@ -8,12 +8,23 @@ use Illuminate\Http\Request;
 
 class AdminFaqController extends Controller
 {
+    public function reorder(Request $request)
+    {
+        $sortedIDs = $request->input('sortedIDs');
+
+        foreach ($sortedIDs as $index => $id) {
+            Faq::where('id', $id)->update(['priority' => $index + 1]);
+        }
+
+        return response()->json(['success' => 'The FAQ has been reordered successfully!']);
+
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $faqs = Faq::get();
+        $faqs = Faq::orderBy('priority', 'asc')->get();
 
         return view('admin.faq_index')
             ->with('faqs', $faqs);

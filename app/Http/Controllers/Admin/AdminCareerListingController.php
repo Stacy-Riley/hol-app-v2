@@ -8,12 +8,23 @@ use Illuminate\Http\Request;
 
 class AdminCareerListingController extends Controller
 {
+    public function reorder(Request $request)
+    {
+        $sortedIDs = $request->input('sortedIDs');
+
+        foreach ($sortedIDs as $index => $id) {
+            CareerListing::where('id', $id)->update(['priority' => $index + 1]);
+        }
+
+        return response()->json(['success' => 'The career listing has been reordered successfully!']);
+
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $careerListings = CareerListing::get();
+        $careerListings = CareerListing::orderBy('priority', 'asc')->get();
 
         return view('admin.careerListing_index')
             ->with('careerListings', $careerListings);

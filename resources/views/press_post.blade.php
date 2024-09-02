@@ -32,7 +32,7 @@
                             @endif
 
                             <p class="press-post-img-caption">{{ $article->img_caption }}</p>
-                            <p>{{ $article->body }}</p>
+                            <p>{!! $article->body !!}</p>
                             <br>
 
                             @if($article->external_link_url)

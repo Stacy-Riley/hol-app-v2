@@ -9,13 +9,35 @@ use Illuminate\Support\Facades\Bus;
 
 class AdminBusinessServiceController extends Controller
 {
+    public function reorder(Request $request)
+    {
+        $sortedIDs = $request->input('sortedIDs');
+
+        foreach ($sortedIDs as $index => $id) {
+            BusinessService::where('id', $id)->update(['priority' => $index + 1]);
+        }
+
+        return response()->json(['success' => 'The business service has been reordered successfully!']);
+
+    }
     /**
      * Display a listing of the resource.
      */
     public function index(request $request)
     {
+//Next time, we are trying to sort by 2 orderBy and ChatGPT went down,
+//I have it here but it isn't working in the admin index, it is
+//just sorting alphabetically
+// Enable query logging
+//        \DB::enableQueryLog();
 
-        $businessServices = BusinessService::get();
+        $businessServices = BusinessService::orderBy('category')
+            ->orderBy('priority')
+            ->get();
+
+// Dump and die to display the query log
+//        dd(\DB::getQueryLog());
+
 
         return view('admin.businessService_index')
             ->with('businessServices', $businessServices);

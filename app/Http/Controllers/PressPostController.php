@@ -21,6 +21,7 @@ class PressPostController extends Controller
             ->active()
             ->where('content_type', 'article')
             ->category($category)
+            ->orderBy('published_at', 'desc')
             ->paginate(3);
 
         // Fetch articles for sidebar without pagination
@@ -28,6 +29,7 @@ class PressPostController extends Controller
             ->active()
             ->where('content_type', 'article')
             ->category($category)
+            ->orderBy('published_at', 'desc')
             ->take(9)
             ->get();
 
@@ -37,6 +39,7 @@ class PressPostController extends Controller
             ->active()
             ->where('content_type', 'podcast')
             ->category($category)
+            ->orderBy('published_at', 'desc')
             ->paginate(5);
 
         return view('press_post', compact('articles', 'articlesSidebar', 'podcasts', 'contentType'));

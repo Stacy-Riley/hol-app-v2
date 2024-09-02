@@ -15,7 +15,8 @@ class AdminPressPostController extends Controller
     {
 
         // Applying the scope to filter by content type if provided
-        $pressPosts = PressPost::get();
+        $pressPosts = PressPost::orderBy('published_at', 'desc')
+        ->get();
 
         return view('admin/pressPost_index')
             ->with('pressPosts', $pressPosts);

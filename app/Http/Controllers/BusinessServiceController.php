@@ -13,14 +13,18 @@ class BusinessServiceController extends Controller
 
     public function education()
     {
-        $services = BusinessService::byCategory('education')->get();
+        $services = BusinessService::byCategory('education')
+            ->orderBy('priority', 'asc')
+            ->get();
 //        return $services;
         return view('business_service_education', ['services' => $services]);
     }
 
     public function corporate()
     {
-        $services = BusinessService::byCategory( 'corporate')->get();
+        $services = BusinessService::byCategory( 'corporate')
+            ->orderBy('priority', 'asc')
+            ->get();
         return view('business_service_corporate', ['services' => $services]);
     }
 

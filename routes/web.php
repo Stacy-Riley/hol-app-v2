@@ -78,6 +78,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('edit.faq');
     Route::put('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('update.faq');
     Route::delete('/admin/faq/delete/{id}', [AdminFaqController::class, 'destroy'])->name('delete.faq');
+    Route::post('/admin/faq/reorder', [AdminFaqController::class, 'reorder'])->name('reorder.faq');
 
     //Admin Testimonial Routes
     Route::get('admin/testimonial', [AdminTestimonialController::class, 'index'])->name('admin.testimonial.index');
@@ -86,6 +87,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/testimonial/edit/{id}', [AdminTestimonialController::class, 'edit'])->name('edit.testimonial');
     Route::put('admin/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('update.testimonial');
     Route::delete('admin/testimonial/delete/{id}', [AdminTestimonialController::class, 'destroy'])->name('delete.testimonial');
+    Route::post('/admin/testimonial/reorder', [AdminTestimonialController::class, 'reorder'])->name('reorder.testimonial');
 
     //Admin Business Service Routes
     Route::get('/admin/businessService', [AdminBusinessServiceController::class, 'index'])->name('admin.businessService.index');
@@ -94,6 +96,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/businessService/edit/{id}', [AdminBusinessServiceController::class, 'edit'])->name('edit.businessService');
     Route::put('/admin/businessService/update/{id}', [AdminBusinessServiceController::class, 'update'])->name('update.businessService');
     Route::delete('/admin/businessService/delete/{id}', [AdminBusinessServiceController::class, 'destroy'])->name('delete.businessService');
+    Route::post('/admin/BusinessService/reorder', [AdminBusinessServiceController::class, 'reorder'])->name('reorder.businessService');
 
     //Admin Business Partner Routes
     Route::get('/admin/businessPartner', [AdminBusinessPartnerController::class, 'index'])->name('admin.businessPartner.index');
@@ -103,6 +106,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin/businessPartner/update/{id}', [AdminBusinessPartnerController::class, 'update'])->name('update.businessPartner');
     Route::delete('/admin/businessPartner/delete/{id}', [AdminBusinessPartnerController::class, 'destroy'])->name('delete.businessPartner');
     Route::post('/admin/businessPartner/reorder', [AdminBusinessPartnerController::class, 'reorder'])->name('reorder.businessPartner');
+
     //Admin Press Post Routes
     Route::get('admin/pressPost', [AdminPressPostController::class, 'index'])->name('admin.pressPost.index');
     Route::get('/admin/pressPost/create', [AdminPressPostController::class, 'create'])->name('create.pressPost');
@@ -118,6 +122,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/careerListing/edit/{id}', [AdminCareerListingController::class, 'edit'])->name('edit.careerListing');
     Route::put('/admin/careerListing/update/{id}', [AdminCareerListingController::class, 'update'])->name('update.careerListing');
     Route::delete('/admin/careerListing/delete/{id}', [AdminCareerListingController::class, 'destroy'])->name('delete.careerListing');
+    Route::post('/admin/careerListing/reorder', [AdminCareerListingController::class, 'reorder'])->name('reorder.careerListing');
 });
 
 require __DIR__.'/auth.php';

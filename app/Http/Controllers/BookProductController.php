@@ -20,7 +20,8 @@ class BookProductController extends Controller
         $cost = $request->input('cost');
 
 //start the query with this table
-        $query = BookProduct::query();
+        $query = BookProduct::query()
+        ->orderBy('title', 'asc');
 
         if ($gradeLevel && $gradeLevel != 'Select Grade') {
             $query->where('grade_level', $gradeLevel);

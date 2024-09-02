@@ -2,6 +2,8 @@
 
 @section('custom_styles')
     <link rel="stylesheet" href="//cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
+    <!-- jQuery UI CSS (for drag-and-drop visuals) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @endsection
 
 @section('content')
@@ -23,6 +25,7 @@
                         </div>
                     @endif
                 </div>
+                <div class="row" id="message-row"></div>
             </div>
             <div class="row">
                 <div class="col-md-2" aria-hidden="true"></div>
@@ -45,10 +48,9 @@
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody class="border-2">
+                                <tbody id="sortable" class="border-2">
                                 @foreach($careerListings as $index=> $careerListing)
-                                    <tr >
-
+                                    <tr data-id="{{ $careerListing->id }}">
                                         <td>
                                             {{ Str::limit($careerListing->title, 20, '...') }}
                                         </td>
@@ -105,7 +107,51 @@
     </script>
 
     <script>
-        let table = new DataTable('#holDataTable');
+        let table = new DataTable('#holDataTable', {
+            //This disables the table from overriding the controller displaying the 'priority' field
+            order: false
+        });
     </script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        function displayMessage(message, type) {
+            var alertClass = (type === 'success') ? 'alert-success' : 'alert-danger';
+            var alertHtml = `
+            <div class="col-md-5 offset-md-2 alert ${alertClass}" role="alert">
+                ${message}
+            </div>`;
+            $("#message-row").prepend(alertHtml);
+
+            $(".alert").fadeTo(5000, 500).slideUp(500, function(){
+                $(this).slideUp(500);
+            });
+        }
+
+        $(function() {
+            $("#sortable").sortable({
+                update: function(event, ui) {
+                    var sortedIDs = $("#sortable").sortable("toArray", { attribute: "data-id" });
+                    $.ajax({
+                        url: "{{ route('reorder.careerListing') }}",
+                        method: "POST",
+                        data: {
+                            sortedIDs: sortedIDs,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function(response) {
+                            displayMessage(response.success, 'success');
+                        },
+                        error: function(xhr) {
+                            displayMessage('There was a problem with the reorder.', 'error');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 @endsection
