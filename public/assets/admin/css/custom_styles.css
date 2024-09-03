@@ -50,6 +50,15 @@
     cursor: pointer;
 }
 
+.admin-logout-button {
+    border-radius: 5px;
+}
+
+.nav-link,
+.nav-link-icon {
+    color: #ffffff;
+}
+
 @media screen and  (max-width: 991px) {
      .admin-sidebar-container h1 {
          width: 200px;
