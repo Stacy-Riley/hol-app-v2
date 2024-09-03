@@ -5,11 +5,9 @@ use App\Http\Controllers\Admin\AdminBookProductController;
 use App\Http\Controllers\Admin\AdminBusinessPartnerController;
 use App\Http\Controllers\Admin\AdminBusinessServiceController;
 use App\Http\Controllers\Admin\AdminCareerListingController;
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPressPostController;
-use App\Http\Controllers\Admin\AdminReorderDataController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\BookProductController;
@@ -53,8 +51,7 @@ Route::get('/sponsor_form', [SponsorFormController::class, 'index']);
 
 //Admin
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
-
+    //After login, admin panel routes to admin/blog as initial page
     //Admin BlogPage Routes
     Route::get('/admin/blog', [AdminBlogPostController::class, 'index'])->name('admin.blog.index');
     Route::get('/admin/create/blog', [AdminBlogPostController::class, 'create'])->name('create.blog');
