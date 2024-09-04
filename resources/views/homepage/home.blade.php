@@ -3,14 +3,14 @@
 
     <!--============================= WELCOME =============================-->
     <section class="homepage-welcome-section background-primary">
-        <div class="container">
+        <div class="container-fluid m-0 px-3">
             <div class="row justify-content-center pb-3">
                 <div class="col-md-10">
                     <h2>Welcome</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-10 ">
                     <p>
                         Thank you for visiting <span>House of Light</span>. We are a leading consulting and training firm dedicated to creating inclusive environments for people with visual impairments. Our team of experienced educators and accessibility experts provides comprehensive solutions to schools, businesses, and organizations seeking to enhance accessibility and compliance.
                     </p>
@@ -60,18 +60,18 @@
     <!--//END WELCOME -->
     <!--============================= SERVICES =============================-->
     <section class="homepage-our-services-section background-secondary position-relative">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-10 text-center">
                     <h2 class="py-3">Our Services</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="d-flex justify-content-between col-md-8 col-lg-6 flex-wrap">
-                    <div class="button-primary-cta mb-4">
+                <div class="d-flex justify-content-center col-md-8 col-lg-6 flex-wrap">
+                    <div class="button-primary-cta mb-4 px-4">
                         <a href="/services/education">Education Services</a>
                     </div>
-                    <div class="button-primary-cta">
+                    <div class="button-primary-cta px-4">
                         <a href="/services/corporate">Corporate Services</a>
                     </div>
 
@@ -82,25 +82,27 @@
     <!--//END OUR SERVICES -->
     <!--============================= OUR PARTNERS =============================-->
     <section class="homepage-our-partners-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 text-center pt-3 pb-5">
                     <h2>Our Partners</h2>
                 </div>
             </div>
-            <div class="row justify-content-between align-items-center">
-                    <div class="col-xs-12 col-md-6 col-lg-4 text-center">
-                        <img src="/assets/images/home/NYPace_NewLogo_horiz.png" class="" alt="partner-logo, NY Pace">
-                    </div>
-                    <div class="col-xs-12 col-md-6 col-lg-3 text-center">
-                        <img src="/assets/images/home/junior-achievement-chicago.png" class="" alt="partner-logo, Junior Achievement Chicago">
-                    </div>
-                    <div class="col-xs-12 col-md-6 col-lg-3 text-center">
-                        <img src="/assets/images/home/north-central-college.png" class="" alt="partner-logo, North Central College">
-                    </div>
+            <div class="row">
+                <div class="col-12 d-flex flex-row flex-wrap justify-content-center align-items-center">
+                    <figure class="mx-2 p-0">
+                        <img src="{{env('APP_URL')}}/assets/images/home/NYPace_NewLogo_horiz.png" class="img-fluid mx-3" alt="partner-logo, NY Pace">
+                    </figure>
+                        <figure class="px-5 p-0">
+                        <img src="{{env('APP_URL')}}/assets/images/home/junior-achievement-chicago.png" class="img-fluid mx-3" alt="partner-logo, Junior Achievement Chicago">
+                    </figure>
+                    <figure class="mx-2 p-0">
+                        <img src="{{env('APP_URL')}}/assets/images/home/north-central-college.png" class="img-fluid mx-3" alt="partner-logo, North Central College">
+                    </figure>
+                </div>
             </div>
             <div class="row">
-                <div class="col-md-12 text-center button-primary-cta">
+                <div class="col-md-12 text-center button-primary-cta mt-3">
                     <a href="/partners" class="">See more >>></a>
                 </div>
             </div>
@@ -110,7 +112,7 @@
     <!--============================= TESTIMONIAL =============================-->
     <hr>
     <section class="testimonial">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <h2>Testimonials</h2>

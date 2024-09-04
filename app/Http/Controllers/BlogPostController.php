@@ -10,7 +10,7 @@ class BlogPostController extends Controller
     public function index()
     {
         $posts = BlogPost::active()->orderBy('published_at', 'desc')->paginate(3);
-        $categoryPosts = BlogPost::select('category')->distinct()->get(); // Get distinct categories
+        $categoryPosts = BlogPost::select('category')->distinct()->get();
         $featuredPosts = BlogPost::recent()->get();
 
         return view('blog_post', [

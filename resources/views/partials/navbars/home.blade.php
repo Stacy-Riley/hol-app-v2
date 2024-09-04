@@ -1,8 +1,8 @@
 <!--============================= HEADER =============================-->
 <header>
-    <div class="container-fluid p-0">
+    <div class="container-fluid m-0 p-0">
         <div class="row pl-3">
-            <div class="col-6">
+            <div class="col-md-12">
                 <div class="responsive-logo-container">
                     <a href="/"><img src="{{env('APP_URL')}}/assets/images/home/House-of-Light-logo-no-bg.png" class="responsive-logo img-fluid" alt="responsive-logo"></a>
                 </div>
@@ -57,15 +57,15 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="hero-text-content-wrapper">
-                    <div class="hero-text-content-container text-center">
+        <div class="row m-0 p-0">
+            <div class="col-md-12 m-0 p-0">
+                <div class="hero-text-content-wrapper m-0 p-0">
+                    <div class="hero-text-content-container text-center m-0 p-0">
                         <h1 class="m-0 pb-1">Making a Difference Beyond the Classroom</h1>
-                        <h2>Consulting, education, &amp; training services to improve the lives of those who are blind &amp; visually impaired.
+                        <h2 class="mx-3">Consulting, education, &amp; training services to improve the lives of those who are blind &amp; visually impaired.
                         </h2>
                     </div>
-                    <img class="img-fluid" src="{{env('APP_URL')}}/assets/images/home/hero-image-trim.jpg" alt="hero image">
+                    <img class="img-fluid m-0 p-0" src="{{env('APP_URL')}}/assets/images/home/hero-image-trim.jpg" alt="hero image">
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-md-10 px-0 my-5">
+                <div class="col-md-10 px-2 my-5">
                     <h2 class="my-3">Open Positions</h2>
                     @foreach($careerListings as $index=> $careerListing)
                         <div class="careerListing-container">

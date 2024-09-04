@@ -23,14 +23,14 @@
    {{--   Search Form--}}
                         <form action="{{ route('book_products.index') }}#search-results" method="GET">
                             <div class="row justify-content-center">
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6 col-lg-3 my-2">
                                     <select class="form-control custom-select" name="grade_level" autocomplete="off">
                                         <option value="">Select Grade</option>
                                         <option value="1">Grade One</option>
                                         <option value="2">Grade Two</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-lg-2">
+                                <div class="col-md-6 col-lg-2 my-2">
                                     <select class="form-control custom-select" name="pages" autocomplete="off">
                                         <option value="">Book Length</option>
                                         <option value="1">Less than 10 pages</option>
@@ -38,7 +38,7 @@
                                         <option value="3">20 pages and above</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-lg-2">
+                                <div class="col-md-6 col-lg-2 my-2">
                                     <select class="form-control custom-select" name="cost" autocomplete="off">
                                         <option value="">Price Range</option>
                                         <option value="1">Less than $10</option>
@@ -47,7 +47,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-12 col-lg-3">
-                                    <button class="btn btn-block btn-admission" type="submit" role="button">Search</button>
+                                    <button class="btn btn-block btn-admission mt-2" type="submit" role="button">Search</button>
                                 </div>
                             </div>
                         </form>

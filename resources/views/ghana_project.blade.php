@@ -22,8 +22,8 @@
                     </p>
                     <br>
                     <div class="d-flex justify-content-around button-primary-cta">
-                        <a href="https://gofund.me/d92b8bb8" role="button" >Donate</a>
-                        <a href="/sponsor_form" role="button" >Sponsor</a>
+                        <a class="mx-2" href="https://gofund.me/d92b8bb8" role="button" >Donate</a>
+                        <a class="mx-2" href="/sponsor_form" role="button" >Sponsor</a>
                     </div>
                 </div>
             </div>

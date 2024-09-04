@@ -55,32 +55,36 @@
 
                 <!--============================= SIDEBAR COLUMN =============================-->
                         <div class="col-md-4">
-                            <h3>Articles</h3>
-                            @foreach($articlesSidebar as $articleSide)
-                            <div class="research-posts">
-                                <div class="research-news_block">
-                                    <span>{{ \Carbon\Carbon::parse($articleSide->published_at)->format('F j, Y') }}</span>
-                                    <a href="{{$articleSide->external_link_url}}"><p>{{ $articleSide->title }}</p></a>
-                                </div>
-                            </div>
-                            @endforeach
-
-                            <hr>
-                            <h3>Podcasts</h3>
-                            @foreach($podcasts as $podcast)
+                            @if($articlesSidebar->count() > 0)
+                                <h3>Articles</h3>
+                                @foreach($articlesSidebar as $articleSide)
                                 <div class="research-posts">
                                     <div class="research-news_block">
-                                        <span>{{ \Carbon\Carbon::parse($podcast->published_at)->format('F j, Y') }}</span>
-                                        <a href="{{ $podcast->external_link_url}}"><p>{{ $podcast->title }}</p></a>
+                                        <span>{{ \Carbon\Carbon::parse($articleSide->published_at)->format('F j, Y') }}</span>
+                                        <a href="{{$articleSide->external_link_url}}"><p>{{ $articleSide->title }}</p></a>
                                     </div>
                                 </div>
-                            @endforeach
+                                @endforeach
+                            @endif
 
-                        <!-- Pagination Links -->
-                            @if($podcasts->lastPage() > 1 )
-                                <div class="d-flex justify-content-center press-post-pagination-container">
-                                    {{ $podcasts->links('pagination::bootstrap-4') }}
-                                </div>
+                            <hr>
+                            @if($podcasts->count() > 0)
+                                <h3>Podcasts</h3>
+                                @foreach($podcasts as $podcast)
+                                    <div class="research-posts">
+                                        <div class="research-news_block">
+                                            <span>{{ \Carbon\Carbon::parse($podcast->published_at)->format('F j, Y') }}</span>
+                                            <a href="{{ $podcast->external_link_url}}"><p>{{ $podcast->title }}</p></a>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                            <!-- Pagination Links -->
+{{--                                @if($podcasts->lastPage() > 1 )--}}
+{{--                                    <div class="d-flex justify-content-center press-post-pagination-container">--}}
+{{--                                        {{ $podcasts->links('pagination::bootstrap-4') }}--}}
+{{--                                    </div>--}}
+{{--                                @endif--}}
                             @endif
                         </div>
             <!--//END SIDEBAR SUMMARY -->

@@ -165,6 +165,15 @@ li {
     padding-right: 11px;
 }
 
+@media (max-width: 767px) {
+    .hero-text-content-container h1 {
+        font-size: 26px;
+    }
+
+    .hero-text-content-container h2 {
+        font-size: 18px;
+    }
+}
 @media(min-width: 768px) {
     .responsive-logo-container {
         width: 200px !important;
@@ -250,6 +259,19 @@ li {
 
 hr {
     width: 90%;
+}
+
+@media (max-width: 768px) {
+    #homepage-services-container {
+        margin: auto;
+    }
+    .homepage-welcome-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    #consult-button {
+        bottom: -80px;
+    }
 }
 /******************************************************************* */
 /***** ABOUT *****/
