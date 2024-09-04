@@ -32,7 +32,7 @@
 
 {{--    Video section with gallery of images--}}
     <section class="ghana-media background-primary">
-        <h3 class="visually-hidden">Images of Ghana Project</h3>
+        <h3 class="visually-hidden">Video of Ghana Project</h3>
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-10 d-flex justify-content-center">
@@ -45,6 +45,7 @@
 
 
         <div class="gallery-wrap">
+            <h3 class="visually-hidden">Images of Ghana Project</h3>
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">

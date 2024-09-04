@@ -58,7 +58,7 @@
 
     <div class="row text-center d-flex justify-content-center">
         <div  class="logo col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
-            <a href="https://www.10ksbapply.com/">
+            <a href="https://www.10ksbapply.com/" aria-label="Link to Goldman-Sachs Small Business Initiative">
                 <img class="image-fluid" src="{{env('APP_URL')}}/assets/images/about-page/goldman-sachs-logo.png" alt="Link to Goldman Sachs">
             </a>
         </div>

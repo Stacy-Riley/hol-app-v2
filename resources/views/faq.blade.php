@@ -2,16 +2,15 @@
 @section('content')
 
     <!--============================= Faq =============================-->
-    <section class="mb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center px-0">
-                    <h1 class="pt-5 pb-5">FAQ</h1>
-                </div>
+<section class="mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center px-0">
+                <h1 class="pt-5 pb-5">FAQ</h1>
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
                 <div class="col-md-12">
-
                     <div  role="tablist" aria-multiselectable="true">
                         @foreach($faqs as $index=>$faq)
                             <div class="card">
@@ -27,14 +26,13 @@
                                         <p>{!! $faq->answer !!}</p>
                                 </div>
                             </div>
-                            @endforeach
+                        @endforeach
                     </div>
-
                 </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!--//End Faq -->
 

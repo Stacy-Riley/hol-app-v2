@@ -21,7 +21,7 @@
                             </div>
                             <br>
                             <div class="button-primary-cta a mb-5">
-                                <a href="/career/apply" aria-label="Apply for this position">Apply Here</a>
+                                <a href="/career/apply" role="button" >Apply Here</a>
                             </div>
                         </div>
                     @endforeach

@@ -33,7 +33,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-8 col-lg-4 text-center button-primary-cta mb-5">
-                    <a href="/contact" role="button" >Work with Us!</a>
+                    <a href="/contact" role="button" aria-label="Fill out our contact us form">Work with Us!</a>
                 </div>
             </div>
 

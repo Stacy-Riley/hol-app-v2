@@ -22,34 +22,38 @@
                     <div class="course_filter background-secondary">
    {{--   Search Form--}}
                         <form action="{{ route('book_products.index') }}#search-results" method="GET">
-                            <div class="row justify-content-center">
-                                <div class="col-md-6 col-lg-3 my-2">
-                                    <select class="form-control custom-select" name="grade_level" autocomplete="off">
-                                        <option value="">Select Grade</option>
-                                        <option value="1">Grade One</option>
-                                        <option value="2">Grade Two</option>
-                                    </select>
+                            <fieldset>
+{{--    Included fieldset and legend for screen readers     --}}
+                                <legend class="sr-only">Search Books</legend>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 col-lg-3 my-2">
+                                        <select class="form-control custom-select" name="grade_level" autocomplete="off" aria-label="Select Grade Level">
+                                            <option value="">Select Grade</option>
+                                            <option value="1">Grade One</option>
+                                            <option value="2">Grade Two</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-lg-2 my-2">
+                                        <select class="form-control custom-select" name="pages" autocomplete="off" aria-label="Select Page Range">
+                                            <option value="">Book Length</option>
+                                            <option value="1">Less than 10 pages</option>
+                                            <option value="2">10 - 20 pages</option>
+                                            <option value="3">20 pages and above</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-lg-2 my-2">
+                                        <select class="form-control custom-select" name="cost" autocomplete="off" aria-label="Select Price Range">
+                                            <option value="">Price Range</option>
+                                            <option value="1">Less than $10</option>
+                                            <option value="2">$10 to $20</option>
+                                            <option value="3">$20 and above</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 col-lg-3">
+                                        <button class="btn btn-block btn-admission mt-2" type="submit" role="button" aria-label="Search for books">Search</button>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 col-lg-2 my-2">
-                                    <select class="form-control custom-select" name="pages" autocomplete="off">
-                                        <option value="">Book Length</option>
-                                        <option value="1">Less than 10 pages</option>
-                                        <option value="2">10 - 20 pages</option>
-                                        <option value="3">20 pages and above</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 col-lg-2 my-2">
-                                    <select class="form-control custom-select" name="cost" autocomplete="off">
-                                        <option value="">Price Range</option>
-                                        <option value="1">Less than $10</option>
-                                        <option value="2">$10 to $20</option>
-                                        <option value="3">$20 and above</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-12 col-lg-3">
-                                    <button class="btn btn-block btn-admission mt-2" type="submit" role="button">Search</button>
-                                </div>
-                            </div>
+                            </fieldset>
                         </form>
                     </div>
                 </div>

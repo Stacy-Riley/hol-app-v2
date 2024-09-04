@@ -27,11 +27,11 @@
                             <div class="campus-img_block">
                                 @if($isOldImage)
                                     <a href="{{ $partner->business_url }}">
-                                        <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                        <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}">
                                     </a>
                                 @else
                                     <a href="{{ $partner->business_url }}">
-                                        <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                        <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}>
                                     </a>
                                 @endif
                             </div>
@@ -57,11 +57,11 @@
                         <div class="campus-img_block">
                             @if($isOldImage)
                                 <a href="{{ $partner->business_url }}">
-                                    <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                    <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}>
                                 </a>
                             @else
                                 <a href="{{ $partner->business_url }}">
-                                    <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}">
+                                    <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}>
                                 </a>
                             @endif
                         </div>
