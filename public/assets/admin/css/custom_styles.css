@@ -87,3 +87,16 @@
 table.dataTable td.dt-type-numeric {
         text-align: center !important;
     }
+@media (max-width:991px){
+    .offset-md-2-5 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width:992px){
+    .offset-md-2-5 {
+        margin-left: 20.833333%; /* (2.5 / 12) * 100 */
+    }
+
+}

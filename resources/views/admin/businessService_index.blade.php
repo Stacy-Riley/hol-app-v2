@@ -11,13 +11,12 @@
     <section class="form-screen-transition mr-5 ">
         <div class="container">
             <div class="row">
-                <div class="col-md-2" aria-hidden="true"></div>
-                <div class="col-md-10 ">
+                <div class="col-12 col-lg-10 offset-md-2-5">
                     <h1 class="text-center ml-4 mt-5">Business Services</h1>
                 </div>
                 <div class="row">
                     @if(session('success'))
-                        <div class="col-md-4 offset-md-2 alert alert-success" role="alert">
+                        <div class="col-12 col-lg-4 offset-md-2-5 alert alert-success" role="alert">
                             {{ session('success') }}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -28,14 +27,12 @@
                 <div class="row" id="message-row"></div>
             </div>
             <div class="row">
-                <div class="col-md-2" aria-hidden="true"></div>
-                <div class="col-md-10 my-4 p-0">
+                <div class="col-12 col-lg-10 offset-md-2-5 my-4 p-0">
                     <a href="/admin/businessService/create" type="button" class="btn admin-form-button">New Service</a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2" aria-hidden="true"></div>
-                <div class="col-md-10 card">
+                <div class="col-12 col-lg-10 offset-md-2-5 card">
                     <div>
                         <div class="table-responsive pb-0 mb-2">
                         <table id="holDataTable" class="table card-table table-vcenter text-nowrap datatable">

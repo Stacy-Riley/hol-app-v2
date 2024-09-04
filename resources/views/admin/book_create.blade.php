@@ -5,16 +5,16 @@
     <section class="form-screen-transition mr-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 offset-md-3">
+                <div class="col-12 col-lg-10 offset-md-2-5">
                     <h1 class="text-center ml-4 mt-5">New Book Entry </h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 offset-md-1">
+                <div class="col-12 col-lg-10 offset-md-2-5">
                     <form action="{{ route('store.book') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-10 offset-md-2">
+                            <div>
                                 <div class="mb-3">
                                     <label class="form-label">Title</label>
                                     <input type="text" class="form-control" name="title" placeholder="" required>
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="d-flex justify-content-between col-md-10 offset-md-2 p-0">
+                            <div class="d-flex justify-content-between p-0">
                                 <div class="col-md-3">
                                     <div class="form-label">Grade Level</div>
                                     <select class="form-select" name="grade_level">
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="row ">
-                            <div class="my-5 col-md-10 offset-md-2 ">
+                            <div class="my-5">
                                 <div class="d-flex justify-content-center ">
                                     <div class="mx-4">
                                         <a href="/admin/book" type="button" class="btn mr-2 admin-form-button"><< Back </a>

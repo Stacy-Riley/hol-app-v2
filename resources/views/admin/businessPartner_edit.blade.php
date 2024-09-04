@@ -5,18 +5,18 @@
     <section class="form-screen-transition mr-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 offset-md-3">
+                <div class="col-12 col-lg-10 offset-md-2-5">
                     <h1 class="text-center ml-4 mt-5">Edit Business Partner </h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 offset-md-1">
+                <div class="col-12 col-lg-10 offset-md-2-5">
                     <form action="{{ route('update.businessPartner', $businessPartner->id) }}" method="POST"  enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="row">
-                                <div class="col-md-10 offset-md-2">
+                                <div>
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Name</label>
                                         <input type="text" class="form-control" name="name" placeholder="" value="{{$businessPartner->name}}" required>
@@ -24,13 +24,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-10 offset-md-2">
+                                <div>
                                     <div class="mb-4">
                                         <label class="form-label">Partner's Url</label>
                                         <input type="text" class="form-control" name="business_url" placeholder="" value="{{$businessPartner->business_url}}" required>
                                     </div>
                                 </div>
-                                <div class="col-md-10 offset-md-2">
+                                <div>
                                     <div class="mb-3">
                                         <label class="form-label">Current Image</label>
                                         <div>
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="d-flex justify-content-between col-md-10 offset-md-2">
+                            <div class="d-flex justify-content-between">
                                 <div class="col-md-5 p-0">
                                     <div class="form-label">Category</div>
                                     <select class="form-select" name="category" required>
@@ -69,7 +69,7 @@
                         </div>
 
                         <div class="row ">
-                            <div class="my-4 col-md-10 offset-md-2 ">
+                            <div class="my-4">
                                 <div class="d-flex justify-content-center ">
                                     <div class="mx-4">
                                         <a href="/admin/businessPartner" type="button" class="btn mr-2 admin-form-button"><< Back </a>

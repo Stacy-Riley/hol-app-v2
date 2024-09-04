@@ -5,17 +5,17 @@
     <section class="form-screen-transition mr-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-10 offset-md-3">
+                <div class="col-12 col-lg-10 offset-md-2-5">
                     <h1 class="text-center ml-4 mt-5">Edit Career Listing</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 offset-md-1">
+                <div class="col-12 col-lg-10 offset-md-2-5">
                     <form action="{{ route('update.careerListing', $careerListing->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
-                            <div class="col-md-10 offset-md-2">
+                            <div>
                                 <div class="mb-4">
                                     <label class="form-label">Title</label>
                                     <input type="text" class="form-control" name="title" value="{{$careerListing->title}}">
@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="mb-3 col-md-10 offset-md-2 page-wrapper">
+                            <div class="mb-3 page-wrapper">
                                 <div class="card">
                                     <div class="card-body d-flex justify-content-center">
                                         <div class=" mb-3">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-10 offset-md-2 p-0">
+                            <div class="p-0">
                                 <div class="col-md-3">
                                     <div class="form-label">Active</div>
                                     <select class="form-select" name="is_active" required>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="row ">
-                            <div class="my-5 col-md-10 offset-md-2 ">
+                            <div class="my-5">
                                 <div class="d-flex justify-content-center ">
                                     <div class="mx-4">
                                         <a href="/admin/careerListing" type="button" class="btn mr-2 admin-form-button"><< Back </a>
