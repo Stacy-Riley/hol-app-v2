@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\Admin\AdminBookProductController;
 use App\Http\Controllers\Admin\AdminBusinessPartnerController;
 use App\Http\Controllers\Admin\AdminBusinessServiceController;
 use App\Http\Controllers\Admin\AdminCareerListingController;
-use App\Http\Controllers\Admin\AdminBlogPostController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPressPostController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
+use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\BookProductController;
 use App\Http\Controllers\BusinessPartnerController;
@@ -28,26 +28,22 @@ use Illuminate\Support\Facades\Route;
 // public pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutPageController::class, 'index']);
-Route::get('/services/education', [BusinessServiceController::class, 'education'])->name('services.education');
-Route::get('/services/corporate', [BusinessServiceController::class, 'corporate'])->name('services.corporate');
-Route::get('/ghana/project', [GhanaProjectController::class, 'index'])->name('ghana.project');
-Route::get('/products', [BookProductController::class, 'index'])->name('book_products.index');
-Route::get('/community_center',[CommunityCenterController::class, 'index']);
-Route::get('/partners', [BusinessPartnerController::class, 'index'])->name('business_partners');;
-Route::get('/press', [PressPostController::class, 'index'])->name('press');
-Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
-
-//Blog pages
 Route::get('/blog', [BlogPostController::class, 'index'])->name('blog.index');
 Route::get('/blog/category/{category}', [BlogPostController::class, 'category'])->name('blog.category');
 Route::get('/blog/post/{slug}', [BlogPostController::class, 'showBySlug'])->name('blog.show');
-
 Route::get('/career', [CareerListingController::class, 'index']);
 Route::get('/career/apply', [CareerFormController::class, 'index']);
-Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+Route::get('/community_center',[CommunityCenterController::class, 'index']);
 Route::get('/contact', [ContactSubmissionsController::class, 'index']);
+Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+Route::get('/ghana/project', [GhanaProjectController::class, 'index'])->name('ghana.project');
+Route::get('/partners', [BusinessPartnerController::class, 'index'])->name('business_partners');;
+Route::get('/press', [PressPostController::class, 'index'])->name('press');
+Route::get('/products', [BookProductController::class, 'index'])->name('book_products.index');
+Route::get('/services/education', [BusinessServiceController::class, 'education'])->name('services.education');
+Route::get('/services/corporate', [BusinessServiceController::class, 'corporate'])->name('services.corporate');
 Route::get('/sponsor_form', [SponsorFormController::class, 'index']);
-
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
 
 //Admin
 Route::middleware('auth')->group(function () {
@@ -68,23 +64,14 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin/book/update/{id}', [AdminBookProductController::class, 'update'])->name('update.book');
     Route::delete('/admin/book/delete/{id}', [AdminBookProductController::class, 'destroy'])->name('delete.book');
 
-    //Admin FAQ Routes
-    Route::get('/admin/faq', [AdminFaqController::class, 'index'])->name('admin.faq.index');
-    Route::get('/admin/faq/create', [AdminFaqController::class, 'create'])->name('create.faq');
-    Route::post('/admin/faq/store', [AdminFaqController::class, 'store'])->name('store.faq');
-    Route::get('/admin/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('edit.faq');
-    Route::put('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('update.faq');
-    Route::delete('/admin/faq/delete/{id}', [AdminFaqController::class, 'destroy'])->name('delete.faq');
-    Route::post('/admin/faq/reorder', [AdminFaqController::class, 'reorder'])->name('reorder.faq');
-
-    //Admin Testimonial Routes
-    Route::get('admin/testimonial', [AdminTestimonialController::class, 'index'])->name('admin.testimonial.index');
-    Route::get('admin/testimonial/create', [AdminTestimonialController::class, 'create'])->name('create.testimonial');
-    Route::post('admin/testimonial/store', [AdminTestimonialController::class, 'store'])->name('store.testimonial');
-    Route::get('admin/testimonial/edit/{id}', [AdminTestimonialController::class, 'edit'])->name('edit.testimonial');
-    Route::put('admin/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('update.testimonial');
-    Route::delete('admin/testimonial/delete/{id}', [AdminTestimonialController::class, 'destroy'])->name('delete.testimonial');
-    Route::post('/admin/testimonial/reorder', [AdminTestimonialController::class, 'reorder'])->name('reorder.testimonial');
+    //Admin Business Partner Routes
+    Route::get('/admin/businessPartner', [AdminBusinessPartnerController::class, 'index'])->name('admin.businessPartner.index');
+    Route::get('/admin/businessPartner/create', [AdminBusinessPartnerController::class, 'create'])->name('create.businessPartner');
+    Route::post('/admin/businessPartner/store', [AdminBusinessPartnerController::class, 'store'])->name('store.businessPartner');
+    Route::get('/admin/businessPartner/edit/{id}', [AdminBusinessPartnerController::class, 'edit'])->name('edit.businessPartner');
+    Route::put('/admin/businessPartner/update/{id}', [AdminBusinessPartnerController::class, 'update'])->name('update.businessPartner');
+    Route::delete('/admin/businessPartner/delete/{id}', [AdminBusinessPartnerController::class, 'destroy'])->name('delete.businessPartner');
+    Route::post('/admin/businessPartner/reorder', [AdminBusinessPartnerController::class, 'reorder'])->name('reorder.businessPartner');
 
     //Admin Business Service Routes
     Route::get('/admin/businessService', [AdminBusinessServiceController::class, 'index'])->name('admin.businessService.index');
@@ -95,14 +82,23 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/businessService/delete/{id}', [AdminBusinessServiceController::class, 'destroy'])->name('delete.businessService');
     Route::post('/admin/BusinessService/reorder', [AdminBusinessServiceController::class, 'reorder'])->name('reorder.businessService');
 
-    //Admin Business Partner Routes
-    Route::get('/admin/businessPartner', [AdminBusinessPartnerController::class, 'index'])->name('admin.businessPartner.index');
-    Route::get('/admin/businessPartner/create', [AdminBusinessPartnerController::class, 'create'])->name('create.businessPartner');
-    Route::post('/admin/businessPartner/store', [AdminBusinessPartnerController::class, 'store'])->name('store.businessPartner');
-    Route::get('/admin/businessPartner/edit/{id}', [AdminBusinessPartnerController::class, 'edit'])->name('edit.businessPartner');
-    Route::put('/admin/businessPartner/update/{id}', [AdminBusinessPartnerController::class, 'update'])->name('update.businessPartner');
-    Route::delete('/admin/businessPartner/delete/{id}', [AdminBusinessPartnerController::class, 'destroy'])->name('delete.businessPartner');
-    Route::post('/admin/businessPartner/reorder', [AdminBusinessPartnerController::class, 'reorder'])->name('reorder.businessPartner');
+    //Admin Career Listing Routes
+    Route::get('admin/careerListing', [AdminCareerListingController::class, 'index'])->name('admin.careerListing.index');
+    Route::get('/admin/careerListing/create', [AdminCareerListingController::class, 'create'])->name('create.careerListing');
+    Route::post('/admin/careerListing/store', [AdminCareerListingController::class, 'store'])->name('store.careerListing');
+    Route::get('/admin/careerListing/edit/{id}', [AdminCareerListingController::class, 'edit'])->name('edit.careerListing');
+    Route::put('/admin/careerListing/update/{id}', [AdminCareerListingController::class, 'update'])->name('update.careerListing');
+    Route::delete('/admin/careerListing/delete/{id}', [AdminCareerListingController::class, 'destroy'])->name('delete.careerListing');
+    Route::post('/admin/careerListing/reorder', [AdminCareerListingController::class, 'reorder'])->name('reorder.careerListing');
+
+    //Admin FAQ Routes
+    Route::get('/admin/faq', [AdminFaqController::class, 'index'])->name('admin.faq.index');
+    Route::get('/admin/faq/create', [AdminFaqController::class, 'create'])->name('create.faq');
+    Route::post('/admin/faq/store', [AdminFaqController::class, 'store'])->name('store.faq');
+    Route::get('/admin/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('edit.faq');
+    Route::put('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('update.faq');
+    Route::delete('/admin/faq/delete/{id}', [AdminFaqController::class, 'destroy'])->name('delete.faq');
+    Route::post('/admin/faq/reorder', [AdminFaqController::class, 'reorder'])->name('reorder.faq');
 
     //Admin Press Post Routes
     Route::get('admin/pressPost', [AdminPressPostController::class, 'index'])->name('admin.pressPost.index');
@@ -112,14 +108,15 @@ Route::middleware('auth')->group(function () {
     Route::put('admin/pressPost/update/{id}', [AdminPressPostController::class, 'update'])->name('update.pressPost');
     Route::delete('admin/pressPost/delete/{id}', [AdminPressPostController::class, 'destroy'])->name('delete.pressPost');
 
-    //Admin Career Listing Routes
-    Route::get('admin/careerListing', [AdminCareerListingController::class, 'index'])->name('admin.careerListing.index');
-    Route::get('/admin/careerListing/create', [AdminCareerListingController::class, 'create'])->name('create.careerListing');
-    Route::post('/admin/careerListing/store', [AdminCareerListingController::class, 'store'])->name('store.careerListing');
-    Route::get('/admin/careerListing/edit/{id}', [AdminCareerListingController::class, 'edit'])->name('edit.careerListing');
-    Route::put('/admin/careerListing/update/{id}', [AdminCareerListingController::class, 'update'])->name('update.careerListing');
-    Route::delete('/admin/careerListing/delete/{id}', [AdminCareerListingController::class, 'destroy'])->name('delete.careerListing');
-    Route::post('/admin/careerListing/reorder', [AdminCareerListingController::class, 'reorder'])->name('reorder.careerListing');
+
+    //Admin Testimonial Routes
+    Route::get('admin/testimonial', [AdminTestimonialController::class, 'index'])->name('admin.testimonial.index');
+    Route::get('admin/testimonial/create', [AdminTestimonialController::class, 'create'])->name('create.testimonial');
+    Route::post('admin/testimonial/store', [AdminTestimonialController::class, 'store'])->name('store.testimonial');
+    Route::get('admin/testimonial/edit/{id}', [AdminTestimonialController::class, 'edit'])->name('edit.testimonial');
+    Route::put('admin/testimonial/update/{id}', [AdminTestimonialController::class, 'update'])->name('update.testimonial');
+    Route::delete('admin/testimonial/delete/{id}', [AdminTestimonialController::class, 'destroy'])->name('delete.testimonial');
+    Route::post('/admin/testimonial/reorder', [AdminTestimonialController::class, 'reorder'])->name('reorder.testimonial');
 });
 
 require __DIR__.'/auth.php';

@@ -10,8 +10,8 @@
                     <h1 class="pt-5 pb-5 ">Our Blog</h1>
                 </div>
             </div>
-
-            <div class="row">
+            @if($posts->count() > 0)
+                <div class="row">
                 <div class="col-md-8 mb-5 px-4">
                     @foreach($posts as $post)
                     <div class="blog-single-item">
@@ -107,6 +107,11 @@
                     </div>
                 </div>
             </div>
+            @else
+                <div>
+                    <h2 class="my-5">Coming Soon!</h2>
+                </div>
+            @endif
         </div>
     </section>
     <!--//END BLOG POST HOMEPAGE -->

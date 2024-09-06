@@ -3,7 +3,7 @@
 @section('content')
 
     <!--============================= BUSINESS PARTNER PAGE =============================-->
-    <section class="business-partners">
+<section class="business-partners">
         <div class="container-fluid">
             <div class="row background-primary">
                 <div class="col-md-12 text-center px-0">
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-{{--  Education Logos--}}
+        {{--  Education Logos--}}
         <div class="container-fluid background-secondary">
             <div class="row">
                 <div class="col-md-12 text-center px-0 py-4">
@@ -31,7 +31,7 @@
                                     </a>
                                 @else
                                     <a href="{{ $partner->business_url }}">
-                                        <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}>
+                                        <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}">
                                     </a>
                                 @endif
                             </div>
@@ -57,11 +57,11 @@
                         <div class="campus-img_block">
                             @if($isOldImage)
                                 <a href="{{ $partner->business_url }}">
-                                    <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}>
+                                    <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}">
                                 </a>
                             @else
                                 <a href="{{ $partner->business_url }}">
-                                    <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}>
+                                    <img src="{{ Storage::url($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}">
                                 </a>
                             @endif
                         </div>
@@ -70,6 +70,6 @@
                 @endforeach
             </div>
         </div>
-    </section>
+</section>
     <!--//END BUSINESS PARTNER PAGE -->
 @endsection
