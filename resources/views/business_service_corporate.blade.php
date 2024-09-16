@@ -6,7 +6,7 @@
         <div class="container-fluid text-center m-0 p-0">
             <div class="row ">
                 <div class="col-md-12">
-                    <h1 class="pt-5 pb-5">Corporate Services</h1>
+                    <h1 class="h1-spacing">Corporate Services</h1>
                 </div>
             </div>
         </div>

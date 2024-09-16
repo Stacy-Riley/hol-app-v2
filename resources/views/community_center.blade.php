@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div id="search-results" class="col-md-10 ">
-                    <h1 class="pt-5 pb-5 text-center">Welcome to the Learning &amp; Community Center</h1>
+                    <h1 class="h1-spacing text-center">Welcome to the Learning &amp; Community Center</h1>
                 </div>
             </div>
 

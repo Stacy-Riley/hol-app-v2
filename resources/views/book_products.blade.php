@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="search-results" class="col-md-12 text-center">
-                    <h1 class="pt-5 pb-5">Braille Books</h1>
+                    <h1 class="h1-spacing">Braille Books</h1>
                 </div>
             </div>
 

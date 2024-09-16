@@ -6,7 +6,7 @@
         <div class="container-fluid m-0 p-0">
             <div class="row background-secondary text-center">
                 <div class="col-md-12">
-                    <h1 class="pt-5 pb-5">Sponsor Form</h1>
+                    <h1 class="h1-spacing">Sponsor Form</h1>
                 </div>
             </div>
             <!-- Sponsorship Application Form Link -->

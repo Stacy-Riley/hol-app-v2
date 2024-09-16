@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center px-0">
-                <h1 class="pt-5 pb-5">FAQ</h1>
+                <h1 class="h1-spacing">FAQ</h1>
             </div>
         </div>
         <div class="row">

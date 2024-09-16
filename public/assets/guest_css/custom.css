@@ -18,6 +18,15 @@ body {
     background-color: #BC942F;
 }
 
+.h1-spacing {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+@media (max-width: 767px) {
+    .h1-spacing {
+        padding: 0;
+    }
+}
 /**********************************/
 /*Blue call-to-action button*/
 /**********************************/

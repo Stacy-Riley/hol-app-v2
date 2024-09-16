@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="search-results" class="col-md-12 text-center">
-                    <h1 class="pt-5 pb-5 ">Our Blog</h1>
+                    <h1 class="h1-spacing">Our Blog</h1>
                 </div>
             </div>
             @if($posts->count() > 0)
@@ -30,7 +30,7 @@
                         </div>
                         <div class="blog-title_block">
                             <h4><a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h4>
-                            <h6>By: <span>{{ $post->author }}</span>  |  Category: <a href="/blog/category/{{ $post->category }}" aria-label="View posts in the {{ $post->category }}>{{ $post->category }}</a></h6>
+                            <h6>By: <span>{{ $post->author }}</span>  |  Category: <a href="/blog/category/{{ $post->category }}" aria-label="View posts in the {{ $post->category }}">{{ $post->category }}</a></h6>
                             <p>{!! Str::limit($post->body, 150) !!}</p>
                             <a href="{{ route('blog.show', $post->slug) }}" aria-label="Read more about {{ $post->title }}">Read More</a>
 

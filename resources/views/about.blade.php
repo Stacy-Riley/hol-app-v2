@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row ">
             <div class="col-md-12 text-center">
-                <h1 class="pt-5 pb-5">The Vision Behind <span class="about-title-span">House of Light</span></h1>
+                <h1 class="h1-spacing">The Vision Behind <span class="about-title-span">House of Light</span></h1>
             </div>
         </div>
         <div class="row justify-content-center p-3 pb-5">

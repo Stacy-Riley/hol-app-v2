@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row background-primary">
                 <div class="col-md-12 text-center px-0">
-                    <h1 class="pt-5 pb-5">Our Partners</h1>
+                    <h1 class="h1-spacing">Our Partners</h1>
                 </div>
             </div>
         </div>
