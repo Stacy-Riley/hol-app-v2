@@ -28,7 +28,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.blog.index', absolute: false));
+        // Set a success flash message
+        session()->flash('success', 'You have successfully logged in!');
+
+        return redirect()->intended(route('admin.index', absolute: false));
     }
 
     /**

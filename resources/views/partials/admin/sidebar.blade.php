@@ -7,8 +7,8 @@
             </svg>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark ">
-            <a href="/">
-                <img src="{{env('APP_URL')}}/assets/images/home/House-of-Light-logo-no-bg.png" alt="House of Light" >
+            <a href="/" target="_blank" rel="noopener noreferrer">
+                <img src="{{env('APP_URL')}}/assets/images/home/House-of-Light-logo-no-bg.png" alt="House of Light">
             </a>
         </h1>
 
