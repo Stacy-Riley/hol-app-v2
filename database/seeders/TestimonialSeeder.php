@@ -34,7 +34,7 @@ class TestimonialSeeder extends Seeder
                 'display_order' => 2,
                 'author_name' => 'A. Lee',
                 'job_title' => 'Administrative Assistant',
-                'comment' => 'Working at House of Light, I felt as though I was a part of the family. The CEO pushed me to pursue my own dreams and never made me feel as though I couldn\’t advance my career.'
+                'comment' => 'Working at House of Light, I felt as though I was a part of the family. The CEO pushed me to pursue my own dreams and never made me feel as though I couldn\'t advance my career.'
             ],
         ];
                 DB::table('testimonials')->insert($testimonials);

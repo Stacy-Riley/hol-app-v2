@@ -124,9 +124,9 @@
                         <div aria-live="polite" class="testimonial-card">
                             <div class="quote">
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                <p class="quote_text">"{{ $testimonial->comment }}"</p>
+                                <p class="quote_text">"{!! $testimonial->comment !!}"</p>
                                 <div class="testi-img_block">
-                                    <p><span>{{ $testimonial->author_name }}</span>{{ $testimonial->job_title }}</p>
+                                    <p><span>{!! $testimonial->author_name !!}</span>{!! $testimonial->job_title !!}</p>
                                 </div>
                             </div>
                         </div>

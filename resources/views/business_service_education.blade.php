@@ -19,7 +19,7 @@
                         <div class="col-10 col-md-6 col-lg-3 background-secondary business-service-card-container">
                             <div>
                                 <div class="pt-4">
-                                    <h2 class="business-service-title text-center">{{ $service->title }}</h2>
+                                    <h2 class="business-service-title text-center">{!! $service->title !!}</h2>
                                 </div>
                             </div>
                             <div class="pb-2 business-service-card-body">
