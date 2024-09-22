@@ -1890,7 +1890,19 @@ select.form-control.custom-select {
     margin: 21px 0 58px; }
 
 .campus-img_block {
-  position: relative; }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+.campus-img_block-wrapper {
+    width: 315px;
+    height: 316px;
+    border: 1px solid #ccc;
+    margin:10px;
+}
   .campus-img_block .campus-title-block {
     width: 100%;
     position: absolute;

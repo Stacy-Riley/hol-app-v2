@@ -12,22 +12,22 @@
             </div>
         </div>
         {{--  Education Logos--}}
-        <div class="container-fluid background-secondary">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col-md-12 text-center px-0 py-4">
                     <h2 class="pt-5 pb-0">Education</h2>
                 </div>
             </div>
-            <div class="row justify-content-center py-5 background-secondary">
+            <div class="row justify-content-center py-5 ">
                 @foreach($educationPartners as $partner)
-                        <div class="d-flex justify-content-center col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                    <div class="campus-img_block-wrapper col-lg-3 col-md-6 col-12 p-3 d-flex justify-content-center align-items-center">
                             @php
                                 $isOldImage = Str::startsWith($partner->logo_path, '/assets/images/partner-logos/education');
                             @endphp
                             <div class="campus-img_block">
                                 @if($isOldImage)
                                     <a href="{{ $partner->business_url }}">
-                                        <img src="{{asset($partner->logo_path) }}" class="img-fluid" alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}">
+                                        <img src="{{asset($partner->logo_path) }}" class="img-fluid " alt="{{ $partner->name }}" aria-label="Logo of {{$partner->name}}">
                                     </a>
                                 @else
                                     <a href="{{ $partner->business_url }}">
@@ -39,7 +39,7 @@
                 @endforeach
             </div>
         </div>
-
+        <hr>
 {{--  Corporate Logos--}}
         <div class="container-fluid">
             <div class="row ">
@@ -49,7 +49,7 @@
             </div>
             <div class="row justify-content-center py-5">
                 @foreach($corporatePartners as $partner)
-                <div class="d-flex justify-content-center col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center">
+                    <div class="campus-img_block-wrapper col-lg-3 col-md-6 col-12 p-3 d-flex justify-content-center align-items-center">
                     <div class="campus-img_block">
                         @php
                             $isOldImage = Str::startsWith($partner->logo_path, '/assets/images/partner-logos/corporate');

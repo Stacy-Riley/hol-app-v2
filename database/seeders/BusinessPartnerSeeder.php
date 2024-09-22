@@ -62,6 +62,14 @@ class BusinessPartnerSeeder extends Seeder
                 'business_url' => 'https://www.sd170.com/',
                 'logo_path' => '/assets/images/partner-logos/education/chicago-heights.png',
             ],
+            [
+                'priority' => 4,
+                'is_active'=> true,
+                'name' => 'Maine Township D207',
+                'category' => 'education',
+                'business_url' => 'https://maine207.org/',
+                'logo_path' => '/assets/images/partner-logos/education/Maine_Township_207_logo.jpeg',
+            ],
 
         ];
         DB::table('business_partners')->insert($partners);
