@@ -14,10 +14,10 @@
                         </div>
                     @endif
                 </div>
-                <div class="row">
+                <div class="row justify-items-center">
                     @if(isset($quote) && isset($author))
-                        <div class="col-12 col-lg-10 offset-md-2-5 quote-box mt-5 p-4 border rounded shadow">>
-                            <blockquote>
+                        <div class="col-12 col-lg-9 mt-5 admin-index-blockquote border rounded shadow ">>
+                            <blockquote class="">
                                 <p class="text-lg italic">{{ $quote }}</p>
                                 <footer class="blockquote-footer">{{ $author }}</footer>
                             </blockquote>
