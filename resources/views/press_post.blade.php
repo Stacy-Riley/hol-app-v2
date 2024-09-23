@@ -25,12 +25,15 @@
                                 <p class="mr-4 fw-bold">By: {{ $article->author }}</p>
                                 <p>{{ \Carbon\Carbon::parse($article->published_at)->format('F j, Y') }}</p>
                             </div>
+                            <div class="blog-img_block text-center">
+                                @if($isOldImage)
+                                    <img src="{{asset($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
+                                @else
+                                    <img src="{{ Storage::url($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
+                                @endif
 
-                            @if($isOldImage)
-                                <img src="{{asset($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
-                            @else
-                                <img src="{{ Storage::url($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
-                            @endif
+                            </div>
+
 
                             <p class="press-post-img-caption">{{ $article->img_caption }}</p>
                             <p>{!! $article->body !!}</p>

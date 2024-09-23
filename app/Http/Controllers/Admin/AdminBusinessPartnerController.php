@@ -99,7 +99,7 @@ class AdminBusinessPartnerController extends Controller
 
         //This is where the new uploaded image will be stored if the admin changes the file
         if($request->hasFile('logo_path')) {
-            $path = $request->file('logo_path')->store('assets/images/partner-logos', 'public');
+            $path = $request->file('logo_path')->store('logo_images', 'public');
             $formData['logo_path'] = $path;
         }
        $businessPartner->update($formData);

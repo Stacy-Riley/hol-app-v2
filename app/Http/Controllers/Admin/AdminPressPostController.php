@@ -57,7 +57,7 @@ class AdminPressPostController extends Controller
         PressPost::create($formData);
 
         return redirect('admin/pressPost')
-            ->with('success', 'Press Post has been created!');
+            ->with('success', 'Press Post created successfully!');
     }
 
     /**
@@ -97,14 +97,14 @@ class AdminPressPostController extends Controller
         ]);
         // This is where the new uploaded image will be stored if the admin changes the file
         if ($request->hasFile('cover_image_path')) {
-            $path = $request->file('cover_image_path')->store('assets/images/press-page', 'public');
+            $path = $request->file('cover_image_path')->store('pressPost_images', 'public');
             $formData['cover_image_path'] = $path;
         }
 
         $pressPost->update($formData);
 
         return redirect('admin/pressPost')
-            ->with('success', 'Press Post has been created!');
+            ->with('success', 'Press Post updated successfully!');
     }
 
     /**
@@ -114,6 +114,6 @@ class AdminPressPostController extends Controller
     {
         $pressPost = PressPost::destroy($id);
         return redirect('admin/pressPost')
-            ->with('success', 'Press Post has been deleted!');
+            ->with('success', 'Press Post deleted successfully!');
     }
 }

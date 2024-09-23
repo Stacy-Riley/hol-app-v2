@@ -56,7 +56,7 @@ class AdminTestimonialController extends Controller
         Testimonial::create($formData);
 
         return redirect('admin/testimonial')
-            ->with('success', 'Testimonial created!');
+            ->with('success', 'Testimonial created successfully!');
     }
 
 
@@ -96,7 +96,7 @@ class AdminTestimonialController extends Controller
         $testimonial->update($formData);
 
         return redirect('admin/testimonial')
-            ->with('success', 'Testimonial updated!');
+            ->with('success', 'Testimonial updated successfully!');
 
     }
 
@@ -109,6 +109,6 @@ class AdminTestimonialController extends Controller
         $testimonial->delete();
 
         return redirect('admin/testimonial')
-            ->with('success', 'Testimonial deleted!');
+            ->with('success', 'Testimonial deleted successfully!');
     }
 }

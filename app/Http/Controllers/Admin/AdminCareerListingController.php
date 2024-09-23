@@ -54,7 +54,7 @@ class AdminCareerListingController extends Controller
         CareerListing::create($formData);
 
         return redirect('admin/careerListing')
-            ->with('success', 'Listing has been created successfully.');
+            ->with('success', 'Listing has been created successfully!');
     }
 
     /**
@@ -89,7 +89,7 @@ class AdminCareerListingController extends Controller
         $careerListing->update($formData);
 
         return redirect('admin/careerListing')
-            ->with('success', 'Listing has been updated successfully.');
+            ->with('success', 'Listing has been updated successfully!');
 
     }
 
@@ -100,6 +100,6 @@ class AdminCareerListingController extends Controller
     {
         careerListing::destroy($id);
         return redirect('admin/careerListing')
-            ->with('success', 'Listing has been deleted successfully.');
+            ->with('success', 'Listing has been deleted successfully!');
     }
 }

@@ -17,9 +17,6 @@
                     @if(session('success'))
                         <div class="col-12 col-lg-4 offset-md-2-5 alert alert-success" role="alert">
                             {{ session('success') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
                     @endif
                 </div>
@@ -148,7 +145,21 @@
             });
         });
     </script>
-
+    {{--    Function to fade out the login message--}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            setTimeout(function() {
+                let alert = document.querySelector('.alert-success');
+                if(alert) {
+                    alert.style.transition = 'opacity 1s ease';
+                    alert.style.opacity = '0';
+                    setTimeout(function() {
+                        alert.remove();
+                    }, 1000);
+                }
+            },3000);
+        })
+    </script>
 
 
 

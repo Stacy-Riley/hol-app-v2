@@ -44,7 +44,7 @@
         <div class="container-fluid">
             <div class="row ">
                 <div class="col-md-12 text-center px-0 py-4">
-                    <h2 class="pt-5 pb-0">Corporate</h2>
+                    <h2 class="pt-4 pb-0">Corporate</h2>
                 </div>
             </div>
             <div class="row justify-content-center py-5">

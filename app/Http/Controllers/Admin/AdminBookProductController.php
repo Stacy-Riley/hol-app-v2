@@ -45,7 +45,7 @@ class AdminBookProductController extends Controller
 
         BookProduct::create($formData);
         return redirect('admin/book')
-            ->with('success', 'Book created successfully');
+            ->with('success', 'Book created successfully!');
     }
 
     /**
@@ -83,7 +83,7 @@ class AdminBookProductController extends Controller
         $book->update($formData);
 
         return redirect('admin/book')
-            ->with('success', 'Book updated successfully');
+            ->with('success', 'Book updated successfully!');
     }
 
     /**
@@ -93,6 +93,6 @@ class AdminBookProductController extends Controller
     {
         $book = BookProduct::destroy($id);
         return redirect('admin/book')
-            ->with('success', 'Book deleted successfully');
+            ->with('success', 'Book deleted successfully!');
     }
 }

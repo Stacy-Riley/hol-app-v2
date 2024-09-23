@@ -54,7 +54,7 @@ class AdminFaqController extends Controller
         Faq::create($formData);
 
         return redirect('admin/faq')
-            ->with('success', 'Faq created successfully');
+            ->with('success', 'Faq created successfully!');
     }
 
     /**
@@ -89,7 +89,7 @@ class AdminFaqController extends Controller
         $faq->update($formData);
 
         return redirect('admin/faq')
-            ->with('success', 'Faq updated successfully');
+            ->with('success', 'Faq updated successfully!');
     }
 
     /**
@@ -99,6 +99,6 @@ class AdminFaqController extends Controller
     {
         $faq =Faq::destroy($id);
         return redirect('admin/faq')
-            ->with('success', 'Faq deleted successfully');
+            ->with('success', 'Faq deleted successfully!');
     }
 }
