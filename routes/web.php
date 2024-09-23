@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\AdminBookProductController;
 use App\Http\Controllers\Admin\AdminBusinessPartnerController;
 use App\Http\Controllers\Admin\AdminBusinessServiceController;
 use App\Http\Controllers\Admin\AdminCareerListingController;
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPressPostController;
 use App\Http\Controllers\Admin\AdminQuoteController;
@@ -50,8 +49,9 @@ Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('sub
 //Admin
 Route::middleware('auth')->group(function () {
     //After login, admin panel routes to admin/admin_index as initial page
-    //Admin BlogPage Routes
     Route::get('/admin', [AdminQuoteController::class, 'show'])->name('admin.index');
+
+    //Admin BlogPage Routes
     Route::get('/admin/blog', [AdminBlogPostController::class, 'index'])->name('admin.blog.index');
     Route::get('/admin/create/blog', [AdminBlogPostController::class, 'create'])->name('create.blog');
     Route::post('/admin/blog/store', [AdminBlogPostController::class, 'store'])->name('store.blog');
