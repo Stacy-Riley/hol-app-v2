@@ -18,7 +18,7 @@
                             @php
                                 $isOldImage = Str::startsWith($post->cover_image, 'assets/images/blog');
                             @endphp
-                            <div class="blog-img_block">
+                            <div class="blog-img_block text-center">
                                 @if($isOldImage)
                                     <img src="{{asset($post->cover_image) }}" class="img-fluid" alt="{{ $post->title }}">
                                 @else

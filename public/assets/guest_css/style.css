@@ -2072,7 +2072,12 @@ select.form-control.custom-select {
   padding: 98px 0; }
 
 .blog-img_block {
-  position: relative; }
+  position: relative;
+    max-width: 752px;
+    max-height: 465px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
   .blog-img_block img {
     padding-left: 40px; }
 

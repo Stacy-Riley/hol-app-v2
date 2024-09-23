@@ -18,7 +18,7 @@
                         @php
                             $isOldImage = Str::startsWith($post->cover_image, 'assets/images/blog');
                         @endphp
-                        <div class="blog-img_block">
+                        <div class="blog-img_block text-center">
                             @if($isOldImage)
                                 <img src="{{asset($post->cover_image) }}" class="img-fluid" alt="{{ $post->title }}">
                             @else
@@ -31,7 +31,7 @@
                         <div class="blog-title_block">
                             <h4><a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h4>
                             <h6>By: <span>{{ $post->author }}</span>  |  Category: <a href="/blog/category/{{ $post->category }}" aria-label="View posts in the {{ $post->category }}">{{ $post->category }}</a></h6>
-                            <p>{!! Str::limit($post->body, 150) !!}</p>
+                            <p>{!! Str::limit($post->body, 200) !!}</p>
                             <a href="{{ route('blog.show', $post->slug) }}" aria-label="Read more about {{ $post->title }}">Read More</a>
 
                             <div class="blog-icons">
@@ -108,8 +108,8 @@
                 </div>
             </div>
             @else
-                <div>
-                    <h2 class="my-5">Coming Soon!</h2>
+                <div class="pb-5">
+                    <h2 class="my-2">Coming Soon!</h2>
                 </div>
             @endif
         </div>
