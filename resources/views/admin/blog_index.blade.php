@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-10 offset-md-2-5 p-0">
+            <div class="col-12 col-lg-10 offset-md-2-5 my-4 p-0">
                 <a href="create/blog" type="button" class="btn admin-form-button">New Post</a>
             </div>
         </div>

@@ -8,6 +8,7 @@
 /*);*/
 body {
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 .background-primary {
@@ -15,7 +16,7 @@ body {
 }
 
 .background-secondary {
-    background-color: #BC942F;
+    background-color: #F0AD4E;
 }
 
 .h1-spacing {
@@ -60,11 +61,12 @@ body {
 /**********************************/
 .button-secondary-cta a {
     display: inline-block;
-    background-color: #BC942F;
+    background-color: #F0AD4E;
     border: none;
     border-radius: 15px;
-    color: #ffffff;
+    color: #000000;
     font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
     font-weight: bold;
     outline: none;
     padding: 12px 30px;

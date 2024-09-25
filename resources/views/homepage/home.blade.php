@@ -69,10 +69,10 @@
             <div class="row justify-content-center">
                 <div class="d-flex justify-content-center col-md-8 col-lg-6 flex-wrap">
                     <div class="button-primary-cta mb-4 px-4">
-                        <a href="/services/education">Education Services</a>
+                        <a href="/services/education" aria-label="Learn more about Education Services">Education Services</a>
                     </div>
                     <div class="button-primary-cta px-4">
-                        <a href="/services/corporate">Corporate Services</a>
+                        <a href="/services/corporate" aria-label="Learn more about Corporate Services">Corporate Services</a>
                     </div>
 
                 </div>
@@ -103,7 +103,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center button-primary-cta mt-3">
-                    <a href="/partners" class="">See more >>></a>
+                    <a href="/partners" aria-label="See more about our partners">See more >>></a>
                 </div>
             </div>
         </div>
@@ -121,21 +121,22 @@
                 <div class="col-md-12">
                     <div class="testimonial-container">
                         @foreach($testimonials as $testimonial)
-                        <div aria-live="polite" class="testimonial-card">
-                            <div class="quote">
-                                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                <p class="quote_text">"{!! $testimonial->comment !!}"</p>
-                                <div class="testi-img_block">
-                                    <p><span>{!! $testimonial->author_name !!}</span>{!! $testimonial->job_title !!}</p>
+                            <div class="testimonial-card" role="group" aria-label="Testimonial by {!! $testimonial->author_name !!}">
+                                <div class="quote">
+                                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    <p class="quote_text">"{!! $testimonial->comment !!}"</p>
+                                    <div class="testi-img_block">
+                                        <p><span>{!! $testimonial->author_name !!}</span>{!! $testimonial->job_title !!}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!--//END TESTIMONIAL -->
 @endsection
 @section('scripts')
@@ -149,7 +150,7 @@
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 autoplay: true,
-                dots: true,
+                dots: false,
                 pauseOnHover: true,
                 autoplaySpeed: 3000,
             });

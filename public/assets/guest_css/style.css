@@ -1068,15 +1068,17 @@ footer {
   color: #969696; }
 
 .btn-warning {
-  background: #BC942F;
+  background: #F0AD4E;
   border: none;
     border-radius: 15px;
   padding: 17px 34px;
     font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   outline: none;
   cursor: pointer;
-  font-weight: bold; }
+  font-weight: bold;
+color: #000000
+}
 
 .btn-black.active,
 .btn-black:active,
@@ -1363,7 +1365,7 @@ footer h3 {
     margin-bottom: 0;
     padding-left: 10px; }
     .testi-img_block p span {
-      color: #BC942F;
+      color: #2A2B2C;
       font-size: 16px;
       display: block; }
 

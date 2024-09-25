@@ -2,7 +2,7 @@
 /* Slider */
 .slick-loading .slick-list
 {
-    background: #fff url('../images/ajax-loader.gif') center center no-repeat;
+    background: #fff;
 }
 
 /* Icons */
@@ -131,7 +131,7 @@
     margin: 0;
 
     list-style: none;
-    
+
     text-align: center;
 }
 .slick-dots li
@@ -142,7 +142,7 @@
 
     width: 20px;
     height: 20px;
-    margin: 0 0px;
+    margin: 0 7px;
     padding: 0;
 
     cursor: pointer;
