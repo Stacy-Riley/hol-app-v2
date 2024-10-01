@@ -25,19 +25,9 @@ class AdminBusinessServiceController extends Controller
      */
     public function index(request $request)
     {
-//Next time, we are trying to sort by 2 orderBy and ChatGPT went down,
-//I have it here but it isn't working in the admin index, it is
-//just sorting alphabetically
-// Enable query logging
-//        \DB::enableQueryLog();
-
         $businessServices = BusinessService::orderBy('category')
             ->orderBy('priority')
             ->get();
-
-// Dump and die to display the query log
-//        dd(\DB::getQueryLog());
-
 
         return view('admin.businessService_index')
             ->with('businessServices', $businessServices);

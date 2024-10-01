@@ -72,7 +72,7 @@ class AdminBlogPostController extends Controller
      */
     public function edit(string $id)
     {
-        $post = BlogPost::findOrFail($id); //I don't know if the findOrFail is the right move here but it was in the book
+        $post = BlogPost::findOrFail($id);
         return view('admin.blog_edit', ['post' => $post]);
     }
 
