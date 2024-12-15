@@ -23,6 +23,7 @@ body {
     padding-top: 48px;
     padding-bottom: 48px;
 }
+
 @media (max-width: 767px) {
     .h1-spacing {
         padding: 0;
@@ -185,6 +186,7 @@ li {
         font-size: 18px;
     }
 }
+
 @media(min-width: 768px) {
     .responsive-logo-container {
         width: 200px !important;
@@ -401,6 +403,7 @@ hr {
 .book {
     padding-bottom: 80px;
 }
+
 .book-intro {
     padding-bottom: 40px;
 }
@@ -432,6 +435,7 @@ hr {
 .book-card-details-container li p {
     color: red;
 }
+
 /*Return to Top button*/
 #return-to-top {
     display: none;
@@ -475,12 +479,14 @@ hr {
 .press-post-img-caption {
     font-style: italic;
 }
+
 .press-post-read-more-container a {
     /*color: #102E96;*/
     font-weight: bold;
     font-size: 18px;
     font-family: 'Quicksand', sans-serif;
 }
+
 .press-post-read-more-container a:hover {
     text-decoration-line: underline;
     cursor: pointer;
@@ -490,6 +496,19 @@ hr {
     /*background-color: #BC942F !important;*/
 }
 
+.press-container {
+    margin-left: 30px;
+}
+
+.press-container img {
+    padding-left: 0;
+}
+
+@media (max-width: 768px) {
+    .press-container {
+        margin-left: 0;
+    }
+}
 /******************************************************************* */
 /***** BLOG POSTS DISPLAY PAGE *****/
 /******************************************************************* */

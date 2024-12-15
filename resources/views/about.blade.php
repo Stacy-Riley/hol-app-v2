@@ -34,7 +34,10 @@
             <div class="col-md-5 ">
                 <h2>Mission</h2>
                 <p>
+                    House of Light is a consulting and training company that specializes in equitable treatment of those who are blind or visually impaired.
                     Our mission is to promote inclusion for individuals with visual impairment by engaging them in society whether in commercial, institutional, or educational spaces.
+                    We do this by providing training and programming that targets in-class training for educators, workshops, and professional development of corporate managers who engage with those with disabilities.
+
                 </p>
                 <br>
                 <h2>Vision</h2>

@@ -11,7 +11,7 @@
                 </div>
             </div>
             <!--============================= ARTICLE SECTION =============================-->
-            <div class="row">
+            <div class="row press-container">
                 <div class="col-md-8">
                     <hr>
                     @foreach($articles as $article)
@@ -27,9 +27,9 @@
                             </div>
                             <div class="blog-img_block text-center">
                                 @if($isOldImage)
-                                    <img src="{{asset($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
+                                    <img src="{{asset($article->cover_image_path) }}" class="img-fluid press-image" alt="{{ $article->title }}">
                                 @else
-                                    <img src="{{ Storage::url($article->cover_image_path) }}" class="img-fluid" alt="{{ $article->title }}">
+                                    <img src="{{ Storage::url($article->cover_image_path) }}" class="img-fluid press-image" alt="{{ $article->title }}">
                                 @endif
 
                             </div>
