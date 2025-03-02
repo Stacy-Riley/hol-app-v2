@@ -15,15 +15,18 @@
                         Thank you for visiting <span>House of Light</span>. We are a leading consulting and training firm dedicated to creating inclusive environments for people with visual impairments. Our team of experienced educators and accessibility experts provides comprehensive solutions to schools, businesses, and organizations seeking to enhance accessibility and compliance.
                     </p>
                     <p>
-                        We offer specialized <a class="homepage-welcome-links" href="/services/education">educational services</a> and training to ensure that students with visual impairments receive the support they need to succeed. Our programs focus on creating inclusive classrooms, developing individualized education plans (IEPs), and providing teachers with the tools and knowledge to effectively support visually impaired students.
+                        Our itinerant model provides flexible, personalized <a class="homepage-welcome-links" href="/services/education">educational services</a> tailored to the needs of blind and visually impaired students. By offering face-to-face, virtual, and hybrid learning options, we ensure that each student receives the attention and support they need to succeed. Our licensed Teachers of the Blind and Visually Impaired (TVI) work closely with school districts to develop Individualized Education Programs (IEP) or 504 plans, ensuring every student's educational needs are met.
                     </p>
                     <p>
-                        Our <a class="homepage-welcome-links" href="/services/corporate">corporate services</a> help corporations build a more inclusive workplace by offering ADA compliance training, accessibility audits, and employee development programs. Our expertise in preventing lawsuits and fostering a culture of inclusion empowers businesses to create a positive impact.
+                        Partnering with <a class="homepage-welcome-links" href="/community_center">iCanDream Center</a>, we will be opening our ESY Program June 2 through July 10th that will offer a supportive, tailored learning environment for visually impaired students. This specialized setting will provide a nurturing space where students can learn and grow, supported by a team of dedicated professionals. Our day school focuses on creating an inclusive atmosphere that fosters independence and confidence.
                     </p>
                     <p>
-                        For example, do you have an event coming soon? Have you thought about making sure your presentation is accessible for those with disabilities in your audience? Is your team trained to work with a person with disabilities? Is your municipality looking to purchase software for your constituents, in your selection price did you make sure the software was accessible? We can help!
+                        House of Light, LLC also partners with organizations to provide comprehensive accessibility training and support. Our <a class="homepage-welcome-links" href="/services/corporate">corporate services</a> are designed to enhance workplace inclusion for visually impaired employees. We offer workshops and consultations to help organizations implement effective accessibility solutions, ensuring a more inclusive and supportive work environment.
 
                     </p>
+{{--                    <p>--}}
+{{--                        For example, do you have an event coming soon? Have you thought about making sure your presentation is accessible for those with disabilities in your audience? Is your team trained to work with a person with disabilities? Is your municipality looking to purchase software for your constituents, in your selection price did you make sure the software was accessible? We can help!--}}
+{{--                    </p>--}}
                 </div>
             </div>
             <div class="row justify-content-center pt-5">

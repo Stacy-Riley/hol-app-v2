@@ -21,7 +21,12 @@ body {
 
 .h1-spacing {
     padding-top: 48px;
-    padding-bottom: 48px;
+    padding-bottom: 18px;
+}
+
+.h1-spacing-corporate {
+    padding-top: 48px;
+    padding-bottom: 18px;
 }
 
 @media (max-width: 767px) {
@@ -346,18 +351,37 @@ hr {
 /******************************************************************* */
 .business-service-card-container {
     border-radius: 15px;
-    box-shadow: 0.25rem 0.313rem 0.25rem #9a8888;
     margin: 20px;
 }
 
 .business-service-card-body a {
    color: #ffffff;
+    font-weight: bold;
+    text-decoration-line: underline;
+    letter-spacing: 1px;
 }
 
 .business-service-card-body a:hover {
-    text-decoration-line: underline;
+    /*text-decoration-line: underline;*/
 }
 
+/*Changes to show client*/
+.service-disclosure {
+    background: #102E96;
+    color: #ffffff;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+#button-work-with-us-corp,
+#button-work-with-us-ed {
+    box-shadow: none;
+}
+
+.business-service-card-container-ed {
+    border-radius: 15px;
+    margin: 20px;
+}
 /******************************************************************* */
 /***** GHANA PROJECT *****/
 /******************************************************************* */

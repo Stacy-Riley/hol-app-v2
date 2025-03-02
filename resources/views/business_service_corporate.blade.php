@@ -2,11 +2,29 @@
 @section('content')
 
     <!--============================= CORPORATE SERVICES =============================-->
-    <section class="mb-5">
-        <div class="container-fluid text-center m-0 p-0">
-            <div class="row ">
-                <div class="col-md-12">
-                    <h1 class="h1-spacing">Corporate Services</h1>
+    <section>
+    {{--   section class="mb-5"--}}
+    <div class="corporate-services-background pb-5"
+        style="
+        background-image: url('{{ env('APP_URL') }}/assets/images/services/blind-woman-reading-braille-book-next-to-young-girl.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment: fixed;
+        color: #ffffff;
+        overflow: hidden
+        "
+    >
+
+        <div class="container-fluid text-center mb-5">
+            <div class="row">
+                <div class="col-md-12 m-0 pt-0 pb-5 background-secondary">
+                    <h1 class="h1-spacing-corporate">Corporate Services</h1>
+                    <div class=" text-center col-10 mx-auto">
+                        <p>
+                            At House of Light, we are dedicated to fostering a welcoming and integrated workplace through our specialized corporate training programs. Our expertise in supporting businesses to hire and empower individuals with disabilities helps create an environment where everyone feels a sense of belonging and participation.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,20 +50,12 @@
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-8 col-lg-4 text-center button-primary-cta mb-5">
+                <div class="col-8 col-lg-4 text-center button-primary-cta mb-5" id="button-work-with-us-corp">
                     <a href="/contact" role="button" aria-label="Fill out our contact us form">Work with Us!</a>
                 </div>
             </div>
-
-
-            <div class="row justify-content-center">
-                <div class="col-10 col-md-10">
-                    <h2>Diversity and Inclusion</h2>
-                    <p>At House of Light, we are committed to creating a world where everyone feels valued and included. Our comprehensive accessibility and inclusion solutions empower businesses to thrive while making a positive impact on society. These values are deeply rooted in our identity as our team comprises individuals with diverse backgrounds, cultures, and perspectives, which inspires us to continuously strive for inclusivity and accessibility. Here at House of Light, we ensure that “Visibility” is at the forefront of our business.
-                    </p>
-                </div>
-            </div>
         </div>
+    </div>
     </section>
     <!--//END CORPORATE SERVICES -->
 @endsection
