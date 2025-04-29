@@ -58,7 +58,7 @@
                             <div>
                                 <div class="mb-3">
                                     <label class="form-label">External Link URL</label>
-                                    <input type="text" class="form-control" name="external_link_url" placeholder="https://example.com" required>
+                                    <input type="text" class="form-control" name="external_link_url" placeholder="https://example.com">
                                 </div>
                             </div>
                         </div>

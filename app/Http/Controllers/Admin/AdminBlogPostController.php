@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BlogPost;
+use App\Helpers\FileSyncHelper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminBlogPostController extends Controller
 {
@@ -40,13 +42,15 @@ class AdminBlogPostController extends Controller
             'body' => 'required|string',
             'published_at' => 'required|date',
             'is_published' => 'required|boolean',
-            'cover_image' => 'sometimes|file|image|max:5000',
+            'cover_image' => 'sometimes|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         //This is where the new uploaded image will be stored if the admin changes the file
         if($request->hasFile('cover_image')) {
             $path = $request->file('cover_image')->store('blog_images', 'public');
             $formData['cover_image'] = $path;
+
+            FileSyncHelper::syncToPublicStorage($path);
         }
 
         $formData['user_id'] = auth()->id();
@@ -92,7 +96,7 @@ class AdminBlogPostController extends Controller
             'body' => 'required|string',
             'published_at' => 'required|date',
             'is_published' => 'required|boolean',
-            'cover_image' => 'sometimes|file|image|max:5000',
+            'cover_image' => 'sometimes|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         //This is where the new uploaded image will be stored if the admin changes the file

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\PressPost;
+use App\Helpers\FileSyncHelper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminPressPostController extends Controller
 {
@@ -43,7 +45,7 @@ class AdminPressPostController extends Controller
             'body' => 'required|string',
             'img_caption' => 'sometimes|string|nullable',
             'cover_image_path' => 'sometimes|file|nullable',
-            'external_link_url' => 'required|string',
+            'external_link_url' => 'sometimes|string|nullable|url',
             'published_at' => 'required|date',
         ]);
 
@@ -51,7 +53,10 @@ class AdminPressPostController extends Controller
         if($request->hasFile('cover_image_path')) {
             $path = $request->file('cover_image_path')->store('pressPost_images', 'public');
             $formData['cover_image_path'] = $path;
-}
+
+            FileSyncHelper::syncToPublicStorage($path);
+        }
+
         $formData['user_id'] = auth()->id();
 
         PressPost::create($formData);
@@ -92,14 +97,32 @@ class AdminPressPostController extends Controller
             'body' => 'required|string',
             'img_caption' => 'sometimes|string|nullable',
             'cover_image_path' => 'sometimes|file|nullable',
-            'external_link_url' => 'required|string',
+            'external_link_url' => 'sometimes|string|nullable|url',
             'published_at' => 'required|date',
         ]);
-        // This is where the new uploaded image will be stored if the admin changes the file
-        if ($request->hasFile('cover_image_path')) {
+
+        //This is where the new uploaded image will be stored
+        if($request->hasFile('cover_image_path')) {
+            // Delete the old image if it exists
+            if ($pressPost->cover_image_path) {
+                $oldPath = storage_path('app/public/' . $pressPost->cover_image_path);
+                $oldPublicPath = public_path('storage/' . $pressPost->cover_image_path);
+
+                if (File::exists($oldPath)) {
+                    File::delete($oldPath);
+                }
+
+                if (File::exists($oldPublicPath)) {
+                    File::delete($oldPublicPath);
+                }
+            }
+
             $path = $request->file('cover_image_path')->store('pressPost_images', 'public');
             $formData['cover_image_path'] = $path;
+
+            FileSyncHelper::syncToPublicStorage($path);
         }
+
 
         $pressPost->update($formData);
 

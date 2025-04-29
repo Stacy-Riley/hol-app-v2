@@ -67,24 +67,27 @@
             </div>
         </div>
 
-        <div class="row m-0 p-0">
-            <div class="col-md-12 m-0 p-0">
-                <div class="hero-text-content-wrapper m-0 p-0">
-                    <div class="hero-text-content-container text-center m-0 p-0">
+        <div class="row no-gutters">
+            <div class="col-md-12 p-0">
+                <div class="hero-text-content-wrapper text-center m-0 p-0">
+                    <div class="hero-text-content-container m-0 p-0">
                         <h1 class="m-0 pb-1">Making a Difference Beyond the Classroom</h1>
                         <h2 class="mx-3">Consulting, education, &amp; training services to improve the lives of those who are blind &amp; visually impaired.
                         </h2>
                     </div>
                     <img
-                        class="img-fluid m-0 p-0"
-                        src="{{env('APP_URL')}}/assets/images/home/hero-image-large.jpeg"
+                        class="img-fluid w-100 m-0 p-0"
+                        src="{{ env('APP_URL') }}/assets/images/home/hero-image-large.jpeg"
                         srcset="
-                        {{env('APP_URL')}}/assets/images/home/hero-image-small.jpeg 480w,
-                        {{env('APP_URL')}}/assets/images/home/hero-image-medium.jpeg 800w,
-                        {{env('APP_URL')}}/assets/images/home/hero-image-large.jpeg 1200w,
-                        {{env('APP_URL')}}/assets/images/home/hero-image-extra-large.jpeg 1920w"
+                            {{ env('APP_URL') }}/assets/images/home/hero-image-small.jpeg 480w,
+                            {{ env('APP_URL') }}/assets/images/home/hero-image-medium.jpeg 800w,
+                            {{ env('APP_URL') }}/assets/images/home/hero-image-large.jpeg 1200w,
+                            {{ env('APP_URL') }}/assets/images/home/hero-image-extra-large.jpeg 1920w
+                          "
+                        sizes="100vw"
                         alt="CEO Sierra Dockery meeting with members of the school in Ghana"
                     />
+
                 </div>
             </div>
         </div>

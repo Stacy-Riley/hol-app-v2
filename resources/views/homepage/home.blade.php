@@ -24,9 +24,6 @@
                         House of Light, LLC also partners with organizations to provide comprehensive accessibility training and support. Our <a class="homepage-welcome-links" href="/services/corporate">corporate services</a> are designed to enhance workplace inclusion for visually impaired employees. We offer workshops and consultations to help organizations implement effective accessibility solutions, ensuring a more inclusive and supportive work environment.
 
                     </p>
-{{--                    <p>--}}
-{{--                        For example, do you have an event coming soon? Have you thought about making sure your presentation is accessible for those with disabilities in your audience? Is your team trained to work with a person with disabilities? Is your municipality looking to purchase software for your constituents, in your selection price did you make sure the software was accessible? We can help!--}}
-{{--                    </p>--}}
                 </div>
             </div>
             <div class="row justify-content-center pt-5">

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BusinessPartner;
+use App\Helpers\FileSyncHelper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminBusinessPartnerController extends Controller
 {
@@ -47,13 +49,15 @@ class AdminBusinessPartnerController extends Controller
             'name' => 'required|string',
             'category' => 'required|string',
             'business_url' => 'required|string',
-            'logo_path' => 'required|file|image|max:5000',
+            'logo_path' => 'sometimes|image|mimes:jpg,jpeg,png,svg|max:2048',
             'is_active' => 'required|boolean'
         ]);
 
         //This is where the new uploaded image will be stored
         $path = $request->file('logo_path')->store('logo_images', 'public');
         $formData['logo_path'] = $path;
+
+        FileSyncHelper::syncToPublicStorage($path);
 
         $formData['user_id'] = auth()->id();
 
@@ -93,7 +97,7 @@ class AdminBusinessPartnerController extends Controller
             'name' => 'required|string',
             'category' => 'required|string',
             'business_url' => 'required|string',
-            'logo_path' => 'sometimes|file|image|max:5000', //Sometimes here, admin might not always add new image
+            'logo_path' => 'sometimes|image|mimes:jpg,jpeg,png,svg|max:2048',
             'is_active' => 'required|boolean'
         ]);
 

@@ -478,6 +478,7 @@ hr {
 #return-to-top:hover {
     background-color: #555;
 }
+
 /******************************************************************* */
 /***** BUSINESS PARTNERS *****/
 /******************************************************************* */
@@ -633,6 +634,110 @@ hr {
 .careerListing-container {
     border-top: 6px solid #BC942F;
 }
+
+/******************************************************************* */
+/***** Learning Center *****/
+/* ****************************************************************** */
+.learning-center a {
+    color: #FF6347;
+    text-decoration:underline;
+}
+
+.learning-center a:hover {
+    color: #000000;
+}
+
+.learning-center-header-container {
+    background-color: #102E96;
+}
+
+.learning-center-header-icon {
+    width: 200px;
+    height: auto;
+}
+
+.learning-center-page-title {
+    /*font-size: 2rem;*/
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.learning-center-content-container {
+    background-color: #E3F2FD;
+}
+
+ul.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Style each list item with a custom bullet */
+ul.custom-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+/* Create the decorative square bullet */
+ul.custom-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;    /* Size of the square */
+    height: 12px;
+    background-color: #FF6347;
+}
+
+ul.custom-list li p {
+    padding-left: 25px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+ul.custom-list li.big-li::before {
+    top: 4%;
+    transform: none;
+}
+
+.learning-center-logos {
+    width: 150px;
+    height: auto;
+}
+
+.learning-center-span-1 {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.learning-center-span-2 {
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.learning-center-span-3 {
+    display:block;
+}
+
+.learning-center-logos {
+    width: 150px;
+    height: auto;
+}
+
+@media(max-width: 991px) {
+    .learning-center-header-icon {
+        display: none;
+    }
+
+    ul.custom-list li.big-li::before {
+        top: 14%;
+        transform: none;
+    }
+}
 /******************************************************************* */
 /***** FOOTER *****/
 /* ****************************************************************** */
@@ -673,4 +778,3 @@ hr {
     font-family: 'Quicksand', sans-serif;
     margin-top: 60px;
 }
-
